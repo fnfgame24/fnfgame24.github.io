@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /404.html
+Disallow: /README
+Disallow: /LICENSE
+Sitemap: https://fnfgame24.github.io/sitemap.xml
