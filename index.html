@@ -1,75 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>FNF | Friday Night Funkin'</title>
+  <meta name="description" content="Play FNF | Friday Night Funkin' free online. Enjoy rhythm battles, songs, and community mods in your browser." />
+  <meta name="keywords" content="FNF, Friday Night Funkin, FNF Mods, Rhythm Game, Music Game, fnfgame24" />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Google Search Console verification -->
   <meta name="google-site-verification" content="jiZelBzINsnHWFKipIb1OUNLzmaCDjXLLhWQxOSXZWQ" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FNF Game 24 – Friday Night Funkin’ Mods & Rhythm Battles</title>
-  <meta name="description" content="FNF Game 24 showcases Friday Night Funkin’ mods, rhythm battles, and music challenges. Explore featured mods, latest updates, and helpful guides.">
-  <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://fnfgame24.github.io/">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="FNF Game 24 – Friday Night Funkin’ Mods & Rhythm Battles">
-  <meta property="og:description" content="Discover FNF mods, rhythm battles, and guides. Explore featured content and play the latest community creations.">
-  <meta property="og:url" content="https://fnfgame24.github.io/">
+  <meta property="og:title" content="FNF | Friday Night Funkin'">
+  <meta property="og:description" content="Play FNF online in your browser with smooth performance and fullscreen mode.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://fnfgame24.github.io/cover.jpg">
+  <meta property="og:url" content="https://fnfgame24.github.io/">
 
-  <link rel="stylesheet" href="/assets/styles.css">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <meta name="theme-color" content="#0a0f18" />
+
   <style>
-    /* fallback nếu chưa tạo assets/styles.css */
-    body{font-family:Arial,sans-serif;margin:0;color:#111;line-height:1.6}
-    .wrap{max-width:960px;margin:auto;padding:20px}
-    header{background:#120022;color:#fff}
-    .top{display:flex;align-items:center;justify-content:space-between}
-    nav a{color:#fff;margin:0 10px;text-decoration:none}
-    nav a:hover{text-decoration:underline}
-    .hero{padding:28px 0}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .card{border:1px solid #eee;border-radius:12px;padding:16px;background:#fff}
-    footer{background:#f6f6f8;margin-top:28px;padding:16px;font-size:14px}
-    .btn{display:inline-block;padding:10px 14px;border-radius:8px;background:#6a30ff;color:#fff;text-decoration:none}
+    :root{
+      --bg:#0a0f18; --panel:#0f1724; --text:#e6ebff; --muted:#8a93a9;
+      --accent:#8b9dff; --radius:20px; --shadow:0 6px 24px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:var(--bg); color:var(--text);
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+    }
+
+    .wrap{
+      max-width:1280px;
+      margin:0 auto;
+      padding:16px 18px 40px;
+    }
+
+    /* Header */
+    .topbar{
+      display:flex; align-items:center; gap:12px; justify-content:space-between;
+      padding:6px 4px 14px;
+    }
+    .brand{display:flex; align-items:center; gap:10px; color:var(--text); text-decoration:none; font-weight:800; letter-spacing:.2px; font-size:18px}
+    .logo{width:32px;height:32px;border-radius:10px;background:#1b2540;display:grid;place-items:center;box-shadow:var(--shadow);overflow:hidden}
+    .logo img{width:100%;height:100%;object-fit:cover}
+    .search{
+      margin-left:auto; width:260px; max-width:34vw;
+      background:#101827; border:1px solid #1f2a44; color:var(--text);
+      padding:9px 12px; border-radius:999px; outline:none; font-size:14px;
+    }
+
+    /* Player card */
+    .player-card{
+      background:var(--panel); border:1px solid #1b2340;
+      border-radius:var(--radius); box-shadow:var(--shadow);
+      padding:14px;
+    }
+    .player{
+      position:relative; width:100%;
+      aspect-ratio:16/9;
+      background:#000; border-radius:16px; overflow:hidden;
+      height:clamp(420px, 70vh, 720px);
+    }
+    .player iframe{position:absolute; inset:0; width:100%; height:100%; border:0; display:block}
+
+    .caption{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px; padding:12px 4px 4px;
+    }
+    .game-meta{display:flex; align-items:center; gap:10px}
+    .appicon{width:36px;height:36px;border-radius:10px;overflow:hidden;background:#1b2540;display:grid;place-items:center}
+    .appicon img{width:100%;height:100%;object-fit:cover}
+    .title{font-size:17px;font-weight:900;letter-spacing:.2px}
+    .muted{color:var(--muted);font-size:13px}
+
+    .actions{display:flex; gap:8px; flex-wrap:wrap}
+    .btn{
+      background:#121b2f; border:1px solid #1e2a46; color:var(--text);
+      padding:9px 12px; border-radius:12px; cursor:pointer; font-weight:700; font-size:14px;
+    }
+    .btn:hover{border-color:#2a3a60}
+
+    footer{margin-top:26px; color:var(--muted); font-size:13px}
+    footer a{color:var(--accent); text-decoration:none}
+
+    @media (max-width: 1366px) {
+      .wrap{padding-left:14px;padding-right:14px}
+      .player{height:clamp(400px, 68vh, 680px)}
+      .brand{font-size:17px}
+      .search{width:240px}
+      .btn{padding:8px 11px;font-size:13.5px}
+    }
+
+    @media (max-height: 768px) {
+      .topbar{padding-bottom:10px}
+      .player{height:clamp(380px, 66vh, 660px)}
+      .caption{padding-top:10px}
+    }
   </style>
 </head>
 <body>
-  <header>
-    <div class="wrap top">
-      <a href="/" style="color:#fff;text-decoration:none;"><strong>FNF Game 24</strong></a>
-      <nav>
-        <a href="/mods.html">Mods</a>
-        <a href="/guides.html">Guides</a>
-        <a href="/about.html">About</a>
-        <a href="/contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <div class="wrap">
+    <!-- Top bar -->
+    <header class="topbar">
+      <a class="brand" href="/">
+        <span class="logo"><img src="/favicon.png" alt="FNF logo"></span>
+        <span>FNF | Friday Night Funkin'</span>
+      </a>
+      <input class="search" type="search" placeholder="Search Games ..." aria-label="Search">
+    </header>
 
-  <main class="wrap">
-    <section class="hero">
-      <h1 style="margin:0 0 10px">Welcome to FNF Game 24</h1>
-      <p>Explore hand-picked <strong>Friday Night Funkin’ mods</strong>, rhythm battles, and community resources. Scroll for featured picks or jump to the Mods page to discover more.</p>
-      <p><a class="btn" href="/mods.html">Browse Mods</a></p>
+    <!-- Player card -->
+    <section class="player-card" aria-label="Game player">
+      <div class="player" id="player-box">
+        <!-- Link nhúng game -->
+        <iframe id="game-frame"
+          src="https://fnf.kdata1.com/2024/fnf/5201/"
+          allow="autoplay; fullscreen; gamepad; accelerometer; clipboard-read; clipboard-write"
+          allowfullscreen
+          loading="lazy"
+          title="FNF Game"></iframe>
+      </div>
+
+      <div class="caption">
+        <div class="game-meta">
+          <span class="appicon"><img src="/favicon.png" alt="FNF icon"></span>
+          <div>
+            <div class="title">FNF</div>
+            <div class="muted">Friday Night Funkin'</div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn" type="button" onclick="toggleFullscreen()">Fullscreen</button>
+          <a class="btn" href="mods.html">Mods</a>
+          <a class="btn" href="/" rel="noopener">Home</a>
+        </div>
+      </div>
     </section>
 
-    <section class="grid" aria-label="Featured content">
-      <article class="card">
-        <h2 style="margin-top:0">Featured Mod</h2>
-        <p>A curated spotlight of a trending FNF mod with smooth charts, catchy tracks, and balanced difficulty.</p>
-        <p><a href="/mods.html">See all mods →</a></p>
-      </article>
-      <article class="card">
-        <h2 style="margin-top:0">Getting Started</h2>
-        <p>New to FNF mods? Our quick guide covers game basics, chart timing, and how to set up your first mod.</p>
-        <p><a href="/guides.html">Read guides →</a></p>
-      </article>
-    </section>
-  </main>
+    <footer>
+      <p>© 2025 FNF Game 24 — Fan-made project for Friday Night Funkin'.</p>
+      <p class="muted">Need help? See <a href="mods.html">mods list</a>.</p>
+    </footer>
+  </div>
 
-  <footer>
-    <div class="wrap">
-      <p>© 2025 FNF Game 24 • <a href="/privacy.html">Privacy</a> • <a href="/sitemap.xml">Sitemap</a></p>
-    </div>
-  </footer>
+  <script>
+    // Fullscreen toggle
+    function toggleFullscreen(){
+      const elem = document.getElementById('player-box');
+      if (!document.fullscreenElement &&
+          !document.webkitFullscreenElement &&
+          !document.msFullscreenElement) {
+        (elem.requestFullscreen || elem.webkitRequestFullscreen || elem.msRequestFullscreen).call(elem);
+      } else {
+        (document.exitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen).call(document);
+      }
+    }
+  </script>
 </body>
 </html>
