@@ -1,0 +1,14 @@
+:root{--ink:#111;--muted:#666;--bg:#fff;--brand:#6a30ff}
+*{box-sizing:border-box}body{font-family:Arial,Helvetica,sans-serif;margin:0;color:var(--ink);background:var(--bg);line-height:1.6}
+.wrap{max-width:960px;margin:auto;padding:20px}
+header{background:#120022;color:#fff}
+.top{display:flex;align-items:center;justify-content:space-between}
+nav a{color:#fff;margin:0 10px;text-decoration:none}
+nav a:hover{text-decoration:underline}
+.hero{padding:28px 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.card{border:1px solid #eee;border-radius:12px;padding:16px;background:#fff}
+footer{background:#f6f6f8;margin-top:28px;padding:16px;font-size:14px}
+.btn{display:inline-block;padding:10px 14px;border-radius:8px;background:var(--brand);color:#fff;text-decoration:none}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{border:1px solid #eee;padding:10px;text-align:left}
