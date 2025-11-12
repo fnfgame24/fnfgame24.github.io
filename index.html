@@ -4,33 +4,72 @@
   <meta charset="UTF-8">
   <meta name="google-site-verification" content="jiZelBzINsnHWFKipIb1OUNLzmaCDjXLLhWQxOSXZWQ" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index,follow">
-  <meta name="description" content="FNF Game 24 – Explore Friday Night Funkin’ mods, rhythm battles, and the best FNF experiences online!">
   <title>FNF Game 24 – Friday Night Funkin’ Mods & Rhythm Battles</title>
+  <meta name="description" content="FNF Game 24 showcases Friday Night Funkin’ mods, rhythm battles, and music challenges. Explore featured mods, latest updates, and helpful guides.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://fnfgame24.github.io/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="FNF Game 24 – Friday Night Funkin’ Mods & Rhythm Battles">
+  <meta property="og:description" content="Discover FNF mods, rhythm battles, and guides. Explore featured content and play the latest community creations.">
+  <meta property="og:url" content="https://fnfgame24.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://fnfgame24.github.io/cover.jpg">
+
+  <link rel="stylesheet" href="/assets/styles.css">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 700px;
-      margin: 60px auto;
-      line-height: 1.6;
-      text-align: center;
-    }
-    h1 { color: #d63cff; }
-    a { color: #0073ff; text-decoration: none; }
+    /* fallback nếu chưa tạo assets/styles.css */
+    body{font-family:Arial,sans-serif;margin:0;color:#111;line-height:1.6}
+    .wrap{max-width:960px;margin:auto;padding:20px}
+    header{background:#120022;color:#fff}
+    .top{display:flex;align-items:center;justify-content:space-between}
+    nav a{color:#fff;margin:0 10px;text-decoration:none}
+    nav a:hover{text-decoration:underline}
+    .hero{padding:28px 0}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .card{border:1px solid #eee;border-radius:12px;padding:16px;background:#fff}
+    footer{background:#f6f6f8;margin-top:28px;padding:16px;font-size:14px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:8px;background:#6a30ff;color:#fff;text-decoration:none}
   </style>
 </head>
 <body>
-  <h1>Welcome to FNF Game 24</h1>
-  <p>Discover all <strong>Friday Night Funkin’ mods</strong> and rhythm challenges in one place! 
-     Join the beat, battle opponents, and master the tempo in every track.</p>
+  <header>
+    <div class="wrap top">
+      <a href="/" style="color:#fff;text-decoration:none;"><strong>FNF Game 24</strong></a>
+      <nav>
+        <a href="/mods.html">Mods</a>
+        <a href="/guides.html">Guides</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  <p>🎵 The place for FNF fans to explore, play, and groove with the best music games online.</p>
+  <main class="wrap">
+    <section class="hero">
+      <h1 style="margin:0 0 10px">Welcome to FNF Game 24</h1>
+      <p>Explore hand-picked <strong>Friday Night Funkin’ mods</strong>, rhythm battles, and community resources. Scroll for featured picks or jump to the Mods page to discover more.</p>
+      <p><a class="btn" href="/mods.html">Browse Mods</a></p>
+    </section>
 
-  <p>Visit our main website for the full experience:<br>
-     <a href="https://fnfgame24.com">https://fnfgame24.com</a></p>
+    <section class="grid" aria-label="Featured content">
+      <article class="card">
+        <h2 style="margin-top:0">Featured Mod</h2>
+        <p>A curated spotlight of a trending FNF mod with smooth charts, catchy tracks, and balanced difficulty.</p>
+        <p><a href="/mods.html">See all mods →</a></p>
+      </article>
+      <article class="card">
+        <h2 style="margin-top:0">Getting Started</h2>
+        <p>New to FNF mods? Our quick guide covers game basics, chart timing, and how to set up your first mod.</p>
+        <p><a href="/guides.html">Read guides →</a></p>
+      </article>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 FNF Game 24. All rights reserved.</p>
+    <div class="wrap">
+      <p>© 2025 FNF Game 24 • <a href="/privacy.html">Privacy</a> • <a href="/sitemap.xml">Sitemap</a></p>
+    </div>
   </footer>
 </body>
 </html>
