@@ -27,11 +27,48 @@
     a{color:inherit;text-decoration:none}
 
     .wrap{max-width:1280px;margin:0 auto;padding:16px 18px 44px}
-    header.top{display:flex;align-items:center;gap:12px;padding:6px 2px 14px}
-    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:800}
-    .logo{width:36px;height:36px;border-radius:10px;overflow:hidden;background:#1b2540;display:grid;place-items:center;box-shadow:var(--shadow)}
-    .logo img{width:100%;height:100%;object-fit:cover}
+
+    header.top{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:6px 2px 14px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      font-weight:800;
+    }
     .title{font-size:22px;letter-spacing:.2px}
+
+    .appicon{
+      width:36px;
+      height:36px;
+      border-radius:10px;
+      overflow:hidden;
+      background:#1b2540;
+      display:grid;
+      place-items:center;
+      box-shadow:var(--shadow);
+      will-change:transform;
+    }
+    .appicon img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    /* Logo hover animation */
+    @keyframes logo-spin{
+      from{transform:scale(1) rotate(0deg);}
+      to{transform:scale(1.12) rotate(360deg);}
+    }
+    .brand:hover .appicon{
+      animation:logo-spin .6s ease-out;
+    }
 
     .actions{display:flex;gap:10px;flex-wrap:wrap;margin-left:auto}
     .btn{
@@ -40,20 +77,75 @@
     }
     .btn:hover{border-color:#2a3a60}
 
-    .block{background:var(--panel);border:1px solid var(--border);
-      border-radius:var(--radius);box-shadow:var(--shadow);padding:14px}
+    .block{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:14px;
+    }
     h1.page{font-size:28px;margin:12px 0 10px}
 
-    /* Player */
-    .player{position:relative;width:100%;aspect-ratio:16/9;background:#000;
-      border-radius:16px;overflow:hidden;height:clamp(420px,70vh,720px)}
-    .player iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+    /* Search box */
+    .search-box{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      background:#0f1728;
+      border:1px solid var(--border);
+      padding:8px 14px;
+      border-radius:20px;
+      box-shadow:0 4px 12px rgba(0,0,0,.35);
+      margin-left:auto;
+      min-width:240px;
+    }
+    .search-icon{
+      font-size:16px;
+      opacity:.8;
+    }
+    .search-input{
+      background:transparent;
+      border:none;
+      outline:none;
+      color:var(--text);
+      font-size:14px;
+      width:100%;
+    }
+    .search-input::placeholder{
+      color:var(--muted);
+    }
 
-    .caption{display:flex;align-items:center;justify-content:space-between;
-      gap:10px;padding:12px 2px 2px}
-    .game-meta{display:flex;align-items:center;gap:10px}
-    .appicon{width:36px;height:36px;border-radius:10px;overflow:hidden;background:#1b2540;display:grid;place-items:center}
-    .appicon img{width:100%;height:100%;object-fit:cover}
+    /* Player */
+    .player{
+      position:relative;
+      width:100%;
+      aspect-ratio:16/9;
+      background:#000;
+      border-radius:16px;
+      overflow:hidden;
+      height:clamp(420px,70vh,720px);
+    }
+    .player iframe{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      border:0;
+      display:block;
+    }
+
+    .caption{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:12px 2px 2px;
+    }
+    .game-meta{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
     .muted{color:var(--muted);font-size:13px}
 
     /* Quick mods row */
@@ -85,88 +177,97 @@
       transform:translateY(-1px);
       background:#111a2c;
     }
-/* Mods grid with images */
-.mods{
-  display:grid;
-  grid-template-columns:repeat(8,minmax(0,1fr)); /* 8 game trên 1 hàng */
-  gap:10px;
-  margin-top:12px;
-}
 
-.mod{
-  position:relative;
-  display:block;
-  overflow:hidden;
-  border-radius:12px;
-  border:2px solid var(--border);
-  background:#101727;
-  cursor:pointer;
-  box-shadow:0 6px 20px rgba(0,0,0,.45);
-  transition:border-color .2s, box-shadow .2s, transform .2s;
-}
+    /* Mods grid with images (square cards) */
+    .mods{
+      display:grid;
+      grid-template-columns:repeat(8,minmax(0,1fr)); /* 8 game trên 1 hàng */
+      gap:10px;
+      margin-top:12px;
+    }
 
-/* Tạo tỉ lệ cố định cho ô game */
-.mod::before{
-  content:"";
-  display:block;
-  padding-top:60%;
-}
+    .mod{
+      position:relative;
+      display:block;
+      overflow:hidden;
+      border-radius:12px;
+      border:2px solid var(--border);
+      background:#101727;
+      cursor:pointer;
+      box-shadow:0 6px 20px rgba(0,0,0,.45);
+      transition:border-color .2s, box-shadow .2s, transform .2s;
+    }
 
-/* Ảnh fill full ô */
-.mod img{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-  transition:transform .25s, filter .25s;
-}
+    /* Tạo tỉ lệ hình vuông */
+    .mod::before{
+      content:"";
+      display:block;
+      padding-top:100%; /* 1:1 square */
+    }
 
-/* Viền sáng + zoom nhẹ khi hover */
-.mod:hover{
-  border-color:var(--accent);
-  box-shadow:0 0 0 1px rgba(139,157,255,.6),0 18px 32px rgba(0,0,0,.7);
-  transform:translateY(-2px);
-}
-.mod:hover img{
-  transform:scale(1.05);
-  filter:brightness(1.07);
-}
+    .mod img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transition:transform .25s, filter .25s;
+    }
 
-/* Tên game: ẩn mặc định, hiện ở dưới khi hover */
-.mod-label{
-  position:absolute;
-  left:6px;
-  right:6px;
-  bottom:6px;
-  padding:5px 6px;
-  border-radius:9px;
-  background:linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.25));
-  font-size:12px;
-  font-weight:700;
-  line-height:1.3;
-  text-align:center;
-  color:#ffffff;
-  opacity:0;
-  transform:translateY(8px);
-  transition:opacity .2s, transform .2s;
-}
+    .mod:hover{
+      border-color:var(--accent);
+      box-shadow:0 0 0 1px rgba(139,157,255,.6),0 18px 32px rgba(0,0,0,.7);
+      transform:translateY(-2px);
+    }
+    .mod:hover img{
+      transform:scale(1.05);
+      filter:brightness(1.07);
+    }
 
-.mod:hover .mod-label{
-  opacity:1;
-  transform:translateY(0);
-}
+    /* Tên game: ẩn, chỉ hiện ở dưới khi hover */
+    .mod-label{
+      position:absolute;
+      left:6px;
+      right:6px;
+      bottom:6px;
+      padding:5px 6px;
+      border-radius:9px;
+      background:linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.25));
+      font-size:12px;
+      font-weight:700;
+      line-height:1.3;
+      text-align:center;
+      color:#ffffff;
+      opacity:0;
+      transform:translateY(8px);
+      transition:opacity .2s, transform .2s;
+    }
+    .mod:hover .mod-label{
+      opacity:1;
+      transform:translateY(0);
+    }
 
     /* Content */
-    article.content{background:var(--panel);border:1px solid var(--border);
-      border-radius:var(--radius);box-shadow:var(--shadow);padding:16px;margin-top:14px}
+    article.content{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:16px;
+      margin-top:14px;
+    }
     article.content h2{margin:14px 0 8px;font-size:20px}
     article.content h3{margin:12px 0 6px;font-size:16px}
     article.content p{margin:8px 0}
     ul.clean{margin:8px 0 12px 18px}
 
-    footer{margin-top:26px;color:var(--muted);font-size:13px;text-align:center}
+    footer{
+      margin-top:26px;
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+    }
     footer a{color:var(--accent);text-decoration:none}
 
     @media (max-width:1366px){
@@ -175,20 +276,24 @@
       .title{font-size:20px}
       .btn{padding:8px 12px;font-size:13.5px}
     }
-    @media (max-height:768px){.player{height:clamp(380px,66vh,660px)}}
+    @media (max-height:768px){
+      .player{height:clamp(380px,66vh,660px)}
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header class="top">
       <a class="brand" href="/">
-        <span class="appicon"><img src="https://fnfgame24.github.io/fnf.png" alt="FNF icon"></span>
+        <span class="appicon">
+          <img src="https://fnfgame24.github.io/fnf.png" alt="FNF icon">
+        </span>
         <span class="title">FNF | Friday Night Funkin'</span>
       </a>
-      <div class="actions">
-        <a class="btn" href="mods.html">Add</a>
-        <button class="btn" type="button" onclick="sharePage()">Share</button>
-        <button class="btn" type="button" onclick="toggleFullscreen()">Full Screen</button>
+
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" placeholder="Search Games ..." class="search-input">
       </div>
     </header>
 
@@ -224,7 +329,9 @@
       </div>
       <div class="caption">
         <div class="game-meta">
-          <span class="appicon"><img src="https://fnfgame24.github.io/fnf.png" alt="FNF icon"></span>
+          <span class="appicon">
+            <img src="https://fnfgame24.github.io/fnf.png" alt="FNF icon">
+          </span>
           <div>
             <strong>FNF</strong>
             <div class="muted">Friday Night Funkin'</div>
@@ -251,6 +358,7 @@
           <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-tricky-the-clown.png" alt="Friday Night Funkin vs Tricky the Clown">
           <div class="mod-label">Friday Night Funkin vs Tricky the Clown</div>
         </a>
+
         <a class="mod" href="https://fnfgame24.github.io/fnf-vs-garcello">
           <img src="https://fnfgame24.github.io/assets/fnf-vs-garcello.png" alt="FNF vs Garcello">
           <div class="mod-label">FNF vs Garcello</div>
@@ -323,8 +431,9 @@
 
     function sharePage(){
       const url = location.href;
-      if (navigator.share) navigator.share({title:document.title,url});
-      else {
+      if (navigator.share) {
+        navigator.share({title:document.title,url});
+      } else {
         navigator.clipboard?.writeText(url);
         alert('Link copied: '+url);
       }
