@@ -41,7 +41,6 @@
       text-decoration:none;
       font-weight:800;
     }
-    .title{font-size:22px;letter-spacing:.2px}
 
     .appicon{
       width:36px;
@@ -120,15 +119,16 @@
       color:var(--muted);
     }
 
-    /* Player */
+    /* Player 782x439 */
     .player{
       position:relative;
       width:100%;
+      max-width:782px;      /* chiều rộng tối đa 782px */
+      margin:0 auto;        /* căn giữa */
       background:#000;
       border-radius:16px;
       overflow:hidden;
-      aspect-ratio:16/9;
-      max-height:640px;
+      aspect-ratio:782/439; /* giữ tỉ lệ 782x439 */
     }
     .player iframe{
       position:absolute;
@@ -277,7 +277,6 @@
 
     @media (max-width:1366px){
       .wrap{padding-left:14px;padding-right:14px}
-      .title{font-size:20px}
       .btn{padding:8px 12px;font-size:13.5px}
     }
   </style>
@@ -289,7 +288,6 @@
         <span class="appicon">
           <img src="https://fnfgame24.github.io/assets/friday-night-funkin.png" alt="FNF icon">
         </span>
-        <span class="title">FNF | Friday Night Funkin'</span>
       </a>
 
       <div class="search-box">
