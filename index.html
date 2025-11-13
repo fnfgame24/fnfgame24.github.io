@@ -58,11 +58,59 @@
     .appicon img{width:100%;height:100%;object-fit:cover}
     .muted{color:var(--muted);font-size:13px}
 
-    /* Mods grid */
-    .mods{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
-    .mod{background:#0f1728;border:1px solid var(--border);border-radius:12px;
-      padding:12px;text-decoration:none;font-weight:700;text-align:center}
-    .mod:hover{border-color:#2a3a60}
+/* Mods grid */
+.mods{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+  gap:14px;
+  margin-top:12px;
+}
+
+.mod{
+  position:relative;
+  display:block;
+  overflow:hidden;
+  border-radius:14px;
+  border:2px solid var(--border);
+  background:#101727;
+  text-decoration:none;
+  color:var(--text);
+  cursor:pointer;
+  box-shadow:0 6px 20px rgba(0,0,0,.45);
+  transition:border-color .2s, box-shadow .2s, transform .2s;
+}
+
+.mod img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  transition:transform .25s, filter .25s;
+}
+
+.mod:hover{
+  border-color:var(--accent);
+  box-shadow:0 0 0 1px rgba(139,157,255,.6),0 18px 32px rgba(0,0,0,.7);
+  transform:translateY(-2px);
+}
+
+.mod:hover img{
+  transform:scale(1.04);
+  filter:brightness(1.07);
+}
+
+.mod-label{
+  position:absolute;
+  left:8px;
+  right:8px;
+  bottom:8px;
+  padding:6px 8px;
+  border-radius:10px;
+  background:linear-gradient(to top,rgba(0,0,0,.88),rgba(0,0,0,.18));
+  font-size:13px;
+  font-weight:700;
+  line-height:1.3;
+}
 
     /* Content */
     article.content{background:var(--panel);border:1px solid var(--border);
@@ -127,12 +175,56 @@
     </section>
 
     <!-- Mods list -->
-    <section class="block">
+    <section class="block" aria-label="Popular FNF mods">
+      <h2 style="margin:4px 0 10px;font-size:18px;">Popular FNF Mods</h2>
       <div class="mods">
-        <a class="mod" href="games/fnf-week7.html">FNF Week 7</a>
-        <a class="mod" href="games/fnf-vs-shaggy.html">FNF vs Shaggy</a>
-        <a class="mod" href="games/fnf-vs-garcello.html">FNF vs Garcello</a>
-        <a class="mod" href="games/fnf-vs-mario.html">FNF vs Mario</a>
+        <a class="mod" href="https://fnfgame24.github.io/friday-night-funkin-vs-whitty">
+          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-whitty.png"
+               alt="Friday Night Funkin vs Whitty">
+          <div class="mod-label">Friday Night Funkin vs Whitty</div>
+        </a>
+
+        <a class="mod" href="https://fnfgame24.github.io/friday-night-funkin-vs-tricky-the-clown">
+          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-tricky-the-clown.png"
+               alt="Friday Night Funkin vs Tricky the Clown">
+          <div class="mod-label">Friday Night Funkin vs Tricky the Clown</div>
+        </a>
+
+        <a class="mod" href="https://fnfgame24.github.io/fnf-vs-garcello">
+          <img src="https://fnfgame24.github.io/assets/fnf-vs-garcello.png"
+               alt="FNF vs Garcello">
+          <div class="mod-label">FNF vs Garcello</div>
+        </a>
+
+        <a class="mod" href="https://fnfgame24.github.io/friday-night-funkin-vs-agoti">
+          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-agoti.png"
+               alt="Friday Night Funkin vs AGOTI">
+          <div class="mod-label">Friday Night Funkin vs AGOTI</div>
+        </a>
+
+        <a class="mod" href="https://fnfgame24.github.io/friday-night-funkin-vs-shaggy-v2">
+          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-shaggy-v2.png"
+               alt="Friday Night Funkin vs Shaggy v2">
+          <div class="mod-label">Friday Night Funkin vs Shaggy v2</div>
+        </a>
+
+        <a class="mod" href="https://fnfgame24.github.io/fnf-indie-cross">
+          <img src="https://fnfgame24.github.io/assets/fnf-indie-cross.png"
+               alt="FNF Indie Cross">
+          <div class="mod-label">FNF Indie Cross</div>
+        </a>
+
+        <a class="mod" href="https://fnfgame24.github.io/fnf-vs-sonic-exe">
+          <img src="https://fnfgame24.github.io/assets/fnf-vs-sonic-exe.png"
+               alt="FNF vs Sonic.EXE">
+          <div class="mod-label">FNF vs Sonic.EXE</div>
+        </a>
+
+        <a class="mod" href="https://fnfgame24.github.io/friday-night-funkin-vs-bob-bosip">
+          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-bob-bosip.png"
+               alt="Friday Night Funkin vs Bob and Bosip">
+          <div class="mod-label">Friday Night Funkin vs Bob &amp; Bosip</div>
+        </a>
       </div>
     </section>
 
