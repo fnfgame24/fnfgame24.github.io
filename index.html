@@ -86,54 +86,78 @@
       background:#111a2c;
     }
 
-    /* Mods grid with images */
-    .mods{
-      display:grid;
-      grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
-      gap:14px;
-      margin-top:12px;
-    }
-    .mod{
-      position:relative;
-      display:block;
-      overflow:hidden;
-      border-radius:14px;
-      border:2px solid var(--border);
-      background:#101727;
-      text-decoration:none;
-      color:var(--text);
-      cursor:pointer;
-      box-shadow:0 6px 20px rgba(0,0,0,.45);
-      transition:border-color .2s, box-shadow .2s, transform .2s;
-    }
-    .mod img{
-      width:100%;
-      height:100%;
-      display:block;
-      object-fit:cover;
-      transition:transform .25s, filter .25s;
-    }
-    .mod:hover{
-      border-color:var(--accent);
-      box-shadow:0 0 0 1px rgba(139,157,255,.6),0 18px 32px rgba(0,0,0,.7);
-      transform:translateY(-2px);
-    }
-    .mod:hover img{
-      transform:scale(1.04);
-      filter:brightness(1.07);
-    }
-    .mod-label{
-      position:absolute;
-      left:8px;
-      right:8px;
-      bottom:8px;
-      padding:6px 8px;
-      border-radius:10px;
-      background:linear-gradient(to top,rgba(0,0,0,.88),rgba(0,0,0,.18));
-      font-size:13px;
-      font-weight:700;
-      line-height:1.3;
-    }
+   /* Mods grid with images */
+.mods{
+  display:grid;
+  grid-template-columns:repeat(8,minmax(0,1fr)); /* 8 game trên 1 hàng */
+  gap:10px;
+  margin-top:12px;
+}
+
+.mod{
+  position:relative;
+  display:block;
+  overflow:hidden;
+  border-radius:12px;
+  border:2px solid var(--border);
+  background:#101727;
+  cursor:pointer;
+  box-shadow:0 6px 20px rgba(0,0,0,.45);
+  transition:border-color .2s, box-shadow .2s, transform .2s;
+}
+
+/* Tạo tỉ lệ cố định cho ô game */
+.mod::before{
+  content:"";
+  display:block;
+  padding-top:60%; /* cao vừa phải, 8 ô lọt 1 hàng */
+}
+
+/* Ảnh fill full ô */
+.mod img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .25s, filter .25s;
+}
+
+/* Hiệu ứng viền sáng + zoom khi hover */
+.mod:hover{
+  border-color:var(--accent);
+  box-shadow:0 0 0 1px rgba(139,157,255,.6),0 18px 32px rgba(0,0,0,.7);
+  transform:translateY(-2px);
+}
+.mod:hover img{
+  transform:scale(1.05);
+  filter:brightness(1.07);
+}
+
+/* Tên game ẩn đi, chỉ hiện khi hover và nằm giữa */
+.mod-label{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:6px 8px;
+  text-align:center;
+  border-radius:inherit;
+  background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.35));
+  font-size:13px;
+  font-weight:700;
+  line-height:1.3;
+  opacity:0;
+  transform:translateY(6px);
+  transition:opacity .2s, transform .2s;
+}
+
+.mod:hover .mod-label{
+  opacity:1;
+  transform:translateY(0);
+}
 
     /* Content */
     article.content{background:var(--panel);border:1px solid var(--border);
