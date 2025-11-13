@@ -70,7 +70,12 @@
       animation:logo-spin .6s ease-out;
     }
 
-    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-left:auto}
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-left:auto;
+    }
     .btn{
       background:#121b2f;border:1px solid var(--border);color:var(--text);
       padding:9px 14px;border-radius:12px;cursor:pointer;font-weight:800;font-size:14px;
@@ -119,11 +124,11 @@
     .player{
       position:relative;
       width:100%;
-      aspect-ratio:16/9;
       background:#000;
       border-radius:16px;
       overflow:hidden;
-      height:clamp(420px,70vh,720px);
+      aspect-ratio:16/9;
+      max-height:640px;
     }
     .player iframe{
       position:absolute;
@@ -272,12 +277,8 @@
 
     @media (max-width:1366px){
       .wrap{padding-left:14px;padding-right:14px}
-      .player{height:clamp(400px,68vh,680px)}
       .title{font-size:20px}
       .btn{padding:8px 12px;font-size:13.5px}
-    }
-    @media (max-height:768px){
-      .player{height:clamp(380px,66vh,660px)}
     }
   </style>
 </head>
@@ -286,7 +287,7 @@
     <header class="top">
       <a class="brand" href="/">
         <span class="appicon">
-          <img src="https://fnfgame24.github.io/fnf.png" alt="FNF icon">
+          <img src="https://fnfgame24.github.io/assets/friday-night-funkin.png" alt="FNF icon">
         </span>
         <span class="title">FNF | Friday Night Funkin'</span>
       </a>
@@ -330,12 +331,8 @@
       <div class="caption">
         <div class="game-meta">
           <span class="appicon">
-            <img src="https://fnfgame24.github.io/fnf.png" alt="FNF icon">
+            <img src="https://fnfgame24.github.io/assets/friday-night-funkin.png" alt="FNF icon">
           </span>
-          <div>
-            <strong>FNF</strong>
-            <div class="muted">Friday Night Funkin'</div>
-          </div>
         </div>
         <div class="actions">
           <button class="btn" type="button" onclick="toggleFullscreen()">Full Screen</button>
@@ -438,6 +435,31 @@
         alert('Link copied: '+url);
       }
     }
+
+    // Search: lọc quick mods + popular mods theo text nhập
+    document.addEventListener('DOMContentLoaded', function () {
+      const input = document.querySelector('.search-input');
+      if (!input) return;
+
+      function filterNodes(nodes, query){
+        nodes.forEach(function(el){
+          const text = el.textContent.toLowerCase();
+          if (!query || text.includes(query)) {
+            el.style.display = '';
+          } else {
+            el.style.display = 'none';
+          }
+        });
+      }
+
+      input.addEventListener('input', function () {
+        const q = input.value.trim().toLowerCase();
+        const quickMods = document.querySelectorAll('.quick-mods-row .quick-mod');
+        const mods = document.querySelectorAll('.mods .mod');
+        filterNodes(quickMods, q);
+        filterNodes(mods, q);
+      });
+    });
   </script>
 </body>
 </html>
