@@ -28,16 +28,18 @@
 
     .wrap{max-width:1180px;margin:0 auto;padding:16px 18px 44px}
 
-header.top{
-  display:flex;
-  align-items:center;
-  gap:16px;
-  padding:12px 24px;
-  background:#0f1724;     /* màu nền thanh dài */
-  border-radius:0;        /* không bo góc để dính mép trên */
-  margin:0 -18px 0;       /* kéo ra full ngang (vì .wrap có padding) */
-  height:64px;            /* chiều cao header giống mẫu */
-}
+    /* === HEADER TOP: THANH DÀI GIỐNG MẪU === */
+    header.top{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      padding:10px 24px;
+      background:#0f1724;     /* màu nền thanh dài */
+      border-radius:0;        /* không bo góc để dính mép trên */
+      margin:0 -18px 0;       /* kéo ra full ngang (vì .wrap có padding) */
+      height:64px;            /* giữ chiều cao header */
+    }
+
     .brand{
       display:flex;
       align-items:center;
@@ -83,6 +85,36 @@ header.top{
       border-radius:var(--radius);
       box-shadow:var(--shadow);
       padding:14px;
+    }
+
+    /* === DÃY GAME TRÊN THANH HEADER === */
+    .top-games{
+      display:flex;
+      gap:10px;
+      flex:1;                  /* chiếm khoảng giữa */
+      overflow:hidden;
+    }
+
+    .top-games .quick-mod{
+      flex:0 0 auto;
+      background:#0f1728;
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:6px 14px;
+      font-size:13px;
+      font-weight:600;
+      white-space:nowrap;
+      color:var(--text);
+      text-decoration:none;
+      box-shadow:0 3px 10px rgba(0,0,0,.35);
+      transition:border-color .2s, box-shadow .2s, transform .2s, background .2s;
+    }
+
+    .top-games .quick-mod:hover{
+      border-color:var(--accent);
+      box-shadow:0 0 0 1px rgba(139,157,255,.5),0 10px 20px rgba(0,0,0,.7);
+      transform:translateY(-1px);
+      background:#111a2c;
     }
 
     /* Search */
@@ -176,52 +208,16 @@ header.top{
       position:relative;
     }
 
-    /* Quick mods trong header */
-    .quick-mods{
-      display:flex;
-      flex:1;
-      margin:0;
-      padding:0;
-    }
-    .quick-mods-row{
-      display:flex;
-      gap:8px;
-      align-items:center;
-      flex-wrap:wrap;
+    .player{
+      position:relative;
       width:100%;
+      max-width:1100px;
+      margin:0 auto;
+      background:#000;
+      border-radius:26px;
+      overflow:hidden;
+      height:530px;
     }
-    .quick-mod{
-      flex:0 0 auto;
-      background:#0f1728;
-      border:1px solid var(--border);
-      border-radius:12px;
-      padding:6px 12px;
-      text-align:center;
-      font-weight:600;
-      font-size:12px;
-      text-decoration:none;
-      color:var(--text);
-      box-shadow:0 3px 10px rgba(0,0,0,.35);
-      transition:border-color .2s, box-shadow .2s, transform .2s, background .2s;
-      white-space:nowrap;
-    }
-    .quick-mod:hover{
-      border-color:var(--accent);
-      box-shadow:0 0 0 1px rgba(139,157,255,.5),0 10px 20px rgba(0,0,0,.7);
-      transform:translateY(-1px);
-      background:#111a2c;
-    }
-
-.player{
-  position:relative;
-  width:100%;      
-  max-width:1100px;
-  margin:0 auto;
-  background:#000;
-  border-radius:26px;
-  overflow:hidden;
-  height:530px;
-}
     .player iframe{
       position:absolute;
       inset:0;
@@ -401,21 +397,19 @@ header.top{
       .caption{
         max-width:100%;
       }
-      .quick-mods{
-        display:none;
+      .top-games{
+        display:none; /* có thể ẩn bớt trên mobile nếu muốn */
       }
     }
 
     @media (max-width:600px){
       header.top{
         flex-wrap:wrap;
+        height:auto;
       }
       .search-container{
         width:100%;
         order:3;
-      }
-      .quick-mods{
-        display:none;
       }
       .mods{
         grid-template-columns:repeat(2,minmax(0,1fr));
@@ -431,39 +425,39 @@ header.top{
 </head>
 <body>
   <div class="wrap">
-<header class="top">
-  <!-- Logo -->
-  <a class="brand" href="/">
-    <span class="appicon">
-      <img src="https://fnfgame24.github.io/assets/fnf.png" alt="FNF logo">
-    </span>
-  </a>
+    <header class="top">
+      <!-- Logo -->
+      <a class="brand" href="/">
+        <span class="appicon">
+          <img src="https://fnfgame24.github.io/assets/fnf.png" alt="FNF logo">
+        </span>
+      </a>
 
-  <!-- 4 game nổi bật nằm cùng thanh -->
-  <div class="top-games">
-    <a class="quick-mod" href="https://fnfgame24.github.io/fnf-doki-doki-takeover">
-      FNF Doki Doki Takeover
-    </a>
-    <a class="quick-mod" href="https://fnfgame24.github.io/fnf-vs-hyplullaby-v2">
-      FNF Vs. Hypno’s Lullaby v2
-    </a>
-    <a class="quick-mod" href="https://fnfgame24.github.io/fnf-indie-cross-ritual-but-everyone-sings-it">
-      FNF Indie Cross Ritual But Everyone Sings It
-    </a>
-    <a class="quick-mod" href="https://fnfgame24.github.io/fnf-vs-impostor-among-us-v4">
-      FNF vs Impostor V4
-    </a>
-  </div>
+      <!-- 4 game nổi bật nằm cùng thanh -->
+      <div class="top-games">
+        <a class="quick-mod" href="https://fnfgame24.github.io/fnf-doki-doki-takeover">
+          FNF Doki Doki Takeover
+        </a>
+        <a class="quick-mod" href="https://fnfgame24.github.io/fnf-vs-hyplullaby-v2">
+          FNF Vs. Hypno’s Lullaby v2
+        </a>
+        <a class="quick-mod" href="https://fnfgame24.github.io/fnf-indie-cross-ritual-but-everyone-sings-it">
+          FNF Indie Cross Ritual But Everyone Sings It
+        </a>
+        <a class="quick-mod" href="https://fnfgame24.github.io/fnf-vs-impostor-among-us-v4">
+          FNF vs Impostor V4
+        </a>
+      </div>
 
-  <!-- Search ở bên phải -->
-  <div class="search-container">
-    <div class="search-box">
-      <span class="search-icon">🔍</span>
-      <input type="text" placeholder="Search Games ..." class="search-input">
-    </div>
-    <div class="search-results" id="search-results"></div>
-  </div>
-</header>
+      <!-- Search ở bên phải -->
+      <div class="search-container">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" placeholder="Search Games ..." class="search-input">
+        </div>
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </header>
 
     <!-- Player -->
     <section class="player-card" aria-label="Game player">
@@ -563,6 +557,7 @@ header.top{
   </div>
 
   <script>
+    /* Fullscreen: phóng to khung chơi */
     function toggleFullscreen(){
       const elem = document.getElementById('player-box');
       if (!document.fullscreenElement &&
@@ -574,16 +569,21 @@ header.top{
       }
     }
 
+    /* Share: luôn copy link trang hiện tại */
     function sharePage(){
       const url = location.href;
-      if (navigator.share) {
-        navigator.share({title:document.title,url});
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(function(){
+          alert('Link copied: ' + url);
+        }).catch(function(){
+          prompt('Copy this link:', url);
+        });
       } else {
-        navigator.clipboard?.writeText(url);
-        alert('Link copied: '+url);
+        prompt('Copy this link:', url);
       }
     }
 
+    /* Favorite: lưu trạng thái vào localStorage */
     function toggleFavorite(){
       const key = 'fnf_main_favorite';
       const btn = document.getElementById('fav-btn');
@@ -609,15 +609,15 @@ header.top{
       const resultsBox = document.getElementById('search-results');
       if (!input || !resultsBox) return;
 
-      // map ảnh riêng cho 4 game quick-mod
       const quickThumbs = {
-        'FNF Doki Doki Takeover': 'https://fnfgame24.github.io/assets/fnf-doki-doki-takeover.png',
-        'FNF Vs. Hypno's Lullaby v2': 'https://fnfgame24.github.io/assets/fnf-vs-hyplullaby-v2.png',
-        'FNF Indie Cross Ritual': 'https://fnfgame24.github.io/assets/fnf-indie-cross-ritual-but-everyone-sings-it.png',
-        'FNF vs Impostor V4': 'https://fnfgame24.github.io/assets/fnf-vs-impostor-among-us-v4.png'
+        "FNF Doki Doki Takeover": "https://fnfgame24.github.io/assets/fnf-doki-doki-takeover.png",
+        "FNF Vs. Hypno’s Lullaby v2": "https://fnfgame24.github.io/assets/fnf-vs-hyplullaby-v2.png",
+        "FNF Indie Cross Ritual But Everyone Sings It": "https://fnfgame24.github.io/assets/fnf-indie-cross-ritual-but-everyone-sings-it.png",
+        "FNF vs Impostor V4": "https://fnfgame24.github.io/assets/fnf-vs-impostor-among-us-v4.png"
       };
 
-      const linkNodes = document.querySelectorAll('.quick-mods-row .quick-mod, .mods .mod');
+      // lấy game từ thanh trên + grid bên dưới
+      const linkNodes = document.querySelectorAll('.top-games .quick-mod, .mods .mod');
       const defaultThumb = 'https://fnfgame24.github.io/assets/friday-night-funkin.png';
 
       const games = Array.from(linkNodes).map(function(el){
@@ -629,7 +629,6 @@ header.top{
           const imageEl = el.querySelector('img');
           if (imageEl && imageEl.src) img = imageEl.src;
         } else {
-          // quick-mod
           if (quickThumbs[title]) img = quickThumbs[title];
         }
 
@@ -669,10 +668,16 @@ header.top{
         resultsBox.style.display = 'block';
       }
 
+      // Khi click/focus vào ô search: hiện tất cả game
+      input.addEventListener('focus', function () {
+        renderResults(games);
+      });
+
+      // Khi gõ: lọc theo text, rỗng thì hiện tất cả
       input.addEventListener('input', function () {
         const q = input.value.trim().toLowerCase();
         if (!q){
-          resultsBox.style.display = 'none';
+          renderResults(games);
           return;
         }
         const matched = games.filter(function(g){
@@ -681,6 +686,7 @@ header.top{
         renderResults(matched);
       });
 
+      // Click ra ngoài thì ẩn list
       document.addEventListener('click', function(e){
         if (!e.target.closest('.search-container')){
           resultsBox.style.display = 'none';
