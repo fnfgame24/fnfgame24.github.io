@@ -40,7 +40,9 @@
       gap:12px;
       text-decoration:none;
       font-weight:800;
+      cursor:pointer;
     }
+
     .title{font-size:22px;letter-spacing:.2px}
 
     .appicon{
@@ -49,11 +51,11 @@
       border-radius:10px;
       overflow:hidden;
       background:#1b2540;
-      display:grid;
-      place-items:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
       box-shadow:var(--shadow);
       will-change:transform;
-      display: flex;
     }
     .appicon img{
       width:100%;
@@ -76,12 +78,40 @@
       gap:10px;
       flex-wrap:wrap;
       margin-left:auto;
+      align-items:center;
     }
+
     .btn{
       background:#121b2f;border:1px solid var(--border);color:var(--text);
       padding:9px 14px;border-radius:12px;cursor:pointer;font-weight:800;font-size:14px;
     }
     .btn:hover{border-color:#2a3a60}
+
+    .icon-btn{
+      width:40px;
+      height:40px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:#121b2f;
+      color:var(--text);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:18px;
+      cursor:pointer;
+      box-shadow:0 4px 12px rgba(0,0,0,.35);
+      transition:border-color .2s, box-shadow .2s, transform .2s, background .2s;
+    }
+    .icon-btn:hover{
+      border-color:var(--accent);
+      box-shadow:0 0 0 1px rgba(139,157,255,.5),0 12px 24px rgba(0,0,0,.7);
+      transform:translateY(-1px);
+      background:#111a2c;
+    }
+    .icon-btn.active{
+      border-color:var(--accent);
+      box-shadow:0 0 0 1px rgba(139,157,255,.7),0 12px 24px rgba(0,0,0,.8);
+    }
 
     .block{
       background:var(--panel);
@@ -90,9 +120,13 @@
       box-shadow:var(--shadow);
       padding:14px;
     }
-    h1.page{font-size:28px;margin:12px 0 10px}
 
-    /* Search box */
+    /* Search */
+    .search-container{
+      margin-left:auto;
+      min-width:260px;
+      position:relative;
+    }
     .search-box{
       display:flex;
       align-items:center;
@@ -102,8 +136,7 @@
       padding:8px 14px;
       border-radius:20px;
       box-shadow:0 4px 12px rgba(0,0,0,.35);
-      margin-left:auto;
-      min-width:240px;
+      width:100%;
     }
     .search-icon{
       font-size:16px;
@@ -120,16 +153,48 @@
     .search-input::placeholder{
       color:var(--muted);
     }
+    .search-results{
+      position:absolute;
+      top:100%;
+      left:0;
+      right:0;
+      margin-top:6px;
+      background:#0f1728;
+      border:1px solid var(--border);
+      border-radius:16px;
+      box-shadow:var(--shadow);
+      max-height:260px;
+      overflow-y:auto;
+      display:none;
+      z-index:20;
+    }
+    .search-item{
+      padding:8px 12px;
+      font-size:14px;
+      cursor:pointer;
+      border-bottom:1px solid rgba(27,35,64,.6);
+    }
+    .search-item:last-child{
+      border-bottom:none;
+    }
+    .search-item:hover{
+      background:#111a2c;
+    }
 
     /* Player */
+    .player-card{
+      padding:14px;
+    }
     .player{
       position:relative;
       width:100%;
+      max-width:1000px;          /* giới hạn chiều rộng để không quá to */
+      margin:0 auto;             /* căn giữa */
       background:#000;
       border-radius:16px;
       overflow:hidden;
       aspect-ratio:16/9;
-      max-height:640px;
+      max-height:520px;          /* chiều cao hợp lý cho desktop */
     }
     .player iframe{
       position:absolute;
@@ -151,6 +216,10 @@
       display:flex;
       align-items:center;
       gap:10px;
+    }
+    .game-title{
+      font-size:20px;
+      margin:0;
     }
     .muted{color:var(--muted);font-size:13px}
 
@@ -231,7 +300,6 @@
       filter:brightness(1.07);
     }
 
-    /* Tên game: ẩn, chỉ hiện ở dưới khi hover */
     .mod-label{
       position:absolute;
       left:6px;
@@ -279,7 +347,28 @@
     @media (max-width:1366px){
       .wrap{padding-left:14px;padding-right:14px}
       .title{font-size:20px}
-      .btn{padding:8px 12px;font-size:13.5px}
+    }
+
+    @media (max-width:900px){
+      .mods{
+        grid-template-columns:repeat(4,minmax(0,1fr));
+      }
+      .player{
+        max-width:100%;
+        max-height:none;
+      }
+    }
+
+    @media (max-width:600px){
+      header.top{
+        flex-wrap:wrap;
+      }
+      .search-container{
+        width:100%;
+      }
+      .mods{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
     }
   </style>
 </head>
@@ -292,9 +381,12 @@
         </span>
       </a>
 
-      <div class="search-box">
-        <span class="search-icon">🔍</span>
-        <input type="text" placeholder="Search Games ..." class="search-input">
+      <div class="search-container">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" placeholder="Search Games ..." class="search-input">
+        </div>
+        <div class="search-results" id="search-results"></div>
       </div>
     </header>
 
@@ -330,13 +422,13 @@
         <div class="game-meta">
           <span class="appicon">
             <img src="https://fnfgame24.github.io/assets/friday-night-funkin.png" alt="FNF icon">
-            <div><h1>FNF</h1> </div>
           </span>
+          <h1 class="game-title">Friday Night Funkin'</h1>
         </div>
         <div class="actions">
-          <button class="btn" type="button" onclick="toggleFullscreen()">Full Screen</button>
-          <a class="btn" href="mods.html">Mods</a>
-          <a class="btn" href="/" rel="noopener">Home</a>
+          <button class="icon-btn" type="button" onclick="sharePage()" aria-label="Share game">🔗</button>
+          <button class="icon-btn" id="fav-btn" type="button" onclick="toggleFavorite()" aria-label="Add to favorites">♡</button>
+          <button class="icon-btn" type="button" onclick="toggleFullscreen()" aria-label="Full screen">⛶</button>
         </div>
       </div>
     </section>
@@ -435,28 +527,77 @@
       }
     }
 
-    // Search: lọc quick mods + popular mods theo text nhập
-    document.addEventListener('DOMContentLoaded', function () {
-      const input = document.querySelector('.search-input');
-      if (!input) return;
+    function toggleFavorite(){
+      const key = 'fnf_main_favorite';
+      const btn = document.getElementById('fav-btn');
+      let isFav = localStorage.getItem(key) === '1';
+      isFav = !isFav;
+      localStorage.setItem(key, isFav ? '1' : '0');
+      if(btn){
+        btn.classList.toggle('active', isFav);
+        btn.textContent = isFav ? '❤' : '♡';
+      }
+    }
 
-      function filterNodes(nodes, query){
-        nodes.forEach(function(el){
-          const text = el.textContent.toLowerCase();
-          if (!query || text.includes(query)) {
-            el.style.display = '';
-          } else {
-            el.style.display = 'none';
-          }
+    document.addEventListener('DOMContentLoaded', function () {
+      // init favorite button state
+      const key = 'fnf_main_favorite';
+      const favBtn = document.getElementById('fav-btn');
+      if (favBtn) {
+        const isFav = localStorage.getItem(key) === '1';
+        favBtn.classList.toggle('active', isFav);
+        favBtn.textContent = isFav ? '❤' : '♡';
+      }
+
+      // Search suggestions
+      const input = document.querySelector('.search-input');
+      const resultsBox = document.getElementById('search-results');
+      if (!input || !resultsBox) return;
+
+      // Lấy danh sách game từ quick-mod và mods
+      const linkNodes = document.querySelectorAll('.quick-mods-row .quick-mod, .mods .mod');
+      const games = Array.from(linkNodes).map(function(el){
+        return {
+          title: el.textContent.trim(),
+          href: el.href
+        };
+      });
+
+      function renderResults(list){
+        resultsBox.innerHTML = '';
+        if (!list.length){
+          resultsBox.style.display = 'none';
+          return;
+        }
+        list.forEach(function(game){
+          const item = document.createElement('div');
+          item.className = 'search-item';
+          item.textContent = game.title;
+          item.addEventListener('click', function(){
+            window.location.href = game.href;
+          });
+          resultsBox.appendChild(item);
         });
+        resultsBox.style.display = 'block';
       }
 
       input.addEventListener('input', function () {
         const q = input.value.trim().toLowerCase();
-        const quickMods = document.querySelectorAll('.quick-mods-row .quick-mod');
-        const mods = document.querySelectorAll('.mods .mod');
-        filterNodes(quickMods, q);
-        filterNodes(mods, q);
+        if (!q){
+          resultsBox.style.display = 'none';
+          return;
+        }
+        const matched = games.filter(function(g){
+          return g.title.toLowerCase().includes(q);
+        });
+        renderResults(matched);
+      });
+
+      // Ẩn hộp kết quả khi click ra ngoài
+      document.addEventListener('click', function(e){
+        if (!e.target.closest('.search-container')){
+          resultsBox.style.display = 'none';
+        }
       });
     });
   </script>
