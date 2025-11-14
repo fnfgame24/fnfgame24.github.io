@@ -208,6 +208,28 @@ header.top{
       display:none;
       z-index:20;
     }
+        /* Scrollbar đẹp cho khung search */
+    .search-results{
+      scrollbar-width: thin;                          /* Firefox mỏng */
+      scrollbar-color: #4e5b82 transparent;           /* Firefox màu thanh kéo */
+    }
+    
+    .search-results::-webkit-scrollbar{
+      width: 6px;                                     /* độ rộng scrollbar */
+    }
+    
+    .search-results::-webkit-scrollbar-track{
+      background: transparent;                        /* nền trong suốt */
+    }
+    
+    .search-results::-webkit-scrollbar-thumb{
+      background: linear-gradient(to bottom,#4e5b82,#8b9dff);
+      border-radius: 999px;
+    }
+    
+    .search-results::-webkit-scrollbar-thumb:hover{
+      background: linear-gradient(to bottom,#6271a3,#a3b1ff);
+    }
     .search-item{
       padding:8px 10px;
       font-size:14px;
