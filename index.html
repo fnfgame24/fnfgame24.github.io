@@ -28,12 +28,16 @@
 
     .wrap{max-width:1180px;margin:0 auto;padding:16px 18px 44px}
 
-    header.top{
-      display:flex;
-      align-items:center;
-      gap:16px;
-      padding:6px 2px 14px;
-    }
+header.top{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding:12px 24px;
+  background:#0f1724;     /* màu nền thanh dài */
+  border-radius:0;        /* không bo góc để dính mép trên */
+  margin:0 -18px 0;       /* kéo ra full ngang (vì .wrap có padding) */
+  height:64px;            /* chiều cao header giống mẫu */
+}
     .brand{
       display:flex;
       align-items:center;
