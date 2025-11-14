@@ -26,12 +26,12 @@
     }
     a{color:inherit;text-decoration:none}
 
-    .wrap{max-width:1280px;margin:0 auto;padding:16px 18px 44px}
+    .wrap{max-width:1180px;margin:0 auto;padding:16px 18px 44px}
 
     header.top{
       display:flex;
       align-items:center;
-      gap:12px;
+      gap:16px;
       padding:6px 2px 14px;
     }
     .brand{
@@ -83,7 +83,7 @@
 
     /* Search */
     .search-container{
-      margin-left:auto;
+      flex-shrink:0;
       min-width:260px;
       position:relative;
     }
@@ -163,17 +163,54 @@
       line-height:1.3;
     }
 
-    /* Player section – giống layout ảnh */
+    /* Player section với quick mods overlay */
     .player-card{
       background:transparent;
       border:none;
       box-shadow:none;
       padding:18px 0 10px;
+      position:relative;
+    }
+
+    /* Quick mods trong header */
+    .quick-mods{
+      display:flex;
+      flex:1;
+      margin:0;
+      padding:0;
+    }
+    .quick-mods-row{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      flex-wrap:wrap;
+      width:100%;
+    }
+    .quick-mod{
+      flex:0 0 auto;
+      background:#0f1728;
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:6px 12px;
+      text-align:center;
+      font-weight:600;
+      font-size:12px;
+      text-decoration:none;
+      color:var(--text);
+      box-shadow:0 3px 10px rgba(0,0,0,.35);
+      transition:border-color .2s, box-shadow .2s, transform .2s, background .2s;
+      white-space:nowrap;
+    }
+    .quick-mod:hover{
+      border-color:var(--accent);
+      box-shadow:0 0 0 1px rgba(139,157,255,.5),0 10px 20px rgba(0,0,0,.7);
+      transform:translateY(-1px);
+      background:#111a2c;
     }
 
     .player{
       position:relative;
-      width:100%;               /* rộng bằng khối nội dung */
+      width:100%;
       margin:0 auto;
       background:#000;
       border-radius:26px;
@@ -190,7 +227,7 @@
     }
 
     .caption{
-      width:100%;               /* cùng chiều rộng với player */
+      width:100%;
       margin:18px auto 0;
       background:#101727;
       border-radius:22px;
@@ -219,9 +256,8 @@
 
     .actions-wrap{
       display:flex;
-      flex-direction:column;
-      align-items:flex-end;
-      gap:2px;
+      align-items:center;
+      gap:10px;
     }
     .actions{
       display:flex;
@@ -254,52 +290,14 @@
       border-color:var(--accent);
       box-shadow:0 0 0 1px rgba(139,157,255,.7),0 12px 24px rgba(0,0,0,.8);
     }
-    .actions-label{
-      font-size:11px;
-      color:#88a7ff;
-      margin-right:4px;
-    }
 
     .muted{color:var(--muted);font-size:13px}
-
-    /* Quick mods row – thu nhỏ lại */
-    .quick-mods{
-      margin:4px 0 6px;
-    }
-    .quick-mods-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-    }
-    .quick-mod{
-      flex:1 1 180px;
-      background:#0f1728;
-      border:1px solid var(--border);
-      border-radius:14px;
-      padding:6px 14px;          /* giảm padding */
-      text-align:center;
-      font-weight:600;
-      font-size:13px;            /* chữ nhỏ hơn */
-      text-decoration:none;
-      color:var(--text);
-      box-shadow:0 3px 10px rgba(0,0,0,.35);
-      transition:border-color .2s, box-shadow .2s, transform .2s, background .2s;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-    .quick-mod:hover{
-      border-color:var(--accent);
-      box-shadow:0 0 0 1px rgba(139,157,255,.5),0 10px 20px rgba(0,0,0,.7);
-      transform:translateY(-1px);
-      background:#111a2c;
-    }
 
     /* Mods grid with images (square cards) */
     .mods{
       display:grid;
       grid-template-columns:repeat(8,minmax(0,1fr));
-      gap:10px;
+      gap:8px;
       margin-top:12px;
     }
 
@@ -398,6 +396,9 @@
       .caption{
         max-width:100%;
       }
+      .quick-mods{
+        display:none;
+      }
     }
 
     @media (max-width:600px){
@@ -406,6 +407,10 @@
       }
       .search-container{
         width:100%;
+        order:3;
+      }
+      .quick-mods{
+        display:none;
       }
       .mods{
         grid-template-columns:repeat(2,minmax(0,1fr));
@@ -428,6 +433,24 @@
         </span>
       </a>
 
+      <!-- Quick featured mods trong header -->
+      <div class="quick-mods" aria-label="Featured FNF mods">
+        <div class="quick-mods-row">
+          <a class="quick-mod" href="https://fnfgame24.github.io/fnf-doki-doki-takeover/">
+            FNF Doki Doki Takeover
+          </a>
+          <a class="quick-mod" href="https://fnfgame24.github.io/fnf-vs-hyplullaby-v2/">
+            FNF Vs. Hypno's Lullaby v2
+          </a>
+          <a class="quick-mod" href="https://fnfgame24.github.io/fnf-indie-cross-ritual-but-everyone-sings-it/">
+            FNF Indie Cross Ritual
+          </a>
+          <a class="quick-mod" href="https://fnfgame24.github.io/fnf-vs-impostor-among-us-v4/">
+            FNF vs Impostor V4
+          </a>
+        </div>
+      </div>
+
       <div class="search-container">
         <div class="search-box">
           <span class="search-icon">🔍</span>
@@ -436,24 +459,6 @@
         <div class="search-results" id="search-results"></div>
       </div>
     </header>
-
-    <!-- Quick featured mods -->
-    <section class="block quick-mods" aria-label="Featured FNF mods">
-      <div class="quick-mods-row">
-        <a class="quick-mod" href="https://fnfgame24.github.io/fnf-doki-doki-takeover/">
-          FNF Doki Doki Takeover
-        </a>
-        <a class="quick-mod" href="https://fnfgame24.github.io/fnf-vs-hyplullaby-v2/">
-          FNF Vs. Hypno’s Lullaby v2
-        </a>
-        <a class="quick-mod" href="https://fnfgame24.github.io/fnf-indie-cross-ritual-but-everyone-sings-it/">
-          FNF Indie Cross Ritual But Everyone Sings It
-        </a>
-        <a class="quick-mod" href="https://fnfgame24.github.io/fnf-vs-impostor-among-us-v4/">
-          FNF vs Impostor Among Us V4
-        </a>
-      </div>
-    </section>
 
     <!-- Player -->
     <section class="player-card" aria-label="Game player">
@@ -473,12 +478,9 @@
           <h1 class="game-title">FNF</h1>
         </div>
         <div class="actions-wrap">
-          <div class="actions">
-            <button class="icon-btn" id="fav-btn" type="button" onclick="toggleFavorite()" aria-label="Add to favorites">♥</button>
-            <button class="icon-btn" type="button" onclick="sharePage()" aria-label="Share game">⇪</button>
-            <button class="icon-btn" type="button" onclick="toggleFullscreen()" aria-label="Full screen">⛶</button>
-          </div>
-          <div class="actions-label">Add</div>
+          <button class="icon-btn" id="fav-btn" type="button" onclick="toggleFavorite()" aria-label="Add to favorites">♥</button>
+          <button class="icon-btn" type="button" onclick="sharePage()" aria-label="Share game">⇪</button>
+          <button class="icon-btn" type="button" onclick="toggleFullscreen()" aria-label="Full screen">⛶</button>
         </div>
       </div>
     </section>
@@ -605,9 +607,9 @@
       // map ảnh riêng cho 4 game quick-mod
       const quickThumbs = {
         'FNF Doki Doki Takeover': 'https://fnfgame24.github.io/assets/fnf-doki-doki-takeover.png',
-        'FNF Vs. Hypno’s Lullaby v2': 'https://fnfgame24.github.io/assets/fnf-vs-hyplullaby-v2.png',
-        'FNF Indie Cross Ritual But Everyone Sings It': 'https://fnfgame24.github.io/assets/fnf-indie-cross-ritual-but-everyone-sings-it.png',
-        'FNF vs Impostor Among Us V4': 'https://fnfgame24.github.io/assets/fnf-vs-impostor-among-us-v4.png'
+        'FNF Vs. Hypno's Lullaby v2': 'https://fnfgame24.github.io/assets/fnf-vs-hyplullaby-v2.png',
+        'FNF Indie Cross Ritual': 'https://fnfgame24.github.io/assets/fnf-indie-cross-ritual-but-everyone-sings-it.png',
+        'FNF vs Impostor V4': 'https://fnfgame24.github.io/assets/fnf-vs-impostor-among-us-v4.png'
       };
 
       const linkNodes = document.querySelectorAll('.quick-mods-row .quick-mod, .mods .mod');
