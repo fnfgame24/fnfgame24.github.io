@@ -1,1 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <title>FNF Vs. Hypno’s Lullaby v2 | FNF Mod</title>
+  <meta name="description" content="Hypno leads Girlfriend into a trap in FNF vs Hypno’s Lullaby v2, sending her through rapid duels against iconic figures like Wigglytuff and Steven Stone." />
+  <meta name="keywords" content="FNF Vs. Hypno’s Lullaby v2, Hypno FNF Mod, FNF Lullaby v2, FNF Mods, Rhythm Game, Music Game, fnfgame24" />
+  <meta name="robots" content="index,follow" />
+  <meta name="google-site-verification" content="jiZelBzINsnHWFKipIb1OUNLzmaCDjXLLhWQxOSXZWQ" />
+  <meta name="theme-color" content="#0a0f18" />
+
+  <style>
+    .fnf-title {
+      color: #F6A313;
+      font-weight: 700;
+      letter-spacing: 2px;
+      font-family: 'Orbitron', sans-serif;
+      text-transform: uppercase;
+      margin-top: 35px;
+    }
+    .fnf-subtitle {
+      color: #F6A313;
+      font-weight: 600;
+      font-family: 'Orbitron', sans-serif;
+      text-transform: capitalize;
+      letter-spacing: 1px;
+      margin-top: 25px;
+    }
+    article.content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+    article.content table th,
+    article.content table td {
+      border: 1px solid #444;
+      padding: 10px;
+      text-align: left;
+    }
+    article.content table th {
+      background: #222;
+      color: #F6A313;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-family: 'Orbitron', sans-serif;
+    }
+    :root{
+      --bg:#0a0f18; --panel:#0f1724; --text:#e6ebff;
+      --muted:#8a93a9; --accent:#8b9dff; --border:#1b2340;
+      --radius:18px; --shadow:0 6px 24px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:var(--bg); color:var(--text);
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      line-height:1.55;
+    }
+    a{color:inherit;text-decoration:none}
+
+    .wrap{
+      max-width:1180px;
+      margin:0 auto;
+      padding:80px 18px 44px;
+    }
+
+    /* === HEADER TOP === */
+    header.top{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 64px;
+      
+      display:flex;
+      align-items:center;
+      gap:16px;
+
+      padding:10px 24px;
+      background:#0f1724;
+      border-radius:0;
+      z-index:1000;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      font-weight:800;
+      cursor:pointer;
+    }
+
+    .title{font-size:22px;letter-spacing:.2px}
+
+    .appicon{
+      width:36px;
+      height:36px;
+      border-radius:10px;
+      overflow:hidden;
+      background:#1b2540;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:var(--shadow);
+      will-change:transform;
+    }
+    .appicon img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    @keyframes logo-spin{
+      from{transform:scale(1) rotate(0deg);}
+      to{transform:scale(1.12) rotate(360deg);}
+    }
+    .brand:hover .appicon{
+      animation:logo-spin .6s ease-out;
+    }
+
+    .block{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:14px;
+    }
+
+    /* === TOP GAMES === */
+    .top-games{
+      display:flex;
+      gap:10px;
+      flex:1;
+      overflow:hidden;
+    }
+
+    .top-games .quick-mod{
+      flex:0 0 auto;
+      background:#0f1728;
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:6px 14px;
+      font-size:13px;
+      font-weight:600;
+      white-space:nowrap;
+      color:var(--text);
+      text-decoration:none;
+      box-shadow:0 3px 10px rgba(0,0,0,.35);
+      transition:border-color .2s, box-shadow .2s, transform .2s, background .2s;
+    }
+
+    .top-games .quick-mod:hover{
+      border-color:var(--accent);
+      box-shadow:0 0 0 1px rgba(139,157,255,.5),0 10px 20px rgba(0,0,0,.7);
+      transform:translateY(-1px);
+      background:#111a2c;
+    }
+
+    /* Search */
+    .search-container{
+      flex-shrink:0;
+      min-width:260px;
+      position:relative;
+    }
+    .search-box{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      background:#0f1728;
+      border:1px solid var(--border);
+      padding:8px 14px;
+      border-radius:20px;
+      box-shadow:0 4px 12px rgba(0,0,0,.35);
+      width:100%;
+    }
+    .search-icon{
+      font-size:16px;
+      opacity:.8;
+    }
+    .search-input{
+      background:transparent;
+      border:none;
+      outline:none;
+      color:var(--text);
+      font-size:14px;
+      width:100%;
+    }
+    .search-input::placeholder{
+      color:var(--muted);
+    }
+    .search-results{
+      position:absolute;
+      top:100%;
+      left:0;
+      right:0;
+      margin-top:6px;
+      background:#0f1728;
+      border:1px solid var(--border);
+      border-radius:16px;
+      box-shadow:var(--shadow);
+      max-height:260px;
+      overflow-y:auto;
+      display:none;
+      z-index:20;
+    }
+    .search-results{
+      scrollbar-width: thin;
+      scrollbar-color: #4e5b82 transparent;
+    }
+    .search-results::-webkit-scrollbar{
+      width: 6px;
+    }
+    .search-results::-webkit-scrollbar-track{
+      background: transparent;
+    }
+    .search-results::-webkit-scrollbar-thumb{
+      background: linear-gradient(to bottom,#4e5b82,#8b9dff);
+      border-radius: 999px;
+    }
+    .search-results::-webkit-scrollbar-thumb:hover{
+      background: linear-gradient(to bottom,#6271a3,#a3b1ff);
+    }
+    .search-item{
+      padding:8px 10px;
+      font-size:14px;
+      cursor:pointer;
+      border-bottom:1px solid rgba(27,35,64,.6);
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .search-item:last-child{
+      border-bottom:none;
+    }
+    .search-item:hover{
+      background:#111a2c;
+    }
+    .search-thumb{
+      width:34px;
+      height:34px;
+      border-radius:9px;
+      overflow:hidden;
+      background:#1b2540;
+      flex-shrink:0;
+      box-shadow:0 3px 8px rgba(0,0,0,.45);
+    }
+    .search-thumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .search-title{
+      font-size:14px;
+      line-height:1.3;
+    }
+
+    /* Player section */
+    .player-card{
+      background:transparent;
+      border:none;
+      box-shadow:none;
+      padding:18px 0 10px;
+      position:relative;
+    }
+
+    .player{
+      position:relative;
+      width:100%;
+      margin:0 auto;
+      background:#000;
+      border-radius:26px;
+      overflow:hidden;
+      height:530px;
+    }
+    .player iframe{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      border:0;
+      display:block;
+    }
+
+    .caption{
+      width:100%;
+      margin:18px auto 0;
+      background:#101727;
+      border-radius:22px;
+      padding:10px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      box-shadow:0 6px 20px rgba(0,0,0,.45);
+    }
+    .game-meta{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+    .caption .appicon{
+      width:52px;
+      height:52px;
+      border-radius:14px;
+    }
+    .game-title{
+      font-size:22px;
+      margin:0;
+      font-weight:700;
+    }
+
+    .actions-wrap{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .actions{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+
+    .icon-btn{
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:#121b2f;
+      color:var(--text);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:20px;
+      cursor:pointer;
+      box-shadow:0 4px 12px rgba(0,0,0,.35);
+      transition:border-color .2s, box-shadow .2s, transform .2s, background .2s;
+    }
+    .icon-btn:hover{
+      border-color:var(--accent);
+      box-shadow:0 0 0 1px rgba(139,157,255,.5),0 12px 24px rgba(0,0,0,.7);
+      transform:translateY(-1px);
+      background:#111a2c;
+    }
+    .icon-btn.active{
+      border-color:var(--accent);
+      box-shadow:0 0 0 1px rgba(139,157,255,.7),0 12px 24px rgba(0,0,0,.8);
+    }
+
+    .muted{color:var(--muted);font-size:13px}
+
+    /* Mods grid */
+    .mods{
+      display:grid;
+      grid-template-columns:repeat(8,minmax(0,1fr));
+      gap:8px;
+      margin-top:12px;
+    }
+
+    .mod{
+      position:relative;
+      display:block;
+      overflow:hidden;
+      border-radius:12px;
+      border:2px solid var(--border);
+      background:#101727;
+      cursor:pointer;
+      box-shadow:0 6px 20px rgba(0,0,0,.45);
+      transition:border-color .2s, box-shadow .2s, transform .2s;
+    }
+
+    .mod::before{
+      content:"";
+      display:block;
+      padding-top:100%;
+    }
+
+    .mod img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transition:transform .25s, filter .25s;
+    }
+
+    .mod:hover{
+      border-color:var(--accent);
+      box-shadow:0 0 0 1px rgba(139,157,255,.6),0 18px 32px rgba(0,0,0,.7);
+      transform:translateY(-2px);
+    }
+    .mod:hover img{
+      transform:scale(1.05);
+      filter:brightness(1.07);
+    }
+
+    .mod-label{
+      position:absolute;
+      left:6px;
+      right:6px;
+      bottom:6px;
+      padding:5px 6px;
+      border-radius:9px;
+      background:linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.25));
+      font-size:12px;
+      font-weight:700;
+      line-height:1.3;
+      text-align:center;
+      color:#ffffff;
+      opacity:0;
+      transform:translateY(8px);
+      transition:opacity .2s, transform .2s;
+    }
+    .mod:hover .mod-label{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* Content */
+    article.content{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:16px;
+      margin-top:14px;
+    }
+    article.content h2{margin:14px 0 8px;font-size:20px}
+    article.content h3{margin:12px 0 6px;font-size:16px}
+    article.content p{margin:8px 0}
+    ul.clean{margin:8px 0 12px 18px}
+
+    footer{
+      margin-top:26px;
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+    }
+    footer a{color:var(--accent);text-decoration:none}
+
+    @media (max-width:1366px){
+      .wrap{padding-left:14px;padding-right:14px}
+      .title{font-size:20px}
+    }
+
+    @media (max-width:900px){
+      .mods{
+        grid-template-columns:repeat(4,minmax(0,1fr));
+      }
+      .player,
+      .caption{
+        max-width:100%;
+      }
+      .top-games{
+        display:none;
+      }
+    }
+
+    @media (max-width:600px){
+      header.top{
+        flex-wrap:wrap;
+        height:auto;
+      }
+      .search-container{
+        width:100%;
+        order:3;
+      }
+      .mods{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+      .caption{
+        flex-direction:row;
+      }
+      .game-title{
+        font-size:18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <!-- Logo -->
+      <a class="brand" href="/">
+        <span class="appicon">
+          <img src="https://fnfgame24.github.io/assets/fnf.png" alt="FNF logo">
+        </span>
+      </a>
+
+      <!-- 4 featured games: thay slot Hypno bằng trang chủ -->
+      <div class="top-games">
+        <a class="quick-mod" href="https://fnfgame24.github.io/fnf-doki-doki-takeover">
+          FNF: Doki Doki Takeover
+        </a>
+        <a class="quick-mod" href="https://fnfgame24.github.io/">
+          FNF | Friday Night Funkin'
+        </a>
+        <a class="quick-mod" href="https://fnfgame24.github.io/fnf-indie-cross-ritual-but-everyone-sings-it">
+          FNF Indie Cross Ritual But Everyone Sings It
+        </a>
+        <a class="quick-mod" href="https://fnfgame24.github.io/fnf-vs-impostor-among-us-v4">
+          FNF vs Impostor Among Us V4 
+        </a>
+      </div>
+
+      <!-- Search -->
+      <div class="search-container">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" placeholder="Search Games ..." class="search-input">
+        </div>
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </header>
+
+    <!-- Player -->
+    <section class="player-card" aria-label="Game player">
+      <div class="player" id="player-box">
+        <iframe id="game-frame"
+          src="https://fnf.kdata1.com/2025/lullaby22/"
+          allow="autoplay; fullscreen; gamepad; accelerometer; clipboard-read; clipboard-write"
+          allowfullscreen
+          loading="lazy"
+          title="FNF Vs. Hypno’s Lullaby v2"></iframe>
+      </div>
+      <div class="caption">
+        <div class="game-meta">
+          <span class="appicon">
+            <img src="https://fnfgame24.github.io/assets/fnf-vs-hyphnos-lullaby-v2.png" alt="FNF Vs. Hypno’s Lullaby v2 icon">
+          </span>
+          <h1 class="game-title">FNF Vs. Hypno’s Lullaby v2</h1>
+        </div>
+        <div class="actions-wrap">
+          <button class="icon-btn" id="fav-btn" type="button" onclick="toggleFavorite()" aria-label="Add to favorites">♥</button>
+          <button class="icon-btn" type="button" onclick="sharePage()" aria-label="Share game">⇪</button>
+          <button class="icon-btn" type="button" onclick="toggleFullscreen()" aria-label="Full screen">⛶</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mods list with images – 8 game giữ nguyên -->
+    <section class="block" aria-label="Popular FNF mods">
+      <h2 style="margin:4px 0 10px;font-size:18px;">Popular FNF Mods</h2>
+      <div class="mods">
+        <a class="mod" href="https://fnfgame24.github.io/friday-night-funkin-vs-whitty">
+          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-whitty.png" alt="Friday Night Funkin' vs. Whitty">
+          <div class="mod-label">Friday Night Funkin' vs. Whitty</div>
+        </a>
+
+        <a class="mod" href="https://fnfgame24.github.io/friday-night-funkin-vs-tricky-the-clown">
+          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-tricky-the-clown.png" alt="Friday Night Funkin' vs. Tricky the Clown">
+          <div class="mod-label">Friday Night Funkin' vs. Tricky the Clown</div>
+        </a>
+
+        <a class="mod" href="https://fnfgame24.github.io/fnf-vs-garcello">
+          <img src="https://fnfgame24.github.io/assets/fnf-vs-garcello.png" alt="FNF vs Garcello">
+          <div class="mod-label">FNF vs Garcello</div>
+        </a>
+
+        <a class="mod" href="https://fnfgame24.github.io/friday-night-funkin-vs-agoti">
+          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-agoti.png" alt="Friday Night Funkin' vs. AGOTI">
+          <div class="mod-label">Friday Night Funkin' vs. AGOTI</div>
+        </a>
+
+        <a class="mod" href="https://fnfgame24.github.io/friday-night-funkin-vs-shaggy-v2">
+          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-shaggy-v2.png" alt="Friday Night Funkin vs Shaggy v2">
+          <div class="mod-label">Friday Night Funkin vs Shaggy v2</div>
+        </a>
+
+        <a class="mod" href="https://fnfgame24.github.io/fnf-indie-cross">
+          <img src="https://fnfgame24.github.io/assets/fnf-indie-cross.png" alt="FNF: Indie Cross">
+          <div class="mod-label">FNF: Indie Cross</div>
+        </a>
+
+        <a class="mod" href="https://fnfgame24.github.io/fnf-vs-sonic-exe">
+          <img src="https://fnfgame24.github.io/assets/fnf-vs-sonic-exe.png" alt="FNF vs. Sonic.EXE">
+          <div class="mod-label">FNF vs. Sonic.EXE</div>
+        </a>
+
+        <a class="mod" href="https://fnfgame24.github.io/friday-night-funkin-vs-bob-bosip">
+          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-bob-bosip.png" alt="Friday Night Funkin' vs. Bob &amp; Bosip">
+          <div class="mod-label">Friday Night Funkin' vs. Bob &amp; Bosip</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Game description -->
+    <article class="content">
+
+      <h2 class="fnf-title">FNF Vs. Hypno’s Lullaby v2 – Haunted Melodies And Night Runs</h2>
+      <p>
+        FNF Vs. Hypno’s Lullaby v2 sends Boyfriend into a dreamlike world inspired by eerie Pokémon legends.
+        Each track blends unsettling ambience with tight rhythm patterns, turning familiar lullabies into tense musical battles.
+        Glitchy screens, flickering text, and darkened stages build a slow, creeping atmosphere around every song.
+      </p>
+
+      <style>
+        .center-img {
+          display: block;
+          margin: 0 auto;
+          max-width: 500px;
+          height: auto;
+        }
+      </style>
+
+      <img src="https://fnfgame24.github.io/assets/fnf-vs-hyphnos-lullaby-v2.png" alt="FNF Vs. Hypno’s Lullaby v2 banner" class="center-img">
+
+      <h3 class="fnf-subtitle">Story and theme</h3>
+      <p>
+        Boyfriend finds himself pulled into a late-night journey that feels like walking through a haunted handheld game.
+        Street lamps, railway tunnels, and foggy routes frame encounters with characters linked to Hypno-themed tales.
+        Dialogue and visual cues reference well-known fan stories while keeping the focus on rhythm duels and musical tension.
+      </p>
+
+      <h3 class="fnf-subtitle">Main characters and mood</h3>
+      <p>
+        Hypno appears as a calm yet unsettling presence, guiding or confronting Boyfriend with hypnotic songs.
+        Other figures enter as silhouettes, trainers, or mysterious companions, adding layers to the dreamlike narrative.
+        Expressions, camera zooms, and visual filters emphasize unease without relying on graphic imagery, letting the music carry the weight.
+      </p>
+
+      <table>
+        <tr>
+          <th>Character</th>
+          <th>Role</th>
+        </tr>
+        <tr>
+          <td>Boyfriend</td>
+          <td>The main challenger, trying to keep his rhythm steady while the world around him shifts and distorts.</td>
+        </tr>
+        <tr>
+          <td>Hypno</td>
+          <td>A hypnotic figure whose lullabies and chants form the core of several key songs and encounters.</td>
+        </tr>
+        <tr>
+          <td>Companions</td>
+          <td>Mysterious allies or onlookers that appear in the background, hinting at different paths and interpretations.</td>
+        </tr>
+      </table>
+
+      <h3 class="fnf-subtitle">Song progression and difficulty</h3>
+      <p>
+        The setlist in FNF Vs. Hypno’s Lullaby v2 moves from slower, haunting tracks to intense, fast-paced climaxes.
+        Early songs focus on atmosphere, with clear patterns and long holds that match the lullaby concept.
+        Later songs increase note density, add off-beat runs, and pair the music with heavier distortion and visual surprises.
+      </p>
+
+      <table>
+        <tr>
+          <th>Song phase</th>
+          <th>Highlights</th>
+        </tr>
+        <tr>
+          <td>Intro lullabies</td>
+          <td>Soft, echoing melodies and simple charts that establish the hypnotic mood.</td>
+        </tr>
+        <tr>
+          <td>Mid-night tension</td>
+          <td>Quicker rhythms, layered instruments, and more demanding patterns requiring sharper focus.</td>
+        </tr>
+        <tr>
+          <td>Final confrontation</td>
+          <td>High-speed sections, intricate streams, and dramatic visuals that test timing and consistency.</td>
+        </tr>
+      </table>
+
+      <h3 class="fnf-subtitle">Gameplay and controls</h3>
+      <p>
+        Gameplay follows classic Friday Night Funkin’ rules: hit the matching arrow keys as notes reach the judgment line.
+        Accurate inputs keep the health bar balanced in Boyfriend’s favor, while repeated misses tilt momentum toward Hypno.
+        Visual effects and atmospheric changes never alter the actual timing windows, so listening to the beat remains the most reliable guide.
+      </p>
+
+      <h3 class="fnf-subtitle">Tips for FNF Vs. Hypno’s Lullaby v2</h3>
+      <ul>
+        <li>Keep focus on the note columns during sudden flashes or visual flickers to maintain a steady rhythm.</li>
+        <li>Use lower difficulty first to learn unusual rhythms before attempting faster or extended versions of songs.</li>
+        <li>Headphones help distinguish background ambience from primary beats, especially in layered lullaby sections.</li>
+        <li>Replay challenging tracks in freeplay-style sessions to build muscle memory for long streams and tricky patterns.</li>
+      </ul>
+
+      <h3 class="fnf-subtitle">Frequently asked questions</h3>
+      <p><strong>Q: Is FNF Vs. Hypno’s Lullaby v2 harder than the first version?</strong><br>
+         A: Many charts in v2 are more complex, with additional patterns and longer songs, so it often feels like a step up in difficulty.</p>
+
+      <p><strong>Q: Does this mod change the control layout?</strong><br>
+         A: No. It still uses the standard arrow keys or WASD, keeping inputs familiar while the music and visuals evolve.</p>
+
+      <p><strong>Q: Can this version be played directly in-browser?</strong><br>
+         A: Yes, this build is optimized for browser play, allowing instant access without separate installation.</p>
+
+      <p><strong>Q: What makes FNF Vs. Hypno’s Lullaby v2 special?</strong><br>
+         A: Its combination of themed storytelling, eerie sound design, polished art, and challenging charts creates a memorable late-night style FNF experience.</p>
+
+      <h3 class="fnf-subtitle">Final thoughts</h3>
+      <p>
+        FNF Vs. Hypno’s Lullaby v2 takes the idea of a gentle lullaby and reshapes it into a full rhythm journey.
+        Careful pacing, distinct musical phases, and a consistent nighttime aesthetic make every track feel connected.
+        Players looking for a moody, atmospheric mod with strong chart design find a standout entry in this version of Hypno’s tale.
+      </p>
+
+    </article>
+
+    <footer>
+      <p>© 2025 FNF Game 24 — Fan-made project for Friday Night Funkin'.</p>
+    </footer>
+  </div>
+
+  <script>
+    /* Fullscreen */
+    function toggleFullscreen(){
+      const elem = document.getElementById('player-box');
+      if (!document.fullscreenElement &&
+          !document.webkitFullscreenElement &&
+          !document.msFullscreenElement) {
+        (elem.requestFullscreen || elem.webkitRequestFullscreen || elem.msRequestFullscreen).call(elem);
+      } else {
+        (document.exitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen).call(document);
+      }
+    }
+
+    /* Share current page URL */
+    function sharePage(){
+      const url = location.href;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(function(){
+          alert('Link copied: ' + url);
+        }).catch(function(){
+          prompt('Copy this link:', url);
+        });
+      } else {
+        prompt('Copy this link:', url);
+      }
+    }
+
+    /* Favorite state (separate key for Hypno’s Lullaby v2 page) */
+    function toggleFavorite(){
+      const key = 'fnf_hypno_lullaby_v2_favorite';
+      const btn = document.getElementById('fav-btn');
+      let isFav = localStorage.getItem(key) === '1';
+      isFav = !isFav;
+      localStorage.setItem(key, isFav ? '1' : '0');
+      if(btn){
+        btn.classList.toggle('active', isFav);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // init favorite button state
+      const key = 'fnf_hypno_lullaby_v2_favorite';
+      const favBtn = document.getElementById('fav-btn');
+      if (favBtn) {
+        const isFav = localStorage.getItem(key) === '1';
+        favBtn.classList.toggle('active', isFav);
+      }
+
+      // Search suggestions
+      const input = document.querySelector('.search-input');
+      const resultsBox = document.getElementById('search-results');
+      if (!input || !resultsBox) return;
+
+      const quickThumbs = {
+        "FNF: Doki Doki Takeover": "https://fnfgame24.github.io/assets/fnf-doki-doki-takeover.png",
+        "FNF Vs. Hypno’s Lullaby v2": "https://fnfgame24.github.io/assets/fnf-vs-hyphnos-lullaby-v2.png",
+        "FNF Indie Cross Ritual But Everyone Sings It": "https://fnfgame24.github.io/assets/fnf-indie-cross-ritual-but-everyone-sings-it.png",
+        "FNF vs Impostor Among Us V4": "https://fnfgame24.github.io/assets/fnf-vs-impostor-among-us-v4.png"
+      };
+
+      // collect from top bar + mods
+      const linkNodes = document.querySelectorAll('.top-games .quick-mod, .mods .mod');
+      const defaultThumb = 'https://fnfgame24.github.io/assets/fnf.png';
+
+      const games = Array.from(linkNodes).map(function(el){
+        const title = el.textContent.trim();
+        const href = el.href;
+        let img = defaultThumb;
+
+        if (el.classList.contains('mod')){
+          const imageEl = el.querySelector('img');
+          if (imageEl && imageEl.src) img = imageEl.src;
+        } else {
+          if (quickThumbs[title]) img = quickThumbs[title];
+        }
+
+        return { title, href, img };
+      });
+      games.unshift({
+        title: "FNF",
+        href: "https://fnfgame24.github.io/",
+        img: "https://fnfgame24.github.io/assets/fnf.png"
+      });
+
+      function renderResults(list){
+        resultsBox.innerHTML = '';
+        if (!list.length){
+          resultsBox.style.display = 'none';
+          return;
+        }
+        list.forEach(function(game){
+          const item = document.createElement('div');
+          item.className = 'search-item';
+
+          const thumb = document.createElement('div');
+          thumb.className = 'search-thumb';
+          const img = document.createElement('img');
+          img.src = game.img;
+          img.alt = game.title;
+          thumb.appendChild(img);
+
+          const label = document.createElement('div');
+          label.className = 'search-title';
+          label.textContent = game.title;
+
+          item.appendChild(thumb);
+          item.appendChild(label);
+
+          item.addEventListener('click', function(){
+            window.location.href = game.href;
+          });
+
+          resultsBox.appendChild(item);
+        });
+        resultsBox.style.display = 'block';
+      }
+
+      // show all on focus
+      input.addEventListener('focus', function () {
+        renderResults(games);
+      });
+
+      // filter on input
+      input.addEventListener('input', function () {
+        const q = input.value.trim().toLowerCase();
+        if (!q){
+          renderResults(games);
+          return;
+        }
+        const matched = games.filter(function(g){
+          return g.title.toLowerCase().includes(q);
+        });
+        renderResults(matched);
+      });
+
+      // hide when clicking outside
+      document.addEventListener('click', function(e){
+        if (!e.target.closest('.search-container')){
+          resultsBox.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
