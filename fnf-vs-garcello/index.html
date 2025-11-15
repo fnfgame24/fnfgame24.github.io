@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>FNF vs Garcello</title>
+  <meta name="description" content="Play FNF vs Garcello online. Rap against the chill smoker in Headache, Nerves, Release, and Fading in a smooth, emotional FNF week." />
+  <meta name="keywords" content="FNF, Friday Night Funkin, FNF vs Garcello, Smoke Em Out Struggle, FNF Mods, Rhythm Game, Music Game, fnfgame24" />
+  <meta name="robots" content="index,follow" />
+  <meta name="google-site-verification" content="jiZelBzINsnHWFKipIb1OUNLzmaCDjXLLhWQxOSXZWQ" />
+  <meta name="theme-color" content="#0a0f18" />
+
+  <style>
+    .fnf-title {
+      color: #F6A313;
+      font-weight: 700;
+      letter-spacing: 2px;
+      font-family: 'Orbitron', sans-serif;
+      text-transform: uppercase;
+      margin-top: 35px;
+    }
+    .fnf-subtitle {
+      color: #F6A313;
+      font-weight: 600;
+      font-family: 'Orbitron', sans-serif;
+      text-transform: capitalize;
+      letter-spacing: 1px;
+      margin-top: 25px;
+    }
+    article.content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+    article.content table th,
+    article.content table td {
+      border: 1px solid #444;
+      padding: 10px;
+      text-align: left;
+    }
+    article.content table th {
+      background: #222;
+      color: #F6A313;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-family: 'Orbitron', sans-serif;
+    }
+    :root{
+      --bg:#0a0f18; --panel:#0f1724; --text:#e6ebff;
+      --muted:#8a93a9; --accent:#8b9dff; --border:#1b2340;
+      --radius:18px; --shadow:0 6px 24px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:var(--bg); color:var(--text);
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      line-height:1.55;
+    }
+    a{color:inherit;text-decoration:none}
+
+    .wrap{
+      max-width:1180px;
+      margin:0 auto;
+      padding:80px 18px 44px;
+    }
+
+    /* === HEADER TOP === */
+    header.top{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 64px;
+      display:flex;
+      align-items:center;
+      gap:16px;
+      padding:10px 24px;
+      background:#0f1724;
+      border-radius:0;
+      z-index:1000;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      font-weight:800;
+      cursor:pointer;
+    }
+
+    .title{font-size:22px;letter-spacing:.2px}
+
+    .appicon{
+      width:36px;
+      height:36px;
+      border-radius:10px;
+      overflow:hidden;
+      background:#1b2540;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:var(--shadow);
+      will-change:transform;
+    }
+    .appicon img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    @keyframes logo-spin{
+      from{transform:scale(1) rotate(0deg);}
+      to{transform:scale(1.12) rotate(360deg);}
+    }
+    .brand:hover .appicon{
+      animation:logo-spin .6s ease-out;
+    }
+
+    .block{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:14px;
+    }
+
+    /* === TOP GAMES ON HEADER === */
+    .top-games{
+      display:flex;
+      gap:10px;
+      flex:1;
+      overflow:hidden;
+    }
+
+    .top-games .quick-mod{
+      flex:0 0 auto;
+      background:#0f1728;
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:6px 14px;
+      font-size:13px;
+      font-weight:600;
+      white-space:nowrap;
+      color:var(--text);
+      text-decoration:none;
+      box-shadow:0 3px 10px rgba(0,0,0,.35);
+      transition:border-color .2s, box-shadow .2s, transform .2s, background .2s;
+    }
+
+    .top-games .quick-mod:hover{
+      border-color:var(--accent);
+      box-shadow:0 0 0 1px rgba(139,157,255,.5),0 10px 20px rgba(0,0,0,.7);
+      transform:translateY(-1px);
+      background:#111a2c;
+    }
+
+    /* Search */
+    .search-container{
+      flex-shrink:0;
+      min-width:260px;
+      position:relative;
+    }
+    .search-box{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      background:#0f1728;
+      border:1px solid var(--border);
+      padding:8px 14px;
+      border-radius:20px;
+      box-shadow:0 4px 12px rgba(0,0,0,.35);
+      width:100%;
+    }
+    .search-icon{
+      font-size:16px;
+      opacity:.8;
+    }
+    .search-input{
+      background:transparent;
+      border:none;
+      outline:none;
+      color:var(--text);
+      font-size:14px;
+      width:100%;
+    }
+    .search-input::placeholder{
+      color:var(--muted);
+    }
+    .search-results{
+      position:absolute;
+      top:100%;
+      left:0;
+      right:0;
+      margin-top:6px;
+      background:#0f1728;
+      border:1px solid var(--border);
+      border-radius:16px;
+      box-shadow:var(--shadow);
+      max-height:260px;
+      overflow-y:auto;
+      display:none;
+      z-index:20;
+    }
+    .search-results{
+      scrollbar-width: thin;
+      scrollbar-color: #4e5b82 transparent;
+    }
+    .search-results::-webkit-scrollbar{
+      width: 6px;
+    }
+    .search-results::-webkit-scrollbar-track{
+      background: transparent;
+    }
+    .search-results::-webkit-scrollbar-thumb{
+      background: linear-gradient(to bottom,#4e5b82,#8b9dff);
+      border-radius: 999px;
+    }
+    .search-results::-webkit-scrollbar-thumb:hover{
+      background: linear-gradient(to bottom,#6271a3,#a3b1ff);
+    }
+    .search-item{
+      padding:8px 10px;
+      font-size:14px;
+      cursor:pointer;
+      border-bottom:1px solid rgba(27,35,64,.6);
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .search-item:last-child{
+      border-bottom:none;
+    }
+    .search-item:hover{
+      background:#111a2c;
+    }
+    .search-thumb{
+      width:34px;
+      height:34px;
+      border-radius:9px;
+      overflow:hidden;
+      background:#1b2540;
+      flex-shrink:0;
+      box-shadow:0 3px 8px rgba(0,0,0,.45);
+    }
+    .search-thumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .search-title{
+      font-size:14px;
+      line-height:1.3;
+    }
+
+    /* Player section */
+    .player-card{
+      background:transparent;
+      border:none;
+      box-shadow:none;
+      padding:18px 0 10px;
+      position:relative;
+    }
+
+    .player{
+      position:relative;
+      width:100%;
+      margin:0 auto;
+      background:#000;
+      border-radius:26px;
+      overflow:hidden;
+      height:530px;
+    }
+    .player iframe{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      border:0;
+      display:block;
+    }
+
+    .caption{
+      width:100%;
+      margin:18px auto 0;
+      background:#101727;
+      border-radius:22px;
+      padding:10px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      box-shadow:0 6px 20px rgba(0,0,0,.45);
+    }
+    .game-meta{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+    .caption .appicon{
+      width:52px;
+      height:52px;
+      border-radius:14px;
+    }
+    .game-title{
+      font-size:22px;
+      margin:0;
+      font-weight:700;
+    }
+
+    .actions-wrap{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .actions{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+
+    .icon-btn{
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:#121b2f;
+      color:var(--text);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:20px;
+      cursor:pointer;
+      box-shadow:0 4px 12px rgba(0,0,0,.35);
+      transition:border-color .2s, box-shadow .2s, transform .2s, background .2s;
+    }
+    .icon-btn:hover{
+      border-color:var(--accent);
+      box-shadow:0 0 0 1px rgba(139,157,255,.5),0 12px 24px rgba(0,0,0,.7);
+      transform:translateY(-1px);
+      background:#111a2c;
+    }
+    .icon-btn.active{
+      border-color:var(--accent);
+      box-shadow:0 0 0 1px rgba(139,157,255,.7),0 12px 24px rgba(0,0,0,.8);
+    }
+
+    .muted{color:var(--muted);font-size:13px}
+
+    /* Mods grid */
+    .mods{
+      display:grid;
+      grid-template-columns:repeat(8,minmax(0,1fr));
+      gap:8px;
+      margin-top:12px;
+    }
+
+    .mod{
+      position:relative;
+      display:block;
+      overflow:hidden;
+      border-radius:12px;
+      border:2px solid var(--border);
+      background:#101727;
+      cursor:pointer;
+      box-shadow:0 6px 20px rgba(0,0,0,.45);
+      transition:border-color .2s, box-shadow .2s, transform .2s;
+    }
+
+    .mod::before{
+      content:"";
+      display:block;
+      padding-top:100%;
+    }
+
+    .mod img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transition:transform .25s, filter .25s;
+    }
+
+    .mod:hover{
+      border-color:var(--accent);
+      box-shadow:0 0 0 1px rgba(139,157,255,.6),0 18px 32px rgba(0,0,0,.7);
+      transform:translateY(-2px);
+    }
+    .mod:hover img{
+      transform:scale(1.05);
+      filter:brightness(1.07);
+    }
+
+    .mod-label{
+      position:absolute;
+      left:6px;
+      right:6px;
+      bottom:6px;
+      padding:5px 6px;
+      border-radius:9px;
+      background:linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.25));
+      font-size:12px;
+      font-weight:700;
+      line-height:1.3;
+      text-align:center;
+      color:#ffffff;
+      opacity:0;
+      transform:translateY(8px);
+      transition:opacity .2s, transform .2s;
+    }
+    .mod:hover .mod-label{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* Content */
+    article.content{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:16px;
+      margin-top:14px;
+    }
+    article.content h2{margin:14px 0 8px;font-size:20px}
+    article.content h3{margin:12px 0 6px;font-size:16px}
+    article.content p{margin:8px 0}
+    ul.clean{margin:8px 0 12px 18px}
+
+    footer{
+      margin-top:26px;
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+    }
+    footer a{color:var(--accent);text-decoration:none}
+
+    @media (max-width:1366px){
+      .wrap{padding-left:14px;padding-right:14px}
+      .title{font-size:20px}
+    }
+
+    @media (max-width:900px){
+      .mods{
+        grid-template-columns:repeat(4,minmax(0,1fr));
+      }
+      .player,
+      .caption{
+        max-width:100%;
+      }
+      .top-games{
+        display:none;
+      }
+    }
+
+    @media (max-width:600px){
+      header.top{
+        flex-wrap:wrap;
+        height:auto;
+      }
+      .search-container{
+        width:100%;
+        order:3;
+      }
+      .mods{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+      .caption{
+        flex-direction:row;
+      }
+      .game-title{
+        font-size:18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <!-- Logo -->
+      <a class="brand" href="/">
+        <span class="appicon">
+          <img src="https://fnfgame24.github.io/assets/fnf.png" alt="FNF logo">
+        </span>
+      </a>
+
+      <!-- 4 featured games -->
+      <div class="top-games">
+        <a class="quick-mod" href="https://fnfgame24.github.io/fnf-doki-doki-takeover">
+          FNF: Doki Doki Takeover
+        </a>
+        <a class="quick-mod" href="https://fnfgame24.github.io/fnf-vs-hyplullaby-v2">
+          FNF Vs. Hypno’s Lullaby v2
+        </a>
+        <a class="quick-mod" href="https://fnfgame24.github.io/fnf-indie-cross-ritual-but-everyone-sings-it">
+          FNF Indie Cross Ritual But Everyone Sings It
+        </a>
+        <a class="quick-mod" href="https://fnfgame24.github.io/fnf-vs-impostor-among-us-v4">
+          FNF vs Impostor Among Us V4 
+        </a>
+      </div>
+
+      <!-- Search -->
+      <div class="search-container">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" placeholder="Search Games ..." class="search-input">
+        </div>
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </header>
+
+    <!-- Player -->
+    <section class="player-card" aria-label="Game player">
+      <div class="player" id="player-box">
+        <iframe id="game-frame"
+          src="https://mod.fnfhub.net/games/24965"
+          allow="autoplay; fullscreen; gamepad; accelerometer; clipboard-read; clipboard-write"
+          allowfullscreen
+          loading="lazy"
+          title="FNF vs Garcello"></iframe>
+      </div>
+      <div class="caption">
+        <div class="game-meta">
+          <span class="appicon">
+            <img src="https://fnfgame24.github.io/assets/fnf-vs-garcello.png" alt="FNF vs Garcello icon">
+          </span>
+          <h1 class="game-title">FNF vs Garcello</h1>
+        </div>
+        <div class="actions-wrap">
+          <button class="icon-btn" id="fav-btn" type="button" onclick="toggleFavorite()" aria-label="Add to favorites">♥</button>
+          <button class="icon-btn" type="button" onclick="sharePage()" aria-label="Share game">⇪</button>
+          <button class="icon-btn" type="button" onclick="toggleFullscreen()" aria-label="Full screen">⛶</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mods list with images -->
+    <section class="block" aria-label="Popular FNF mods">
+      <h2 style="margin:4px 0 10px;font-size:18px;">Popular FNF Mods</h2>
+      <div class="mods">
+        <a class="mod" href="https://fnfgame24.github.io/friday-night-funkin-vs-whitty">
+          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-whitty.png" alt="Friday Night Funkin' vs Whitty">
+          <div class="mod-label">Friday Night Funkin' vs Whitty</div>
+        </a>
+
+        <a class="mod" href="https://fnfgame24.github.io/friday-night-funkin-vs-tricky-the-clown">
+          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-tricky-the-clown.png" alt="Friday Night Funkin' vs Tricky the Clown">
+          <div class="mod-label">Friday Night Funkin' vs Tricky the Clown</div>
+        </a>
+
+        <!-- Thay Garcello bằng FNF (trang chủ) -->
+        <a class="mod" href="https://fnfgame24.github.io/">
+          <img src="https://fnfgame24.github.io/assets/fnf.png" alt="Friday Night Funkin'">
+          <div class="mod-label">FNF</div>
+        </a>
+
+        <a class="mod" href="https://fnfgame24.github.io/friday-night-funkin-vs-agoti">
+          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-agoti.png" alt="Friday Night Funkin' vs AGOTI">
+          <div class="mod-label">Friday Night Funkin' vs AGOTI</div>
+        </a>
+
+        <a class="mod" href="https://fnfgame24.github.io/friday-night-funkin-vs-shaggy-v2">
+          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-shaggy-v2.png" alt="Friday Night Funkin vs Shaggy v2">
+          <div class="mod-label">Friday Night Funkin vs Shaggy v2</div>
+        </a>
+
+        <a class="mod" href="https://fnfgame24.github.io/fnf-indie-cross">
+          <img src="https://fnfgame24.github.io/assets/fnf-indie-cross.png" alt="FNF: Indie Cross">
+          <div class="mod-label">FNF: Indie Cross</div>
+        </a>
+
+        <a class="mod" href="https://fnfgame24.github.io/fnf-vs-sonic-exe">
+          <img src="https://fnfgame24.github.io/assets/fnf-vs-sonic-exe.png" alt="FNF vs Sonic.EXE">
+          <div class="mod-label">FNF vs Sonic.EXE</div>
+        </a>
+
+        <a class="mod" href="https://fnfgame24.github.io/friday-night-funkin-vs-bob-bosip">
+          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-bob-bosip.png" alt="Friday Night Funkin' vs Bob and Bosip">
+          <div class="mod-label">Friday Night Funkin' vs Bob & Bosip</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Game description -->
+    <article class="content">
+
+      <h2 class="fnf-title">FNF VS GARCELLO: SMOKE ’EM OUT STRUGGLE MOD</h2>
+      
+      <h3 class="fnf-sub">Overview</h3>
+      <p>
+      FNF vs Garcello delivers a heartfelt rhythm week set in a foggy back alley where Boyfriend meets the mysterious chain-smoker Garcello. The mod mixes lo-fi beats with a cinematic storytelling style, creating one of the most memorable experiences in the entire FNF community.
+      </p>
+
+      <style>
+        .center-img {
+          display: block;
+          margin: 0 auto;
+          max-width: 500px;
+          height: auto;
+        }
+      </style>
+
+      <img src="https://fnfgame24.github.io/assets/fnf-vs-garcello.png" alt="FNF vs Garcello banner" class="center-img">
+      <h3 class="fnf-sub">Summary Box</h3>
+      <table>
+        <tr><td><strong>Mod Name</strong></td><td>FNF vs Garcello (Smoke ’Em Out Struggle)</td></tr>
+        <tr><td><strong>Total Songs</strong></td><td>4 tracks (Headache, Nerves, Release, Fading)</td></tr>
+        <tr><td><strong>Difficulty</strong></td><td>Medium → Hard</td></tr>
+        <tr><td><strong>Latest Version</strong></td><td>Definitive Edition</td></tr>
+        <tr><td><strong>Developers</strong></td><td>atsuover & Rageminer</td></tr>
+      </table>
+      
+      <h3 class="fnf-sub">Songs List</h3>
+      <ul>
+        <li><b>Headache</b> – A lo-fi intro with smooth pacing.</li>
+        <li><b>Nerves</b> – The mood shifts as Garcello weakens.</li>
+        <li><b>Release</b> – Emotional tension peaks at this midpoint.</li>
+        <li><b>Fading</b> – A final farewell as Garcello’s spirit fades away.</li>
+      </ul>
+      
+      <h3 class="fnf-sub">Character Information</h3>
+      <p>
+      <b>Garcello</b> is a calm, soft-spoken man often found smoking alone in a dim alley. Behind his relaxed attitude lies a tragic story tied to his habit. As the songs progress, players witness his gradual physical decline until his body dissolves into smoke, leaving only his spirit to finish the final track.
+      </p>
+      <p>
+      <b>Boyfriend</b> engages in the rap battle with curiosity and determination, while <b>Girlfriend</b> observes and reacts to Garcello’s transformation throughout the week.
+      </p>
+      
+      <h3 class="fnf-sub">Basic Controls</h3>
+      <ul>
+        <li><b>Arrow Keys / WASD</b> – Hit notes</li>
+        <li><b>Enter</b> – Pause / Start</li>
+        <li><b>Space</b> – Confirm (menus)</li>
+      </ul>
+      
+      <h3 class="fnf-sub">Gameplay Tips</h3>
+      <p>
+      Focus on reading long chains of notes early—Garcello’s charts blend smooth lo-fi rhythms with sudden bursts of difficulty. “Nerves” introduces tighter patterns, so keep your eyes on incoming arrows rather than reacting late. In “Fading,” the emotional pacing syncs with slower transitions, making accuracy more important than speed. Use Easy mode if you want to experience the full story first.
+      </p>
+      
+      <h3 class="fnf-sub">FAQ</h3>
+      
+      <p><b>1. Is FNF vs Garcello difficult?</b><br>
+      The mod starts moderately but can become challenging on Hard mode due to fast switch-ups and dense note patterns.</p>
+      
+      <p><b>2. Can the mod run on Chromebook or low-end devices?</b><br>
+      Yes. The web version is optimized for Chromebook, Mac, Linux, and low-spec PCs.</p>
+      
+      <p><b>3. Is "Fading" the canon ending?</b><br>
+      Yes. “Fading” represents Garcello’s final moment, concluding his emotional story as his spirit gradually disappears.</p>
+     
+    </article>
+
+    <footer>
+      <p>© 2025 FNF Game 24 — Fan-made project for Friday Night Funkin' and community mods.</p>
+    </footer>
+  </div>
+
+  <script>
+    /* Fullscreen */
+    function toggleFullscreen(){
+      const elem = document.getElementById('player-box');
+      if (!document.fullscreenElement &&
+          !document.webkitFullscreenElement &&
+          !document.msFullscreenElement) {
+        (elem.requestFullscreen || elem.webkitRequestFullscreen || elem.msRequestFullscreen).call(elem);
+      } else {
+        (document.exitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen).call(document);
+      }
+    }
+
+    /* Share: copy current page link */
+    function sharePage(){
+      const url = location.href;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(function(){
+          alert('Link copied: ' + url);
+        }).catch(function(){
+          prompt('Copy this link:', url);
+        });
+      } else {
+        prompt('Copy this link:', url);
+      }
+    }
+
+    /* Favorite: store state in localStorage */
+    function toggleFavorite(){
+      const key = 'fnf_garcello_favorite';
+      const btn = document.getElementById('fav-btn');
+      let isFav = localStorage.getItem(key) === '1';
+      isFav = !isFav;
+      localStorage.setItem(key, isFav ? '1' : '0');
+      if(btn){
+        btn.classList.toggle('active', isFav);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // init favorite button state
+      const key = 'fnf_garcello_favorite';
+      const favBtn = document.getElementById('fav-btn');
+      if (favBtn) {
+        const isFav = localStorage.getItem(key) === '1';
+        favBtn.classList.toggle('active', isFav);
+      }
+
+      // Search suggestions
+      const input = document.querySelector('.search-input');
+      const resultsBox = document.getElementById('search-results');
+      if (!input || !resultsBox) return;
+
+      const quickThumbs = {
+        "FNF: Doki Doki Takeover": "https://fnfgame24.github.io/assets/fnf-doki-doki-takeover.png",
+        "FNF Vs. Hypno’s Lullaby v2": "https://fnfgame24.github.io/assets/fnf-vs-hyphnos-lullaby-v2.png",
+        "FNF Indie Cross Ritual But Everyone Sings It": "https://fnfgame24.github.io/assets/fnf-indie-cross-ritual-but-everyone-sings-it.png",
+        "FNF vs Impostor Among Us V4": "https://fnfgame24.github.io/assets/fnf-vs-impostor-among-us-v4.png"
+      };
+
+      // get games from header + grid
+      const linkNodes = document.querySelectorAll('.top-games .quick-mod, .mods .mod');
+      const defaultThumb = 'https://fnfgame24.github.io/assets/fnf.png';
+
+      const games = Array.from(linkNodes).map(function(el){
+        const title = el.textContent.trim();
+        const href = el.href;
+        let img = defaultThumb;
+
+        if (el.classList.contains('mod')){
+          const imageEl = el.querySelector('img');
+          if (imageEl && imageEl.src) img = imageEl.src;
+        } else {
+          if (quickThumbs[title]) img = quickThumbs[title];
+        }
+
+        return { title, href, img };
+      });
+
+      // Add current game as first search result
+      games.unshift({
+        title: "FNF vs Garcello",
+        href: "https://fnfgame24.github.io/fnf-vs-garcello",
+        img: "https://fnfgame24.github.io/assets/fnf-vs-garcello.png"
+      });
+
+      function renderResults(list){
+        resultsBox.innerHTML = '';
+        if (!list.length){
+          resultsBox.style.display = 'none';
+          return;
+        }
+        list.forEach(function(game){
+          const item = document.createElement('div');
+          item.className = 'search-item';
+
+          const thumb = document.createElement('div');
+          thumb.className = 'search-thumb';
+          const img = document.createElement('img');
+          img.src = game.img;
+          img.alt = game.title;
+          thumb.appendChild(img);
+
+          const label = document.createElement('div');
+          label.className = 'search-title';
+          label.textContent = game.title;
+
+          item.appendChild(thumb);
+          item.appendChild(label);
+
+          item.addEventListener('click', function(){
+            window.location.href = game.href;
+          });
+
+          resultsBox.appendChild(item);
+        });
+        resultsBox.style.display = 'block';
+      }
+
+      // show all games on focus
+      input.addEventListener('focus', function () {
+        renderResults(games);
+      });
+
+      // filter as user types
+      input.addEventListener('input', function () {
+        const q = input.value.trim().toLowerCase();
+        if (!q){
+          renderResults(games);
+          return;
+        }
+        const matched = games.filter(function(g){
+          return g.title.toLowerCase().includes(q);
+        });
+        renderResults(matched);
+      });
+
+      // click outside to hide
+      document.addEventListener('click', function(e){
+        if (!e.target.closest('.search-container')){
+          resultsBox.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
