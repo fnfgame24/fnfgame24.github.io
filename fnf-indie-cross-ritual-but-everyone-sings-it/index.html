@@ -5,109 +5,494 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>FNF Indie Cross Ritual But Everyone Sings It | FNF Mod</title>
-  <meta name="description" content="Play FNF Indie Cross Ritual But Everyone Sings It free online. Join a massive crossover performance where multiple characters sing the Ritual track together." />
-  <meta name="keywords" content="FNF Indie Cross Ritual But Everyone Sings It, FNF Indie Cross, Ritual FNF Mod, FNF Mods, Rhythm Game, fnfgame24" />
+  <meta name="description" content="Play FNF Indie Cross Ritual But Everyone Sings It free online. Enjoy a massive crossover performance where multiple indie characters share the Ritual spotlight in one song." />
+  <meta name="keywords" content="FNF Indie Cross Ritual But Everyone Sings It, FNF Indie Cross, Ritual FNF Mod, Everyone Sings It, FNF Mods, Rhythm Game, fnfgame24" />
   <meta name="robots" content="index,follow" />
   <meta name="google-site-verification" content="jiZelBzINsnHWFKipIb1OUNLzmaCDjXLLhWQxOSXZWQ" />
   <meta name="theme-color" content="#0a0f18" />
 
   <style>
     .fnf-title {
-      color:#F6A313; font-weight:700; letter-spacing:2px;
-      font-family:'Orbitron',sans-serif; text-transform:uppercase;
-      margin-top:35px;
+      color: #F6A313;
+      font-weight: 700;
+      letter-spacing: 2px;
+      font-family: 'Orbitron', sans-serif;
+      text-transform: uppercase;
+      margin-top: 35px;
     }
     .fnf-subtitle {
-      color:#F6A313; font-weight:600; font-family:'Orbitron',sans-serif;
-      text-transform:capitalize; letter-spacing:1px; margin-top:25px;
+      color: #F6A313;
+      font-weight: 600;
+      font-family: 'Orbitron', sans-serif;
+      text-transform: capitalize;
+      letter-spacing: 1px;
+      margin-top: 25px;
     }
     article.content table {
-      width:100%; border-collapse:collapse; margin:15px 0;
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
     }
-    article.content table th, article.content table td {
-      border:1px solid #444; padding:10px; text-align:left;
+    article.content table th,
+    article.content table td {
+      border: 1px solid #444;
+      padding: 10px;
+      text-align: left;
     }
     article.content table th {
-      background:#222; color:#F6A313; font-weight:bold;
-      text-transform:uppercase; font-family:'Orbitron',sans-serif;
+      background: #222;
+      color: #F6A313;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-family: 'Orbitron', sans-serif;
     }
     :root{
       --bg:#0a0f18; --panel:#0f1724; --text:#e6ebff;
       --muted:#8a93a9; --accent:#8b9dff; --border:#1b2340;
       --radius:18px; --shadow:0 6px 24px rgba(0,0,0,.35);
     }
-    body {margin:0; background:var(--bg); color:var(--text);
-      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;}
-    a{text-decoration:none;color:inherit}
-    .wrap{max-width:1180px;margin:0 auto;padding:80px 18px 44px}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:var(--bg); color:var(--text);
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      line-height:1.55;
+    }
+    a{color:inherit;text-decoration:none}
 
+    .wrap{
+      max-width:1180px;
+      margin:0 auto;
+      padding:80px 18px 44px;
+    }
+
+    /* === HEADER TOP: fixed bar === */
     header.top{
-      position:fixed;top:0;left:0;width:100%;height:64px;
-      display:flex;align-items:center;gap:16px;
-      padding:10px 24px;background:#0f1724;z-index:1000;
-    }
-    .brand{display:flex;align-items:center;gap:12px;cursor:pointer}
-    .appicon{width:36px;height:36px;border-radius:10px;overflow:hidden;background:#1b2540;display:flex;align-items:center;justify-content:center}
-    .appicon img{width:100%;height:100%;object-fit:cover}
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 64px;
+      
+      display:flex;
+      align-items:center;
+      gap:16px;
 
-    .top-games{display:flex;gap:10px;flex:1}
-    .quick-mod{
-      padding:6px 14px;font-size:13px;font-weight:600;
-      background:#0f1728;border:1px solid var(--border);
-      border-radius:18px;white-space:nowrap;
-      transition:.2s;
+      padding:10px 24px;
+      background:#0f1724;
+      border-radius:0;
+      z-index:1000;
     }
-    .quick-mod:hover{border-color:var(--accent);background:#111a2c}
 
-    .search-container{min-width:260px;position:relative}
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      font-weight:800;
+      cursor:pointer;
+    }
+
+    .title{font-size:22px;letter-spacing:.2px}
+
+    .appicon{
+      width:36px;
+      height:36px;
+      border-radius:10px;
+      overflow:hidden;
+      background:#1b2540;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:var(--shadow);
+      will-change:transform;
+    }
+    .appicon img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    @keyframes logo-spin{
+      from{transform:scale(1) rotate(0deg);}
+      to{transform:scale(1.12) rotate(360deg);}
+    }
+    .brand:hover .appicon{
+      animation:logo-spin .6s ease-out;
+    }
+
+    .block{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:14px;
+    }
+
+    /* === TOP GAMES === */
+    .top-games{
+      display:flex;
+      gap:10px;
+      flex:1;
+      overflow:hidden;
+    }
+
+    .top-games .quick-mod{
+      flex:0 0 auto;
+      background:#0f1728;
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:6px 14px;
+      font-size:13px;
+      font-weight:600;
+      white-space:nowrap;
+      color:var(--text);
+      text-decoration:none;
+      box-shadow:0 3px 10px rgba(0,0,0,.35);
+      transition:border-color .2s, box-shadow .2s, transform .2s, background .2s;
+    }
+
+    .top-games .quick-mod:hover{
+      border-color:var(--accent);
+      box-shadow:0 0 0 1px rgba(139,157,255,.5),0 10px 20px rgba(0,0,0,.7);
+      transform:translateY(-1px);
+      background:#111a2c;
+    }
+
+    /* Search */
+    .search-container{
+      flex-shrink:0;
+      min-width:260px;
+      position:relative;
+    }
     .search-box{
-      display:flex;align-items:center;gap:8px;background:#0f1728;
-      border:1px solid var(--border);padding:8px 14px;border-radius:20px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      background:#0f1728;
+      border:1px solid var(--border);
+      padding:8px 14px;
+      border-radius:20px;
+      box-shadow:0 4px 12px rgba(0,0,0,.35);
+      width:100%;
     }
-    .search-input{background:transparent;border:none;color:var(--text);width:100%}
+    .search-icon{
+      font-size:16px;
+      opacity:.8;
+    }
+    .search-input{
+      background:transparent;
+      border:none;
+      outline:none;
+      color:var(--text);
+      font-size:14px;
+      width:100%;
+    }
+    .search-input::placeholder{
+      color:var(--muted);
+    }
+    .search-results{
+      position:absolute;
+      top:100%;
+      left:0;
+      right:0;
+      margin-top:6px;
+      background:#0f1728;
+      border:1px solid var(--border);
+      border-radius:16px;
+      box-shadow:var(--shadow);
+      max-height:260px;
+      overflow-y:auto;
+      display:none;
+      z-index:20;
+    }
+    .search-results{
+      scrollbar-width: thin;
+      scrollbar-color: #4e5b82 transparent;
+    }
+    .search-results::-webkit-scrollbar{
+      width: 6px;
+    }
+    .search-results::-webkit-scrollbar-track{
+      background: transparent;
+    }
+    .search-results::-webkit-scrollbar-thumb{
+      background: linear-gradient(to bottom,#4e5b82,#8b9dff);
+      border-radius: 999px;
+    }
+    .search-results::-webkit-scrollbar-thumb:hover{
+      background: linear-gradient(to bottom,#6271a3,#a3b1ff);
+    }
+    .search-item{
+      padding:8px 10px;
+      font-size:14px;
+      cursor:pointer;
+      border-bottom:1px solid rgba(27,35,64,.6);
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .search-item:last-child{
+      border-bottom:none;
+    }
+    .search-item:hover{
+      background:#111a2c;
+    }
+    .search-thumb{
+      width:34px;
+      height:34px;
+      border-radius:9px;
+      overflow:hidden;
+      background:#1b2540;
+      flex-shrink:0;
+      box-shadow:0 3px 8px rgba(0,0,0,.45);
+    }
+    .search-thumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .search-title{
+      font-size:14px;
+      line-height:1.3;
+    }
 
-    .player{background:#000;height:530px;border-radius:26px;overflow:hidden;position:relative}
-    .player iframe{position:absolute;width:100%;height:100%;border:0}
+    /* Player section */
+    .player-card{
+      background:transparent;
+      border:none;
+      box-shadow:none;
+      padding:18px 0 10px;
+      position:relative;
+    }
+
+    .player{
+      position:relative;
+      width:100%;
+      margin:0 auto;
+      background:#000;
+      border-radius:26px;
+      overflow:hidden;
+      height:530px;
+    }
+    .player iframe{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      border:0;
+      display:block;
+    }
 
     .caption{
-      background:#101727;margin-top:18px;padding:10px 18px;
-      border-radius:22px;display:flex;align-items:center;justify-content:space-between;
+      width:100%;
+      margin:18px auto 0;
+      background:#101727;
+      border-radius:22px;
+      padding:10px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      box-shadow:0 6px 20px rgba(0,0,0,.45);
     }
-    .game-meta{display:flex;align-items:center;gap:14px}
-    .caption .appicon{width:52px;height:52px;border-radius:14px}
-    .game-title{font-size:22px;margin:0;font-weight:700}
+    .game-meta{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+    .caption .appicon{
+      width:52px;
+      height:52px;
+      border-radius:14px;
+    }
+    .game-title{
+      font-size:22px;
+      margin:0;
+      font-weight:700;
+    }
+
+    .actions-wrap{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .actions{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
 
     .icon-btn{
-      width:44px;height:44px;border-radius:14px;border:1px solid var(--border);
-      background:#121b2f;color:#fff;font-size:20px;cursor:pointer;
-      transition:.2s;
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:#121b2f;
+      color:var(--text);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:20px;
+      cursor:pointer;
+      box-shadow:0 4px 12px rgba(0,0,0,.35);
+      transition:border-color .2s, box-shadow .2s, transform .2s, background .2s;
     }
-    .icon-btn:hover{border-color:var(--accent);background:#111a2c}
+    .icon-btn:hover{
+      border-color:var(--accent);
+      box-shadow:0 0 0 1px rgba(139,157,255,.5),0 12px 24px rgba(0,0,0,.7);
+      transform:translateY(-1px);
+      background:#111a2c;
+    }
+    .icon-btn.active{
+      border-color:var(--accent);
+      box-shadow:0 0 0 1px rgba(139,157,255,.7),0 12px 24px rgba(0,0,0,.8);
+    }
 
+    .muted{color:var(--muted);font-size:13px}
+
+    /* Mods grid */
     .mods{
-      display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px;margin-top:12px;
+      display:grid;
+      grid-template-columns:repeat(8,minmax(0,1fr));
+      gap:8px;
+      margin-top:12px;
     }
-    .mod{position:relative;border-radius:12px;border:2px solid var(--border);overflow:hidden;cursor:pointer}
-    .mod img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
 
+    .mod{
+      position:relative;
+      display:block;
+      overflow:hidden;
+      border-radius:12px;
+      border:2px solid var(--border);
+      background:#101727;
+      cursor:pointer;
+      box-shadow:0 6px 20px rgba(0,0,0,.45);
+      transition:border-color .2s, box-shadow .2s, transform .2s;
+    }
+
+    .mod::before{
+      content:"";
+      display:block;
+      padding-top:100%;
+    }
+
+    .mod img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transition:transform .25s, filter .25s;
+    }
+
+    .mod:hover{
+      border-color:var(--accent);
+      box-shadow:0 0 0 1px rgba(139,157,255!.6),0 18px 32px rgba(0,0,0,.7);
+      transform:translateY(-2px);
+    }
+    .mod:hover img{
+      transform:scale(1.05);
+      filter:brightness(1.07);
+    }
+
+    .mod-label{
+      position:absolute;
+      left:6px;
+      right:6px;
+      bottom:6px;
+      padding:5px 6px;
+      border-radius:9px;
+      background:linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.25));
+      font-size:12px;
+      font-weight:700;
+      line-height:1.3;
+      text-align:center;
+      color:#ffffff;
+      opacity:0;
+      transform:translateY(8px);
+      transition:opacity .2s, transform .2s;
+    }
+    .mod:hover .mod-label{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* Content */
     article.content{
-      background:var(--panel);border-radius:var(--radius);
-      border:1px solid var(--border);padding:16px;margin-top:14px;
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:16px;
+      margin-top:14px;
+    }
+    article.content h2{margin:14px 0 8px;font-size:20px}
+    article.content h3{margin:12px 0 6px;font-size:16px}
+    article.content p{margin:8px 0}
+    ul.clean{margin:8px 0 12px 18px}
+
+    footer{
+      margin-top:26px;
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+    }
+    footer a{color:var(--accent);text-decoration:none}
+
+    @media (max-width:1366px){
+      .wrap{padding-left:14px;padding-right:14px}
+      .title{font-size:20px}
     }
 
+    @media (max-width:900px){
+      .mods{
+        grid-template-columns:repeat(4,minmax(0,1fr));
+      }
+      .player,
+      .caption{
+        max-width:100%;
+      }
+      .top-games{
+        display:none;
+      }
+    }
+
+    @media (max-width:600px){
+      header.top{
+        flex-wrap:wrap;
+        height:auto;
+      }
+      .search-container{
+        width:100%;
+        order:3;
+      }
+      .mods{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+      .caption{
+        flex-direction:row;
+      }
+      .game-title{
+        font-size:18px;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
-
-    <!-- HEADER -->
     <header class="top">
-
+      <!-- Logo -->
       <a class="brand" href="/">
-        <span class="appicon"><img src="https://fnfgame24.github.io/assets/fnf.png"></span>
+        <span class="appicon">
+          <img src="https://fnfgame24.github.io/assets/fnf.png" alt="FNF logo">
+        </span>
       </a>
 
-      <!-- 4 game top, slot Indie Cross đổi thành trang chủ -->
+      <!-- 4 featured games: replace FNF Indie Cross Ritual But Everyone Sings It with homepage -->
       <div class="top-games">
         <a class="quick-mod" href="https://fnfgame24.github.io/fnf-doki-doki-takeover">
           FNF: Doki Doki Takeover
@@ -119,160 +504,358 @@
           FNF | Friday Night Funkin'
         </a>
         <a class="quick-mod" href="https://fnfgame24.github.io/fnf-vs-impostor-among-us-v4">
-          FNF vs Impostor Among Us V4
+          FNF vs Impostor Among Us V4 
         </a>
       </div>
 
-      <!-- SEARCH -->
+      <!-- Search -->
       <div class="search-container">
         <div class="search-box">
-          <span>🔍</span>
-          <input type="text" class="search-input" placeholder="Search Games ...">
+          <span class="search-icon">🔍</span>
+          <input type="text" placeholder="Search Games ..." class="search-input">
         </div>
         <div class="search-results" id="search-results"></div>
       </div>
-
     </header>
 
-    <!-- PLAYER -->
-    <section class="player-card">
+    <!-- Player -->
+    <section class="player-card" aria-label="Game player">
       <div class="player" id="player-box">
-        <iframe src="https://st.8games.net/7/igra-fnf-indi-kross-ritual/"
+        <iframe id="game-frame"
+          src="https://st.8games.net/7/igra-fnf-indi-kross-ritual/"
           allow="autoplay; fullscreen; gamepad; accelerometer; clipboard-read; clipboard-write"
-          title="FNF Indie Cross Ritual But Everyone Sings It">
-        </iframe>
+          allowfullscreen
+          loading="lazy"
+          title="FNF Indie Cross Ritual But Everyone Sings It"></iframe>
       </div>
-
       <div class="caption">
         <div class="game-meta">
           <span class="appicon">
-            <img src="https://fnfgame24.github.io/assets/fnf-indie-cross-ritual-but-everyone-sings-it.png">
+            <img src="https://fnfgame24.github.io/assets/fnf-indie-cross-ritual-but-everyone-sings-it.png" alt="FNF Indie Cross Ritual But Everyone Sings It icon">
           </span>
           <h1 class="game-title">FNF Indie Cross Ritual But Everyone Sings It</h1>
         </div>
-
-        <div>
-          <button class="icon-btn" id="fav-btn" onclick="toggleFavorite()">♥</button>
-          <button class="icon-btn" onclick="sharePage()">⇪</button>
-          <button class="icon-btn" onclick="toggleFullscreen()">⛶</button>
+        <div class="actions-wrap">
+          <button class="icon-btn" id="fav-btn" type="button" onclick="toggleFavorite()" aria-label="Add to favorites">♥</button>
+          <button class="icon-btn" type="button" onclick="sharePage()" aria-label="Share game">⇪</button>
+          <button class="icon-btn" type="button" onclick="toggleFullscreen()" aria-label="Full screen">⛶</button>
         </div>
       </div>
     </section>
 
-    <!-- POPULAR MODS (8 GAME GIỮ NGUYÊN) -->
-    <section class="block">
-      <h2 style="font-size:18px;margin:4px 0 10px;">Popular FNF Mods</h2>
+    <!-- Mods list with images – 8 games giữ nguyên -->
+    <section class="block" aria-label="Popular FNF mods">
+      <h2 style="margin:4px 0 10px;font-size:18px;">Popular FNF Mods</h2>
       <div class="mods">
-
         <a class="mod" href="https://fnfgame24.github.io/friday-night-funkin-vs-whitty">
-          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-whitty.png">
+          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-whitty.png" alt="Friday Night Funkin' vs. Whitty">
+          <div class="mod-label">Friday Night Funkin' vs. Whitty</div>
         </a>
 
         <a class="mod" href="https://fnfgame24.github.io/friday-night-funkin-vs-tricky-the-clown">
-          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-tricky-the-clown.png">
+          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-tricky-the-clown.png" alt="Friday Night Funkin' vs. Tricky the Clown">
+          <div class="mod-label">Friday Night Funkin' vs. Tricky the Clown</div>
         </a>
 
         <a class="mod" href="https://fnfgame24.github.io/fnf-vs-garcello">
-          <img src="https://fnfgame24.github.io/assets/fnf-vs-garcello.png">
+          <img src="https://fnfgame24.github.io/assets/fnf-vs-garcello.png" alt="FNF vs Garcello">
+          <div class="mod-label">FNF vs Garcello</div>
         </a>
 
         <a class="mod" href="https://fnfgame24.github.io/friday-night-funkin-vs-agoti">
-          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-agoti.png">
+          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-agoti.png" alt="Friday Night Funkin' vs. AGOTI">
+          <div class="mod-label">Friday Night Funkin' vs. AGOTI</div>
         </a>
 
         <a class="mod" href="https://fnfgame24.github.io/friday-night-funkin-vs-shaggy-v2">
-          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-shaggy-v2.png">
+          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-shaggy-v2.png" alt="Friday Night Funkin vs Shaggy v2">
+          <div class="mod-label">Friday Night Funkin vs Shaggy v2</div>
         </a>
 
         <a class="mod" href="https://fnfgame24.github.io/fnf-indie-cross">
-          <img src="https://fnfgame24.github.io/assets/fnf-indie-cross.png">
+          <img src="https://fnfgame24.github.io/assets/fnf-indie-cross.png" alt="FNF: Indie Cross">
+          <div class="mod-label">FNF: Indie Cross</div>
         </a>
 
         <a class="mod" href="https://fnfgame24.github.io/fnf-vs-sonic-exe">
-          <img src="https://fnfgame24.github.io/assets/fnf-vs-sonic-exe.png">
+          <img src="https://fnfgame24.github.io/assets/fnf-vs-sonic-exe.png" alt="FNF vs. Sonic.EXE">
+          <div class="mod-label">FNF vs. Sonic.EXE</div>
         </a>
 
         <a class="mod" href="https://fnfgame24.github.io/friday-night-funkin-vs-bob-bosip">
-          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-bob-bosip.png">
+          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-bob-bosip.png" alt="Friday Night Funkin' vs. Bob &amp; Bosip">
+          <div class="mod-label">Friday Night Funkin' vs. Bob &amp; Bosip</div>
         </a>
-
       </div>
     </section>
 
-    <!-- CONTENT -->
+    <!-- Game description -->
     <article class="content">
 
-      <h2 class="fnf-title">FNF Indie Cross Ritual But Everyone Sings It – Multi-Character Remix Performance</h2>
+      <h2 class="fnf-title">FNF Indie Cross Ritual But Everyone Sings It – All-Stars On One Track</h2>
       <p>
-        FNF Indie Cross Ritual But Everyone Sings It turns the classic Indie Cross “Ritual” track into a massive
-        collaborative remix featuring characters from multiple indie universes.  
-        Each verse swaps singers, creating an energetic performance where voices, animations, and styles shift seamlessly between every scene.
+        FNF Indie Cross Ritual But Everyone Sings It transforms the original Ritual chart into a rotating showcase of indie icons.
+        Instead of one rival, the microphone passes between Cuphead, Sans, Bendy, Boyfriend, and other guest characters.
+        The result is a long-form remix where each verse feels like a new crossover moment layered onto a familiar song.
       </p>
 
-      <img src="https://fnfgame24.github.io/assets/fnf-indie-cross-ritual-but-everyone-sings-it.png" class="center-img" style="max-width:500px;display:block;margin:0 auto;"/>
+      <style>
+        .center-img {
+          display:block;
+          margin:0 auto;
+          max-width:500px;
+          height:auto;
+        }
+      </style>
 
-      <h3 class="fnf-subtitle">Concept and crossover style</h3>
+      <img src="https://fnfgame24.github.io/assets/fnf-indie-cross-ritual-but-everyone-sings-it.png" alt="FNF Indie Cross Ritual But Everyone Sings It banner" class="center-img">
+
+      <h3 class="fnf-subtitle">Concept and presentation</h3>
       <p>
-        This version blends characters from Cuphead, Undertale, Bendy, and more.  
-        Instead of a traditional duel, each character takes turns delivering parts of the same Ritual chart, matching their tone and visual identity.
+        This version keeps the structure of the Indie Cross Ritual battle but layers in multiple singers.
+        Each character enters with custom animations, unique poses, and small timing twists that match their home game.
+        Backgrounds and camera angles adapt as the spotlight shifts, making a single track feel like several different duels stitched together.
       </p>
 
-      <h3 class="fnf-subtitle">Featured characters</h3>
+      <h3 class="fnf-subtitle">Featured indie characters</h3>
+      <p>
+        The mod focuses on heroes and anti-heroes from popular indie titles, with Boyfriend acting as a recurring anchor.
+        Vocal tones, facial expressions, and subtle visual references help distinguish each new arrival in the lineup.
+      </p>
 
       <table>
-        <tr><th>Character</th><th>Universe</th></tr>
-        <tr><td>Cuphead</td><td>Cuphead</td></tr>
-        <tr><td>Sans</td><td>Undertale</td></tr>
-        <tr><td>Bendy</td><td>Bendy and the Ink Machine</td></tr>
-        <tr><td>Boyfriend</td><td>Friday Night Funkin'</td></tr>
+        <tr>
+          <th>Character</th>
+          <th>Origin</th>
+        </tr>
+        <tr>
+          <td>Cuphead</td>
+          <td>Cuphead</td>
+        </tr>
+        <tr>
+          <td>Sans</td>
+          <td>Undertale</td>
+        </tr>
+        <tr>
+          <td>Bendy</td>
+          <td>Bendy and the Ink Machine</td>
+        </tr>
+        <tr>
+          <td>Boyfriend</td>
+          <td>Friday Night Funkin'</td>
+        </tr>
       </table>
 
-      <h3 class="fnf-subtitle">Song structure</h3>
+      <h3 class="fnf-subtitle">Song layout and flow</h3>
       <p>
-        The Ritual chart remains faithful to the original Indie Cross version but adds transitions where each singer enters the spotlight.
-        Special animations and effects appear depending on which character is active.
+        The chart keeps Ritual’s recognizable motifs while introducing character-based switches.
+        Short handoffs, overlapping lines, and call-and-response sections give the performance a concert feeling.
+        Certain segments emphasize visual flair, while others highlight rhythm density and directional changes in the note patterns.
       </p>
 
-      <h3 class="fnf-subtitle">Why this version is popular</h3>
+      <table>
+        <tr>
+          <th>Section</th>
+          <th>Highlight</th>
+        </tr>
+        <tr>
+          <td>Opening measures</td>
+          <td>Sets the tone with the first vocalist and a faithful version of Ritual’s main hook.</td>
+        </tr>
+        <tr>
+          <td>Middle swaps</td>
+          <td>Frequent character changes, layered harmonies, and visual nods to each guest universe.</td>
+        </tr>
+        <tr>
+          <td>Final stretch</td>
+          <td>More intense note streams and shared lines that combine multiple singers on screen.</td>
+        </tr>
+      </table>
+
+      <h3 class="fnf-subtitle">Gameplay and controls</h3>
+      <p>
+        FNF Indie Cross Ritual But Everyone Sings It uses the traditional Friday Night Funkin’ input layout.
+        Players press the matching arrow keys as notes cross the judgment line, keeping the health bar balanced through accurate hits.
+        Even when visuals change quickly during character swaps, the timing window remains synced to Ritual’s core beat and rhythm.
+      </p>
+
+      <h3 class="fnf-subtitle">Tips for enjoying this version</h3>
       <ul>
-        <li>Varied vocals and singing styles from multiple universes</li>
-        <li>Animated transitions between characters</li>
-        <li>Fresh pacing for a familiar track</li>
-        <li>Great for fans who enjoy multi-character showcase mods</li>
+        <li>Focus on the note columns when new characters appear, as visual changes can become very active.</li>
+        <li>Replay the track to catch small animation details and references tied to each indie universe.</li>
+        <li>Use a comfortable difficulty first to enjoy the full performance before aiming for higher accuracy runs.</li>
+        <li>Listen for recurring motifs to anticipate when patterns repeat or escalate in later measures.</li>
       </ul>
+
+      <h3 class="fnf-subtitle">Frequently asked questions</h3>
+      <p><strong>Q: Is this a full week or a single-song mod?</strong><br>
+         A: This version focuses on the Ritual track, turning it into an extended multi-character performance rather than a full week campaign.</p>
+
+      <p><strong>Q: Does everyone sing the entire chart?</strong><br>
+         A: Different characters handle specific segments, with shared parts and overlaps designed to keep the performance varied.</p>
+
+      <p><strong>Q: Are controls different from regular FNF?</strong><br>
+         A: No. It keeps the usual arrow or WASD layout, so existing FNF players adjust instantly.</p>
+
+      <p><strong>Q: What makes FNF Indie Cross Ritual But Everyone Sings It special?</strong><br>
+         A: Its focus on crossover energy, packed cast, and a single polished track makes it ideal for players who enjoy “everyone sings” style remixes.</p>
+
+      <h3 class="fnf-subtitle">Final thoughts</h3>
+      <p>
+        FNF Indie Cross Ritual But Everyone Sings It takes a fan-favorite chart and turns it into a character-driven showcase.
+        The blend of indie icons, animation flourishes, and evolving vocal leads keeps the song engaging from start to finish.
+        For fans of Indie Cross and ensemble-style FNF mods, this performance offers a focused but memorable spin on Ritual.
+      </p>
 
     </article>
 
-    <footer><p>© 2025 FNF Game 24 — Fan-made project.</p></footer>
-
+    <footer>
+      <p>© 2025 FNF Game 24 — Fan-made project for Friday Night Funkin'.</p>
+    </footer>
   </div>
 
-<script>
-function toggleFullscreen(){
-  const el=document.getElementById('player-box');
-  if(!document.fullscreenElement) el.requestFullscreen();
-  else document.exitFullscreen();
-}
+  <script>
+    /* Fullscreen: enlarge player box */
+    function toggleFullscreen(){
+      const elem = document.getElementById('player-box');
+      if (!document.fullscreenElement &&
+          !document.webkitFullscreenElement &&
+          !document.msFullscreenElement) {
+        (elem.requestFullscreen || elem.webkitRequestFullscreen || elem.msRequestFullscreen).call(elem);
+      } else {
+        (document.exitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen).call(document);
+      }
+    }
 
-function sharePage(){
-  const url=location.href;
-  navigator.clipboard?.writeText(url).then(()=>alert("Link copied: "+url));
-}
+    /* Share current page URL */
+    function sharePage(){
+      const url = location.href;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(function(){
+          alert('Link copied: ' + url);
+        }).catch(function(){
+          prompt('Copy this link:', url);
+        });
+      } else {
+        prompt('Copy this link:', url);
+      }
+    }
 
-function toggleFavorite(){
-  const key='fnf_indie_cross_ritual_everyone_favorite';
-  const btn=document.getElementById('fav-btn');
-  const newState=!(localStorage.getItem(key)==="1");
-  localStorage.setItem(key,newState?"1":"0");
-  btn.classList.toggle("active",newState);
-}
+    /* Favorite state for this page */
+    function toggleFavorite(){
+      const key = 'fnf_indie_cross_ritual_everyone_sings_favorite';
+      const btn = document.getElementById('fav-btn');
+      let isFav = localStorage.getItem(key) === '1';
+      isFav = !isFav;
+      localStorage.setItem(key, isFav ? '1' : '0');
+      if(btn){
+        btn.classList.toggle('active', isFav);
+      }
+    }
 
-document.addEventListener('DOMContentLoaded',()=>{
-  const key='fnf_indie_cross_ritual_everyone_favorite';
-  document.getElementById('fav-btn').classList.toggle("active",localStorage.getItem(key)==="1");
-});
-</script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // init favorite button state
+      const key = 'fnf_indie_cross_ritual_everyone_sings_favorite';
+      const favBtn = document.getElementById('fav-btn');
+      if (favBtn) {
+        const isFav = localStorage.getItem(key) === '1';
+        favBtn.classList.toggle('active', isFav);
+      }
 
+      // Search suggestions
+      const input = document.querySelector('.search-input');
+      const resultsBox = document.getElementById('search-results');
+      if (!input || !resultsBox) return;
+
+      const quickThumbs = {
+        "FNF: Doki Doki Takeover": "https://fnfgame24.github.io/assets/fnf-doki-doki-takeover.png",
+        "FNF Vs. Hypno’s Lullaby v2": "https://fnfgame24.github.io/assets/fnf-vs-hyphnos-lullaby-v2.png",
+        "FNF Indie Cross Ritual But Everyone Sings It": "https://fnfgame24.github.io/assets/fnf-indie-cross-ritual-but-everyone-sings-it.png",
+        "FNF vs Impostor Among Us V4": "https://fnfgame24.github.io/assets/fnf-vs-impostor-among-us-v4.png"
+      };
+
+      // collect from top bar + mods
+      const linkNodes = document.querySelectorAll('.top-games .quick-mod, .mods .mod');
+      const defaultThumb = 'https://fnfgame24.github.io/assets/fnf.png';
+
+      const games = Array.from(linkNodes).map(function(el){
+        const title = el.textContent.trim();
+        const href = el.href;
+        let img = defaultThumb;
+
+        if (el.classList.contains('mod')){
+          const imageEl = el.querySelector('img');
+          if (imageEl && imageEl.src) img = imageEl.src;
+        } else {
+          if (quickThumbs[title]) img = quickThumbs[title];
+        }
+
+        return { title, href, img };
+      });
+      games.unshift({
+        title: "FNF",
+        href: "https://fnfgame24.github.io/",
+        img: "https://fnfgame24.github.io/assets/fnf.png"
+      });
+
+      function renderResults(list){
+        resultsBox.innerHTML = '';
+        if (!list.length){
+          resultsBox.style.display = 'none';
+          return;
+        }
+        list.forEach(function(game){
+          const item = document.createElement('div');
+          item.className = 'search-item';
+
+          const thumb = document.createElement('div');
+          thumb.className = 'search-thumb';
+          const img = document.createElement('img');
+          img.src = game.img;
+          img.alt = game.title;
+          thumb.appendChild(img);
+
+          const label = document.createElement('div');
+          label.className = 'search-title';
+          label.textContent = game.title;
+
+          item.appendChild(thumb);
+          item.appendChild(label);
+
+          item.addEventListener('click', function(){
+            window.location.href = game.href;
+          });
+
+          resultsBox.appendChild(item);
+        });
+        resultsBox.style.display = 'block';
+      }
+
+      // show all on focus
+      input.addEventListener('focus', function () {
+        renderResults(games);
+      });
+
+      // filter on input
+      input.addEventListener('input', function () {
+        const q = input.value.trim().toLowerCase();
+        if (!q){
+          renderResults(games);
+          return;
+        }
+        const matched = games.filter(function(g){
+          return g.title.toLowerCase().includes(q);
+        });
+        renderResults(matched);
+      });
+
+      // hide when clicking outside
+      document.addEventListener('click', function(e){
+        if (!e.target.closest('.search-container')){
+          resultsBox.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
-
