@@ -4,48 +4,48 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>FNF | Friday Night Funkin'</title>
-  <meta name="description" content="Play FNF | Friday Night Funkin vs Shaggy v2 free online. Enjoy rhythm battles, songs, and community mods in your browser." />
-  <meta name="keywords" content="FNF, Friday Night Funkin, FNF Mods, Rhythm Game, Music Game, fnfgame24" />
+  <title>Friday Night Funkin vs Shaggy v2 | FNF Mod</title>
+  <meta name="description" content="Play Friday Night Funkin vs Shaggy v2 free online. Face Shaggy’s multi-form power, unlock new songs, and test your rhythm skills in this iconic FNF mod." />
+  <meta name="keywords" content="FNF, Friday Night Funkin vs Shaggy v2, FNF Shaggy Mod, Rhythm Game, Music Game, fnfgame24" />
   <meta name="robots" content="index,follow" />
   <meta name="google-site-verification" content="jiZelBzINsnHWFKipIb1OUNLzmaCDjXLLhWQxOSXZWQ" />
   <meta name="theme-color" content="#0a0f18" />
 
   <style>
     .fnf-title {
-    color: #F6A313;
-    font-weight: 700;
-    letter-spacing: 2px;
-    font-family: 'Orbitron', sans-serif;
-    text-transform: uppercase;
-    margin-top: 35px;
-}
-.fnf-subtitle {
-    color: #F6A313;
-    font-weight: 600;
-    font-family: 'Orbitron', sans-serif;
-    text-transform: capitalize;
-    letter-spacing: 1px;
-    margin-top: 25px;
-}
-article.content table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 15px 0;
-}
-article.content table th,
-article.content table td {
-    border: 1px solid #444;
-    padding: 10px;
-    text-align: left;
-}
-article.content table th {
-    background: #222;
-    color: #F6A313;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-family: 'Orbitron', sans-serif;
-}
+      color: #F6A313;
+      font-weight: 700;
+      letter-spacing: 2px;
+      font-family: 'Orbitron', sans-serif;
+      text-transform: uppercase;
+      margin-top: 35px;
+    }
+    .fnf-subtitle {
+      color: #F6A313;
+      font-weight: 600;
+      font-family: 'Orbitron', sans-serif;
+      text-transform: capitalize;
+      letter-spacing: 1px;
+      margin-top: 25px;
+    }
+    article.content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+    article.content table th,
+    article.content table td {
+      border: 1px solid #444;
+      padding: 10px;
+      text-align: left;
+    }
+    article.content table th {
+      background: #222;
+      color: #F6A313;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-family: 'Orbitron', sans-serif;
+    }
     :root{
       --bg:#0a0f18; --panel:#0f1724; --text:#e6ebff;
       --muted:#8a93a9; --accent:#8b9dff; --border:#1b2340;
@@ -61,28 +61,28 @@ article.content table th {
     a{color:inherit;text-decoration:none}
 
     .wrap{
-  max-width:1180px;
-  margin:0 auto;
-  padding:80px 18px 44px;
-}
+      max-width:1180px;
+      margin:0 auto;
+      padding:80px 18px 44px;
+    }
 
-    /* === HEADER TOP: THANH DÀI GIỐNG MẪU === */
-header.top{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 64px;
-  
-  display:flex;
-  align-items:center;
-  gap:16px;
+    /* === HEADER TOP === */
+    header.top{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 64px;
+      
+      display:flex;
+      align-items:center;
+      gap:16px;
 
-  padding:10px 24px;
-  background:#0f1724;
-  border-radius:0;
-  z-index:1000;
-}
+      padding:10px 24px;
+      background:#0f1724;
+      border-radius:0;
+      z-index:1000;
+    }
 
     .brand{
       display:flex;
@@ -114,7 +114,6 @@ header.top{
       display:block;
     }
 
-    /* Logo hover animation */
     @keyframes logo-spin{
       from{transform:scale(1) rotate(0deg);}
       to{transform:scale(1.12) rotate(360deg);}
@@ -131,11 +130,11 @@ header.top{
       padding:14px;
     }
 
-    /* === DÃY GAME TRÊN THANH HEADER === */
+    /* === TOP GAMES === */
     .top-games{
       display:flex;
       gap:10px;
-      flex:1;                  /* chiếm khoảng giữa */
+      flex:1;
       overflow:hidden;
     }
 
@@ -208,25 +207,20 @@ header.top{
       display:none;
       z-index:20;
     }
-        /* Scrollbar đẹp cho khung search */
     .search-results{
-      scrollbar-width: thin;                          /* Firefox mỏng */
-      scrollbar-color: #4e5b82 transparent;           /* Firefox màu thanh kéo */
+      scrollbar-width: thin;
+      scrollbar-color: #4e5b82 transparent;
     }
-    
     .search-results::-webkit-scrollbar{
-      width: 6px;                                     /* độ rộng scrollbar */
+      width: 6px;
     }
-    
     .search-results::-webkit-scrollbar-track{
-      background: transparent;                        /* nền trong suốt */
+      background: transparent;
     }
-    
     .search-results::-webkit-scrollbar-thumb{
       background: linear-gradient(to bottom,#4e5b82,#8b9dff);
       border-radius: 999px;
     }
-    
     .search-results::-webkit-scrollbar-thumb:hover{
       background: linear-gradient(to bottom,#6271a3,#a3b1ff);
     }
@@ -265,7 +259,7 @@ header.top{
       line-height:1.3;
     }
 
-    /* Player section với quick mods overlay */
+    /* Player section */
     .player-card{
       background:transparent;
       border:none;
@@ -359,7 +353,7 @@ header.top{
 
     .muted{color:var(--muted);font-size:13px}
 
-    /* Mods grid with images (square cards) */
+    /* Mods grid */
     .mods{
       display:grid;
       grid-template-columns:repeat(8,minmax(0,1fr));
@@ -463,7 +457,7 @@ header.top{
         max-width:100%;
       }
       .top-games{
-        display:none; /* có thể ẩn bớt trên mobile nếu muốn */
+        display:none;
       }
     }
 
@@ -498,7 +492,7 @@ header.top{
         </span>
       </a>
 
-      <!-- 4 game nổi bật nằm cùng thanh -->
+      <!-- 4 featured games -->
       <div class="top-games">
         <a class="quick-mod" href="https://fnfgame24.github.io/fnf-doki-doki-takeover">
           FNF: Doki Doki Takeover
@@ -514,7 +508,7 @@ header.top{
         </a>
       </div>
 
-      <!-- Search ở bên phải -->
+      <!-- Search -->
       <div class="search-container">
         <div class="search-box">
           <span class="search-icon">🔍</span>
@@ -528,18 +522,18 @@ header.top{
     <section class="player-card" aria-label="Game player">
       <div class="player" id="player-box">
         <iframe id="game-frame"
-          src="https://fnf.kdata1.com/2024/fnf/5201/"
+          src="https://fnf.run3.io/shaggy/6.5/"
           allow="autoplay; fullscreen; gamepad; accelerometer; clipboard-read; clipboard-write"
           allowfullscreen
           loading="lazy"
-          title="FNF Game"></iframe>
+          title="Friday Night Funkin vs Shaggy v2"></iframe>
       </div>
       <div class="caption">
         <div class="game-meta">
           <span class="appicon">
-            <img src="https://fnfgame24.github.io/assets/fnf.png" alt="FNF icon">
+            <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-shaggy-v2.png" alt="Friday Night Funkin vs Shaggy v2 icon">
           </span>
-          <h1 class="game-title">FNF</h1>
+          <h1 class="game-title">Friday Night Funkin vs Shaggy v2</h1>
         </div>
         <div class="actions-wrap">
           <button class="icon-btn" id="fav-btn" type="button" onclick="toggleFavorite()" aria-label="Add to favorites">♥</button>
@@ -573,9 +567,10 @@ header.top{
           <div class="mod-label">Friday Night Funkin' vs. AGOTI</div>
         </a>
 
+        <!-- YÊU CẦU: ở block 8 game này, thay tên Friday Night Funkin vs Shaggy v2 bằng "fnf" -->
         <a class="mod" href="https://fnfgame24.github.io/friday-night-funkin-vs-shaggy-v2">
-          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-shaggy-v2.png" alt="Friday Night Funkin vs Shaggy v2">
-          <div class="mod-label">Friday Night Funkin vs Shaggy v2</div>
+          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-shaggy-v2.png" alt="fnf">
+          <div class="mod-label">fnf</div>
         </a>
 
         <a class="mod" href="https://fnfgame24.github.io/fnf-indie-cross">
@@ -598,146 +593,119 @@ header.top{
     <!-- Game description -->
     <article class="content">
 
-  <h2 class="fnf-title">FNF: Friday Night Funkin' – Step Into The Ultimate Rhythm Showdown</h2>
-  <p>
-    Friday Night Funkin’ is a fast-paced rhythm game where players follow musical notes to win rap battles.
-    Its retro pixel art, catchy soundtrack, and quirky characters have made it one of the most iconic indie titles in the world.
-    Step into the beat and see if you can conquer the stage!
-  </p>
-    <style>
-.center-img {
-    display: block;
-    margin: 0 auto;
-    max-width: 500px;  /* chỉnh kích thước thu nhỏ tại đây */
-    height: auto;
-}
-</style>
+      <h2 class="fnf-title">Friday Night Funkin vs Shaggy v2 – Ultra Instinct Rhythm Battle</h2>
+      <p>
+        Friday Night Funkin vs Shaggy v2 is a legendary FNF mod where Boyfriend faces Shaggy, who unleashes absurd, universe-level power through music.
+        New songs, higher key counts, and shifting forms turn each battle into a wild test of timing and focus.
+        Can your rhythm keep up with 0.001% of his strength?
+      </p>
 
-<img src="https://fnfgame24.github.io/assets/fnf.png" alt="FNF logo" class="center-img">
-  <h3 class="fnf-subtitle">Developer & creation history</h3>
-  <p>
-    Friday Night Funkin’ was created by ninjamuffin99, with art by PhantomArcade and Evilsk8r, and music by Kawai Sprite.
-    Originally built for a game jam, FNF quickly exploded in popularity due to its unique style, open-source nature, and simple yet addictive rhythm mechanics.
-    The game continues to evolve with updates, community contributions, and thousands of mods.
-  </p>
+      <style>
+        .center-img {
+          display: block;
+          margin: 0 auto;
+          max-width: 500px;
+          height: auto;
+        }
+      </style>
 
-  <h3 class="fnf-subtitle">Plot & main characters</h3>
-  <p>
-    The story follows Boyfriend, a blue-haired hero determined to earn the approval of Girlfriend’s family.
-    He must defeat many eccentric opponents through musical duels, from her parents to iconic characters like Pico, Skid & Pump, Senpai, and dozens more from the modding community.
-  </p>
+      <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-shaggy-v2.png" alt="Friday Night Funkin vs Shaggy v2 banner" class="center-img">
 
-  <table>
-    <tr>
-      <th>Character</th>
-      <th>Description</th>
-    </tr>
-    <tr>
-      <td>Boyfriend</td>
-      <td>The main protagonist battling through music to win Girlfriend’s heart.</td>
-    </tr>
-    <tr>
-      <td>Girlfriend</td>
-      <td>The supportive partner who appears in nearly every stage.</td>
-    </tr>
-    <tr>
-      <td>Daddy Dearest</td>
-      <td>Girlfriend’s intimidating father and Boyfriend’s first major challenger.</td>
-    </tr>
-    <tr>
-      <td>Mommy Mearest</td>
-      <td>A powerful singer who appears in Week 4 with difficult tracks.</td>
-    </tr>
-    <tr>
-      <td>Pico</td>
-      <td>A gun-wielding icon from the Pico series who returns as a rival.</td>
-    </tr>
-  </table>
+      <h3 class="fnf-subtitle">About this FNF mod</h3>
+      <p>
+        VS Shaggy v2 expands the original Shaggy mod with more songs, fresh animations, and multi-phase transformations.
+        Shaggy’s power level rises across the week, increasing key counts and chart complexity.
+        The mod keeps the humorous “Scooby-Doo” tone while turning every track into a high-intensity rhythm challenge.
+      </p>
 
-  <h3 class="fnf-subtitle">Weeks & official soundtrack</h3>
+      <h3 class="fnf-subtitle">Main characters and forms</h3>
+      <p>
+        Boyfriend steps into a cosmic rap battle against Shaggy, whose casual posture hides absurd strength.
+        Across the mod he unlocks new forms, visual auras, and star-filled backgrounds that signal higher difficulty spikes.
+        Each stage blends jokes, references, and over-the-top power-ups with precise note patterns.
+      </p>
 
-  <table>
-    <tr>
-      <th>Week</th>
-      <th>Songs</th>
-    </tr>
-    <tr>
-      <td>Week 1</td>
-      <td>Bopeebo, Fresh, Dad Battle</td>
-    </tr>
-    <tr>
-      <td>Week 2</td>
-      <td>Spookeez, South, Monster</td>
-    </tr>
-    <tr>
-      <td>Week 3</td>
-      <td>Pico, Philly, Blammed</td>
-    </tr>
-    <tr>
-      <td>Week 4</td>
-      <td>Satin-Panties, High, MILF</td>
-    </tr>
-    <tr>
-      <td>Week 5</td>
-      <td>Cocoa, Eggnog, Winter-Horrorland</td>
-    </tr>
-    <tr>
-      <td>Week 6</td>
-      <td>Senpai, Roses, Thorns</td>
-    </tr>
-    <tr>
-      <td>Week 7</td>
-      <td>Ugh, Guns, Stress</td>
-    </tr>
-    <tr>
-      <td>Weekend 1</td>
-      <td>Darnell, Lit Up, 2Hot, Blazin</td>
-    </tr>
-  </table>
+      <table>
+        <tr>
+          <th>Character</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>Boyfriend</td>
+          <td>The rhythm-focused hero defending his pride in a seemingly impossible music duel.</td>
+        </tr>
+        <tr>
+          <td>Girlfriend</td>
+          <td>Cheering from the speakers, she reacts as the energy and speed of each track escalate.</td>
+        </tr>
+        <tr>
+          <td>Shaggy</td>
+          <td>A relaxed fighter who slowly reveals godlike abilities through multi-key patterns and powerful songs.</td>
+        </tr>
+      </table>
 
-  <h3 class="fnf-subtitle">Gameplay guide</h3>
-  <p>
-    Players must press the matching arrow keys as notes reach the target zone. Accuracy increases your score and pushes the health bar in your favor.
-    Missing too many notes reverses the bar and results in a loss.
-    You can choose difficulty levels ranging from Easy to Hard, and Freeplay mode allows practicing individual songs.
-  </p>
+      <h3 class="fnf-subtitle">Songs and difficulty curve</h3>
+      <p>
+        VS Shaggy v2 is famous for gradually increasing complexity.
+        Early songs start with standard four-key layouts, while later tracks introduce extra rows and rapid patterns.
+        Players experience a curve that moves from intense but manageable, to near “boss level” rhythm sections that demand sharp attention.
+      </p>
 
-  <h3 class="fnf-subtitle">Why players love Friday Night Funkin'</h3>
-  <ul>
-    <li>Catchy soundtrack blending hip-hop, funk, and electro styles</li>
-    <li>Retro pixel graphics with stylish animations</li>
-    <li>Dozens of unique rivals and memorable tracks</li>
-    <li>Open-source structure supporting endless mods</li>
-    <li>Fast-paced, skill-based rhythm gameplay</li>
-  </ul>
+      <table>
+        <tr>
+          <th>Phase</th>
+          <th>Highlights</th>
+        </tr>
+        <tr>
+          <td>Opening songs</td>
+          <td>Classic four-arrow charts that introduce Shaggy’s style and timing.</td>
+        </tr>
+        <tr>
+          <td>Mid-phase</td>
+          <td>More notes, animations, and energy spikes to test reading speed and coordination.</td>
+        </tr>
+        <tr>
+          <td>Final rounds</td>
+          <td>High key-count patterns, cosmic backgrounds, and demanding sections that feel like a true final showdown.</td>
+        </tr>
+      </table>
 
-  <h3 class="fnf-subtitle">FNF mods: the extension of the universe</h3>
-  <p>
-    The modding community has built thousands of custom characters, songs, and full weeks, keeping the game fresh.
-    Popular mods include Triple Trouble, Shaggy’s Thoughts, Accelerant Hank Reanimated, and Minecraft Null.
-  </p>
+      <h3 class="fnf-subtitle">Controls and gameplay</h3>
+      <p>
+        The core goal remains simple: press the correct arrows as they reach the judgment line in sync with the music.
+        Accurate hits fill your side of the health bar, while misses or off-beat presses drain it.
+        VS Shaggy v2 adds intensity by increasing note density and using patterns that reward steady, relaxed rhythm rather than random button mashing.
+      </p>
 
-  <h3 class="fnf-subtitle">Frequently asked questions</h3>
-  <p><strong>Q: Is FNF free to play?</strong><br>
-     A: Yes, both the browser version and most mods are free.</p>
+      <h3 class="fnf-subtitle">Tips for playing VS Shaggy v2</h3>
+      <ul>
+        <li>Start on Easy or Normal to learn the patterns before moving to harder settings.</li>
+        <li>Focus on reading note groups instead of individual arrows to maintain flow.</li>
+        <li>Use headphones to track beats and subtle rhythm shifts more clearly.</li>
+        <li>Take short breaks between attempts to reduce hand fatigue and maintain accuracy.</li>
+      </ul>
 
-  <p><strong>Q: Can I play FNF on Chromebook or school computers?</strong><br>
-     A: Yes, FNF and most web-optimized mods run smoothly on Chromebooks.</p>
+      <h3 class="fnf-subtitle">FAQ about Shaggy v2</h3>
+      <p><strong>Q: Is Friday Night Funkin vs Shaggy v2 harder than the base game?</strong><br>
+         A: Yes. The mod is designed with advanced charting and higher key counts, making it more demanding than standard weeks.</p>
 
-  <p><strong>Q: Is FNF still being updated?</strong><br>
-     A: Yes. The Funkin’ Crew continues releasing major updates such as Weekend 1 and the Pitstop update.</p>
+      <p><strong>Q: Do I need special controls for this mod?</strong><br>
+         A: No. It still uses the usual arrow keys or WASD layout, but quick reading and steady timing become much more important.</p>
 
-  <p><strong>Q: Can I install FNF mods without downloading?</strong><br>
-     A: Many mods have browser versions playable instantly.</p>
+      <p><strong>Q: Can VS Shaggy v2 be played directly in a browser?</strong><br>
+         A: Yes. This version is optimized for in-browser play, allowing instant access without installation.</p>
 
-  <h3 class="fnf-subtitle">Final thoughts</h3>
-  <p>
-    Friday Night Funkin’ remains one of the most influential rhythm games of the decade.
-    Its mix of music, style, storytelling, and community creativity keeps fans returning for more.
-    Are you ready to hit the beat, win Girlfriend’s heart, and dominate the stage?
-  </p>
+      <p><strong>Q: What makes this mod so popular?</strong><br>
+         A: The mix of humor, over-the-top “power levels,” creative charts, and memorable music keeps it widely loved in the FNF community.</p>
 
-</article>
+      <h3 class="fnf-subtitle">Final thoughts</h3>
+      <p>
+        Friday Night Funkin vs Shaggy v2 stands as one of the most iconic and challenging FNF mods ever created.
+        Its escalating forms, intense charts, and playful references create a rhythm experience that feels both epic and fun.
+        Step into the showdown and see how far your skills can go against Shaggy’s cosmic groove!
+      </p>
+
+    </article>
 
     <footer>
       <p>© 2025 FNF Game 24 — Fan-made project for Friday Night Funkin'.</p>
@@ -745,7 +713,7 @@ header.top{
   </div>
 
   <script>
-    /* Fullscreen: phóng to khung chơi */
+    /* Fullscreen */
     function toggleFullscreen(){
       const elem = document.getElementById('player-box');
       if (!document.fullscreenElement &&
@@ -757,7 +725,7 @@ header.top{
       }
     }
 
-    /* Share: luôn copy link trang hiện tại */
+    /* Share current page URL */
     function sharePage(){
       const url = location.href;
       if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -771,9 +739,9 @@ header.top{
       }
     }
 
-    /* Favorite: lưu trạng thái vào localStorage */
+    /* Favorite state (separate key for Shaggy page) */
     function toggleFavorite(){
-      const key = 'fnf_main_favorite';
+      const key = 'fnf_shaggy_v2_favorite';
       const btn = document.getElementById('fav-btn');
       let isFav = localStorage.getItem(key) === '1';
       isFav = !isFav;
@@ -785,7 +753,7 @@ header.top{
 
     document.addEventListener('DOMContentLoaded', function () {
       // init favorite button state
-      const key = 'fnf_main_favorite';
+      const key = 'fnf_shaggy_v2_favorite';
       const favBtn = document.getElementById('fav-btn');
       if (favBtn) {
         const isFav = localStorage.getItem(key) === '1';
@@ -804,7 +772,7 @@ header.top{
         "FNF vs Impostor Among Us V4": "https://fnfgame24.github.io/assets/fnf-vs-impostor-among-us-v4.png"
       };
 
-      // lấy game từ thanh trên + grid bên dưới
+      // collect from top bar + mods
       const linkNodes = document.querySelectorAll('.top-games .quick-mod, .mods .mod');
       const defaultThumb = 'https://fnfgame24.github.io/assets/fnf.png';
 
@@ -826,7 +794,7 @@ header.top{
         title: "FNF",
         href: "https://fnfgame24.github.io/",
         img: "https://fnfgame24.github.io/assets/fnf.png"
-       });
+      });
 
       function renderResults(list){
         resultsBox.innerHTML = '';
@@ -861,12 +829,12 @@ header.top{
         resultsBox.style.display = 'block';
       }
 
-      // Khi click/focus vào ô search: hiện tất cả game
+      // show all on focus
       input.addEventListener('focus', function () {
         renderResults(games);
       });
 
-      // Khi gõ: lọc theo text, rỗng thì hiện tất cả
+      // filter on input
       input.addEventListener('input', function () {
         const q = input.value.trim().toLowerCase();
         if (!q){
@@ -879,7 +847,7 @@ header.top{
         renderResults(matched);
       });
 
-      // Click ra ngoài thì ẩn list
+      // hide when clicking outside
       document.addEventListener('click', function(e){
         if (!e.target.closest('.search-container')){
           resultsBox.style.display = 'none';
