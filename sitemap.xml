@@ -1,9 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://fnfgame24.github.io/</loc>
-    <lastmod>2025-11-12</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <url>
+    <loc>https://fnfgame24.github.io/friday-night-funkin-vs-whitty/</loc>
+  </url>
+
+  <url>
+    <loc>https://fnfgame24.github.io/friday-night-funkin-vs-tricky-the-clown/</loc>
+  </url>
+
+  <url>
+    <loc>https://fnfgame24.github.io/fnf-vs-garcello/</loc>
+  </url>
+
+  <url>
+    <loc>https://fnfgame24.github.io/friday-night-funkin-vs-agoti/</loc>
+  </url>
+
+  <url>
+    <loc>https://fnfgame24.github.io/friday-night-funkin-vs-shaggy-v2/</loc>
+  </url>
+
+  <url>
+    <loc>https://fnfgame24.github.io/fnf-indie-cross/</loc>
+  </url>
+
+  <url>
+    <loc>https://fnfgame24.github.io/fnf-vs-sonic-exe/</loc>
+  </url>
+
+  <url>
+    <loc>https://fnfgame24.github.io/friday-night-funkin-vs-bob-bosip/</loc>
+  </url>
+
+  <url>
+    <loc>https://fnfgame24.github.io/fnf-doki-doki-takeover/</loc>
+  </url>
+
+  <url>
+    <loc>https://fnfgame24.github.io/fnf-vs-hyplullaby-v2/</loc>
+  </url>
+
+  <url>
+    <loc>https://fnfgame24.github.io/fnf-indie-cross-ritual-but-everyone-sings-it/</loc>
+  </url>
+
+  <url>
+    <loc>https://fnfgame24.github.io/fnf-vs-impostor-among-us-v4/</loc>
+  </url>
+
 </urlset>
