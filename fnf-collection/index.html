@@ -1,0 +1,2295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>FNF Games Collection - Play The Best Friday Night Funkin Mods</title>
+  <meta name="description" content="Play the best FNF games in one collection. Enjoy rhythm battles, funny mods, new songs, cool characters, and fast music challenges online." />
+  <meta name="keywords" content="FNF Mods, Friday Night Funkin mods, FNF game, FNF online, fnfgame24" />
+  <meta name="robots" content="index,follow" />
+  <meta name="google-site-verification" content="jiZelBzINsnHWFKipIb1OUNLzmaCDjXLLhWQxOSXZWQ" />
+  <meta name="theme-color" content="#0a0f18" />
+
+  <link rel="icon" href="https://fnfgame24.github.io/assets/favicon.png" type="image/png">
+  <link rel="canonical" href="https://fnfgame24.github.io/fnf-collection" />
+   <meta itemprop="image" content="https://fnfgame24.github.io/assets/fnf.png">
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="FNF Games Collection - Play The Best Friday Night Funkin Mods" />
+  <meta property="og:description" content="Play the best FNF games in one collection. Enjoy rhythm battles, funny mods, new songs, cool characters, and fast music challenges online." />
+  <meta property="og:url" content="https://fnfgame24.github.io/fnf-collection" />
+  <meta property="og:image" content="https://fnfgame24.github.io/assets/fnf.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FNF Games Collection - Play The Best Friday Night Funkin Mods" />
+  <meta name="twitter:description" content="Play the best FNF games in one collection. Enjoy rhythm battles, funny mods, new songs, cool characters, and fast music challenges online." />
+  <meta name="twitter:image" content="https://fnfgame24.github.io/assets/fnf.png" />
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "FNF Games Collection - Play The Best Friday Night Funkin Mods",
+    "url": "https://fnfgame24.github.io/fnf-collection",
+    "description": "Play the best FNF games in one collection. Enjoy rhythm battles, funny mods, new songs, cool characters, and fast music challenges online.",
+    "about": {
+      "@type": "Game",
+      "name": "Friday Night Funkin",
+      "genre": "Music Video Game",
+      "playMode": "SinglePlayer"
+    }
+  }
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1XJXQCK40V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1XJXQCK40V');
+  </script>
+
+  <style>
+    :root{
+      --bg:#0a0f18; --panel:#0f1724; --text:#e6ebff;
+      --muted:#8a93a9; --accent:#8b9dff; --border:#1b2340;
+      --radius:18px; --shadow:0 6px 24px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:var(--bg); color:var(--text);
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      line-height:1.55;
+    }
+    a{color:inherit;text-decoration:none}
+
+    .wrap{
+      max-width:1400px;
+      margin:0 auto;
+      padding:80px 18px 44px;
+    }
+
+    /* HEADER */
+    header.top{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 64px;
+      display:flex;
+      align-items:center;
+      gap:16px;
+      padding:10px 24px;
+      background:#0f1724;
+      border-radius:0;
+      z-index:1000;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      font-weight:800;
+      cursor:pointer;
+    }
+
+    .appicon{
+      width:36px;
+      height:36px;
+      border-radius:10px;
+      overflow:hidden;
+      background:#1b2540;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:var(--shadow);
+      will-change:transform;
+    }
+    .appicon img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    @keyframes logo-spin{
+      from{transform:scale(1) rotate(0deg);}
+      to{transform:scale(1.12) rotate(360deg);}
+    }
+    .brand:hover .appicon{
+      animation:logo-spin .6s ease-out;
+    }
+
+    /* TOP GAMES */
+    .top-games{
+      display:flex;
+      gap:10px;
+      flex:1;
+      overflow:hidden;
+    }
+    .top-games .quick-mod{
+      flex:0 0 auto;
+      background:#0f1728;
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:6px 14px;
+      font-size:13px;
+      font-weight:600;
+      white-space:nowrap;
+      color:var(--text);
+      box-shadow:0 3px 10px rgba(0,0,0,.35);
+      transition:border-color .2s, box-shadow .2s, transform .2s, background .2s;
+    }
+    .top-games .quick-mod:hover{
+      border-color:var(--accent);
+      box-shadow:0 0 0 1px rgba(139,157,255,.5),0 10px 20px rgba(0,0,0,.7);
+      transform:translateY(-1px);
+      background:#111a2c;
+    }
+
+    /* COLLECTION BUTTON */
+    .collection-btn {
+      background: linear-gradient(90deg, #F6A313, #f05454);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(246, 163, 19, 0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      border: none;
+      margin-right: 8px;
+    }
+    .collection-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(246, 163, 19, 0.6);
+      color: #fff;
+    }
+
+    /* SEARCH */
+    .search-container{
+      flex-shrink:0;
+      min-width:260px;
+      position:relative;
+    }
+    .search-box{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      background:#0f1728;
+      border:1px solid var(--border);
+      padding:8px 14px;
+      border-radius:20px;
+      box-shadow:0 4px 12px rgba(0,0,0,.35);
+      width:100%;
+    }
+    .search-icon{
+      font-size:16px;
+      opacity:.8;
+    }
+    .search-input{
+      background:transparent;
+      border:none;
+      outline:none;
+      color:var(--text);
+      font-size:14px;
+      width:100%;
+    }
+    .search-input::placeholder{
+      color:var(--muted);
+    }
+    .search-results{
+      position:absolute;
+      top:100%;
+      left:0;
+      right:0;
+      margin-top:6px;
+      background:#0f1728;
+      border:1px solid var(--border);
+      border-radius:16px;
+      box-shadow:var(--shadow);
+      max-height:260px;
+      overflow-y:auto;
+      display:none;
+      z-index:20;
+      scrollbar-width: thin;
+      scrollbar-color: #4e5b82 transparent;
+    }
+    .search-results::-webkit-scrollbar{ width: 6px; }
+    .search-results::-webkit-scrollbar-track{ background: transparent; }
+    .search-results::-webkit-scrollbar-thumb{ background: linear-gradient(to bottom,#4e5b82,#8b9dff); border-radius: 999px; }
+    .search-results::-webkit-scrollbar-thumb:hover{ background: linear-gradient(to bottom,#6271a3,#a3b1ff); }
+    
+    .search-item{
+      padding:8px 10px;
+      font-size:14px;
+      cursor:pointer;
+      border-bottom:1px solid rgba(27,35,64,.6);
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .search-item:last-child{ border-bottom:none; }
+    .search-item:hover{ background:#111a2c; }
+    .search-thumb{
+      width:34px;
+      height:34px;
+      border-radius:9px;
+      overflow:hidden;
+      background:#1b2540;
+      flex-shrink:0;
+    }
+    .search-thumb img{ width:100%; height:100%; object-fit:cover; }
+    .search-title{ font-size:14px; line-height:1.3; }
+
+    /* LAYOUT COLLECTION */
+    .collection-layout {
+      display: flex;
+      gap: 20px;
+      width: 100%;
+      height: calc(100vh - 130px);
+      min-height: 450px;
+      max-height: 700px;
+      background: transparent;
+    }
+
+    /* SIDEBAR */
+    .mod-sidebar {
+      width: 320px;
+      display: flex;
+      flex-direction: column;
+      background: var(--panel);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: var(--shadow);
+    }
+
+    .mod-sidebar-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .mod-sidebar-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      color: #00f2fe;
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
+
+    .mod-count {
+      background: rgba(0, 242, 254, 0.1);
+      color: #00f2fe;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .sidebar-search {
+      padding: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .sidebar-search input {
+      width: 100%;
+      background: #1b2340;
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 10px 14px;
+      border-radius: 8px;
+      color: var(--text);
+      outline: none;
+      font-size: 14px;
+    }
+    .sidebar-search input:focus {
+      border-color: #00f2fe;
+    }
+
+    .mod-list {
+      flex: 1;
+      overflow-y: auto;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .mod-list::-webkit-scrollbar { width: 6px; }
+    .mod-list::-webkit-scrollbar-track { background: transparent; }
+    .mod-list::-webkit-scrollbar-thumb { background: #4e5b82; border-radius: 999px; }
+
+    .mod-list-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.2s;
+      background: transparent;
+      border: 1px solid transparent;
+    }
+
+    .mod-list-item:hover, .mod-list-item.active {
+      background: #1b2340;
+      border-color: rgba(255,255,255,0.1);
+    }
+
+    .mod-number {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+      font-weight: 700;
+      width: 16px;
+      text-align: right;
+    }
+
+    .mod-list-thumb {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .mod-list-name {
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex: 1;
+    }
+
+    /* PLAYER AREA */
+    .mod-player-area {
+      flex: 1;
+      background: #000;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .player-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .play-icon-circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(0, 242, 254, 0.1);
+      border: 1px solid rgba(0, 242, 254, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: #00f2fe;
+    }
+
+    .mod-player-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: none;
+    }
+
+    footer{
+      margin-top:26px;
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+    }
+
+    @media (max-width:900px){
+      .wrap{padding-left:14px;padding-right:14px; padding-top: 70px;}
+      .top-games{display:none;}
+      .collection-layout {
+        flex-direction: column;
+        height: auto;
+      }
+      .mod-sidebar {
+        width: 100%;
+        height: 280px;
+      }
+      .mod-player-area {
+        height: calc(100vh - 400px);
+        min-height: 350px;
+      }
+    }
+    @media (max-width:600px){
+      header.top{
+        flex-wrap:wrap;
+        height:auto;
+      }
+      .search-container{
+        width:100%;
+        order:3;
+      }
+    }
+
+    .player-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      min-width: 0;
+    }
+    .caption{
+      width:100%;
+      background:#101727;
+      border-radius:22px;
+      padding:10px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      box-shadow:var(--shadow);
+      border: 1px solid var(--border);
+    }
+    .game-meta{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+    .caption .appicon{
+      width:52px;
+      height:52px;
+      border-radius:14px;
+    }
+    .game-title{
+      font-size:22px;
+      margin:0;
+      font-weight:700;
+    }
+    .actions-wrap{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .icon-btn{
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:#121b2f;
+      color:var(--text);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:20px;
+      cursor:pointer;
+      box-shadow:0 4px 12px rgba(0,0,0,.35);
+      transition:border-color .2s, box-shadow .2s, transform .2s, background .2s;
+    }
+    .icon-btn:hover{
+      border-color:var(--accent);
+      box-shadow:0 0 0 1px rgba(139,157,255,.5),0 12px 24px rgba(0,0,0,.7);
+      transform:translateY(-1px);
+      background:#111a2c;
+    }
+    .icon-btn.active{
+      border-color:var(--accent);
+      box-shadow:0 0 0 1px rgba(139,157,255,.7),0 12px 24px rgba(0,0,0,.8);
+    }
+
+    article.content {
+      background: #101727;
+      padding: 24px 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      margin-top: 30px;
+      border: 1px solid var(--border);
+      line-height: 1.7;
+      font-size: 16px;
+      color: var(--text);
+    }
+    article.content h2, article.content h3 {
+      color: #F6A313;
+      margin-top: 25px;
+      margin-bottom: 15px;
+      font-family: 'Orbitron', sans-serif;
+    }
+    article.content p {
+      margin-bottom: 15px;
+    }
+  
+    /* Toast Notification */
+    .toast-notification {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      background: rgba(15, 23, 40, 0.95);
+      border: 1px solid rgba(139, 157, 255, 0.4);
+      border-radius: 12px;
+      padding: 12px 20px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 15px rgba(139, 157, 255, 0.2);
+      z-index: 99999;
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+      transition: opacity 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      pointer-events: none;
+      backdrop-filter: blur(8px);
+    }
+    .toast-notification.show {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    .toast-icon {
+      color: #8b9dff;
+      font-size: 18px;
+    }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <!-- Logo -->
+      <a class="brand" href="/">
+        <span class="appicon">
+          <img src="https://fnfgame24.github.io/assets/fnf.png" alt="FNF logo">
+        </span>
+      </a>
+
+      <!-- 4 game nổi bật nằm cùng thanh -->
+      <div class="top-games">
+        <a class="quick-mod" href="https://fnfgame24.github.io/fnf-doki-doki-takeover">
+          FNF: Doki Doki Takeover
+        </a>
+        <a class="quick-mod" href="https://fnfgame24.github.io/fnf-vs-hypnos-lullaby-v2">
+          FNF Vs. Hypno’s Lullaby v2
+        </a>
+        <a class="quick-mod" href="https://fnfgame24.github.io/fnf-indie-cross-ritual-but-everyone-sings-it">
+          FNF Indie Cross Ritual But Everyone Sings It
+        </a>
+        <a class="quick-mod" href="https://fnfgame24.github.io/fnf-vs-impostor-among-us-v4">
+          FNF vs Impostor Among Us V4 
+        </a>
+      </div>
+
+      <!-- Search ở bên phải -->
+      <a href="/fnf-collection" class="collection-btn">🔥 FNF Collection</a>
+        <div class="search-container">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" placeholder="Search Games ..." class="search-input">
+        </div>
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </header>
+
+    <div class="collection-layout">
+      <div class="mod-sidebar">
+        <div class="mod-sidebar-header">
+          <div class="mod-sidebar-title">
+            <span style="font-size:18px;">☰</span> MOD LIST
+          </div>
+          <div class="mod-count">238</div>
+        </div>
+        <div class="sidebar-search">
+          <input type="text" id="sidebar-search-input" placeholder="🔍 Search mods...">
+        </div>
+        <div class="mod-list" id="mod-list-container">
+          <!-- Generated by JS -->
+        </div>
+      </div>
+
+      <div class="player-column">
+        <div class="mod-player-area" id="player-box">
+          <div class="player-placeholder" id="player-placeholder">
+            <div class="play-icon-circle">▶</div>
+            <div style="font-size:16px; font-weight:bold; color:white;">Pick a mod to play</div>
+            <div style="font-size:13px;">← Select from the list</div>
+          </div>
+          <iframe id="collection-iframe" class="mod-player-iframe" src="" allow="autoplay; fullscreen; gamepad; accelerometer; clipboard-read; clipboard-write" allowfullscreen loading="lazy"></iframe>
+        </div>
+        
+        <div class="caption">
+          <div class="game-meta">
+            <span class="appicon">
+              <img id="current-mod-icon" src="https://fnfgame24.github.io/assets/fnf.png" alt="FNF icon">
+            </span>
+            <h1 class="game-title" id="current-mod-title">FNF Collection</h1>
+          </div>
+          <div class="actions-wrap">
+            <button class="icon-btn" id="fav-btn" type="button" onclick="toggleFavorite()" aria-label="Add to favorites">♥</button>
+            <button class="icon-btn" type="button" onclick="sharePage()" aria-label="Share game">⇪</button>
+            <button class="icon-btn" type="button" onclick="toggleFullscreen()" aria-label="Full screen">⛶</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <article class="content" aria-label="About FNF Games Collection">
+      <h2>FNF Games Collection</h2>
+      <p>FNF games bring rhythm, music, and character battles into one exciting place. This collection is made for players who enjoy Friday Night Funkin style gameplay, colorful mods, catchy songs, and quick reaction challenges. Each game focuses on timing, beat matching, and fun music battles where every note matters.</p>
+      <p>In this FNF games collection, players can explore many different mods with new opponents, remixed tracks, custom stages, and creative visual styles. Some games feel funny and light, while others add faster songs, tricky note patterns, or intense boss battles. That variety makes FNF games easy to enjoy for beginners and still exciting for players who want harder rhythm tests.</p>
+      
+      <h3>Why Players Love FNF Games</h3>
+      <p>FNF games are simple to start but hard to master. The main goal is to press the right keys in time with the music. When the beat gets faster, players need focus, rhythm, and quick hands to keep the song going. This makes every round feel active and rewarding.</p>
+      <p>Many FNF games also stand out because of their characters. Players may face classic rivals, meme characters, cartoon inspired opponents, spooky singers, or completely original mod characters. Each one can change the mood of the battle with different music, animations, and stage effects.</p>
+      
+      <h2>A Collection Full Of Music Battles</h2>
+      <p>This page brings together FNF games with different styles, so players can jump from one rhythm challenge to another without searching too much. Some mods focus on smooth songs and easy timing. Others use sharp beat drops, sudden note changes, or long tracks that test accuracy until the end.</p>
+      <p>FNF games are also popular because every mod feels like a small music event. A new song can introduce a new story, a new rival, or a surprising twist in the middle of the battle.</p>
+      
+      <h3>Best For Quick Rhythm Fun</h3>
+      <p>FNF games work well for short play sessions. Players can open a game, choose a song, and start battling right away. The controls are usually easy to understand, but each song creates a different challenge through speed, rhythm, and note placement.</p>
+      <p>This makes the collection useful for players who want fast fun, new mods, or a place to practice rhythm skills.</p>
+      
+      <h2>How To Play FNF Games</h2>
+      <p>Use the arrow keys or WASD to match the notes on screen. Press each key when the note reaches the target area. Keep the rhythm steady, avoid missing too many notes, and try to finish the song with a strong score. The better the timing, the better the performance in FNF games.</p>
+    </article>
+
+    <footer>
+      <p>© 2026 FNF Game 24 — Fan-made project for Friday Night Funkin'.</p>
+    </footer>
+  </div>
+
+  <script>
+    const modData = [
+  {
+    "id": 1,
+    "title": "FNF Minus",
+    "img": "../assets/images/fnf-minus.webp",
+    "iframe": "https://www.miniplay.com/embed/friday-night-funkin-minus"
+  },
+  {
+    "id": 2,
+    "title": "FNF StarCatcher",
+    "img": "../assets/images/fnf-starcatcher.webp",
+    "iframe": "https://gamaverse.com/c/f/g/friday-night-funkin-starcatcher/"
+  },
+  {
+    "id": 3,
+    "title": "Friday Night Sprunki",
+    "img": "../assets/images/fnf-another-friday-night.webp",
+    "iframe": "https://html5.gamemonetize.co/o4i40mgrpxgzltypewm2jeqc3usjik5f/"
+  },
+  {
+    "id": 4,
+    "title": "FNF Flip-Side",
+    "img": "../assets/images/fnf-flip-side.webp",
+    "iframe": "https://www.gameszap.com/iframe/19141.html"
+  },
+  {
+    "id": 5,
+    "title": "FNF B-Sides",
+    "img": "../assets/images/fnf-b-sides.webp",
+    "iframe": "https://fnf.kdata1.com/b-sides/1.5/"
+  },
+  {
+    "id": 6,
+    "title": "FNF Vs. Hex 2",
+    "img": "../assets/images/fnf-vs-hex-2.webp",
+    "iframe": "https://fnf.kdata1.com/hex-weekend/2/"
+  },
+  {
+    "id": 7,
+    "title": "FNF Vs Level Devil",
+    "img": "../assets/images/fnf-vs-level-devil.webp",
+    "iframe": "https://fnf.kdata1.com/2024/funk-devil/1/"
+  },
+  {
+    "id": 8,
+    "title": "FNF Funkin at Freddy’s vs Afton",
+    "img": "../assets/images/fnf-funkin-at-freddy-s-vs-afton.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-freddi-afton/"
+  },
+  {
+    "id": 9,
+    "title": "FNF Cassandra",
+    "img": "../assets/images/fnf-cassandra.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-kassandra/index-en.html"
+  },
+  {
+    "id": 10,
+    "title": "FNF: The Blueballs Incident",
+    "img": "../assets/images/fnf-the-blueballs-incident.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-delo-agenta-blyubolza-1-999/index-en.html"
+  },
+  {
+    "id": 11,
+    "title": "FNF Vs. Suicide Mouse Remastered",
+    "img": "../assets/images/fnf-vs-suicide-mouse-remastered.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-mikki-maus/index-en.html"
+  },
+  {
+    "id": 12,
+    "title": "FNF: Herobrine",
+    "img": "../assets/images/fnf-herobrine.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-kherobrin/index-en.html"
+  },
+  {
+    "id": 13,
+    "title": "FNF Vs. Huggy Wuggy (Poppy Playtime)",
+    "img": "../assets/images/fnf-vs-huggy-wuggy-poppy-playtime.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-khaggi-vaggi/index-en.html"
+  },
+  {
+    "id": 14,
+    "title": "FNF The Amazing Digital Circus",
+    "img": "../assets/images/fnf-the-amazing-digital-circus.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-udivitelnyj-tsifrovoj-tsirk/"
+  },
+  {
+    "id": 15,
+    "title": "FNF: Minecraft Funky Edition",
+    "img": "../assets/images/fnf-minecraft-funky-edition.webp",
+    "iframe": "https://fnf.kdata1.com/minecraft-funky-edition/1/"
+  },
+  {
+    "id": 16,
+    "title": "FNF Funkin Ball Z vs Goku",
+    "img": "../assets/images/fnf-funkin-ball-z-vs-goku.webp",
+    "iframe": "https://fnf.kdata1.com/funkin-ball-z-vs-goku/1/"
+  },
+  {
+    "id": 17,
+    "title": "FNF: Darnell’s Mixtape",
+    "img": "../assets/images/fnf-darnell-s-mixtape.webp",
+    "iframe": "https://fnf.kdata1.com/2026/darnells-mixtape/1/"
+  },
+  {
+    "id": 18,
+    "title": "FNF: Sky’s Awesome Mod of Cuteness!!",
+    "img": "../assets/images/fnf-sky-s-awesome-mod-of-cuteness.webp",
+    "iframe": "https://fnf.kdata1.com/2025/skyawesome/1/"
+  },
+  {
+    "id": 19,
+    "title": "FNF Sweet Licorice",
+    "img": "../assets/images/fnf-sweet-licorice.webp",
+    "iframe": "https://fnf.kdata1.com/2025/sweet-licorice/1/"
+  },
+  {
+    "id": 20,
+    "title": "FNF Gumballs",
+    "img": "../assets/images/fnf-gumballs.webp",
+    "iframe": "https://fnf.kdata1.com/2025/gumball/1/"
+  },
+  {
+    "id": 21,
+    "title": "Friday Night Funkin’: VS OMGkawaiiAngel",
+    "img": "../assets/images/friday-night-funkin-vs-omgkawaiiangel.webp",
+    "iframe": "https://fnf.kdata1.com/2025/omgkawaii/1/"
+  },
+  {
+    "id": 22,
+    "title": "FNF Elements Of Insanity vs My Little Pony",
+    "img": "../assets/images/fnf-elements-of-insanity-vs-my-little-pony.webp",
+    "iframe": "https://fnf.kdata1.com/elements-of-insanity-vs-my-little-pony-cupcakes/2/"
+  },
+  {
+    "id": 23,
+    "title": "FNF: Lit Up (Darnell Mix)",
+    "img": "../assets/images/fnf-lit-up-darnell-mix.webp",
+    "iframe": "https://fnf.kdata1.com/2026/lit-up-darnell-mix/1/"
+  },
+  {
+    "id": 24,
+    "title": "FNF Vs. Jason Voorhees: 13th Friday Night Funk",
+    "img": "../assets/images/fnf-vs-jason-voorhees-13th-friday-night-funk.webp",
+    "iframe": "https://files.fnfmodsunblocked.com/file/h5games/onlinegames/games/2023/q3/friday-night-funkin-13th-friday-night-jason-voorhees/index.html"
+  },
+  {
+    "id": 25,
+    "title": "FNF vs Minus Sarvente (Mid-Fight Masses Minus)",
+    "img": "../assets/images/fnf-vs-minus-sarvente-mid-fight-masses-minus.webp",
+    "iframe": "https://fnf.kdata1.com/2026/mid-fight-masses-minus/1/"
+  },
+  {
+    "id": 26,
+    "title": "FNF: Darkness Takeover vs Pibby Family Guy",
+    "img": "../assets/images/fnf-darkness-takeover-vs-pibby-family-guy.webp",
+    "iframe": "https://fnf.kdata1.com/darkness-takeover-vs-pibby-family-guy/1/"
+  },
+  {
+    "id": 27,
+    "title": "FNF UpSide",
+    "img": "../assets/images/fnf-upside.webp",
+    "iframe": "https://www.gameszap.com/iframe/17774.html"
+  },
+  {
+    "id": 28,
+    "title": "FNF Funkadelix",
+    "img": "../assets/images/fnf-funkadelix.webp",
+    "iframe": "https://fnf.kdata1.com/2024/funkadelix-fnf-with-lyrics/60/"
+  },
+  {
+    "id": 29,
+    "title": "FNF vs Mokey the Mouse",
+    "img": "../assets/images/fnf-vs-mokey-the-mouse.webp",
+    "iframe": "https://fnf.kdata1.com/mokey-2/1/"
+  },
+  {
+    "id": 30,
+    "title": "FNF TwiddleFinger",
+    "img": "../assets/images/fnf-twiddlefinger.webp",
+    "iframe": "https://fnf.kdata1.com/2024/twiddlefinger-fanmade/5/"
+  },
+  {
+    "id": 31,
+    "title": "FNF Sonic.EXE Final Escape",
+    "img": "../assets/images/fnf-sonic-exe-final-escape.webp",
+    "iframe": "https://fnf.kdata1.com/sonic-exe-final-escape/1/"
+  },
+  {
+    "id": 32,
+    "title": "FNF Broken Strings",
+    "img": "../assets/images/fnf-broken-strings.webp",
+    "iframe": "https://fnf.kdata1.com/2024/broken-string/1.12/"
+  },
+  {
+    "id": 33,
+    "title": "FNF Vs. Hypno’s Lullaby v2",
+    "img": "../assets/images/fnf-vs-hypno-s-lullaby-v2.webp",
+    "iframe": "https://fnf.kdata1.com/2025/lullaby22/"
+  },
+  {
+    "id": 34,
+    "title": "FNF Vs. Whitty",
+    "img": "../assets/images/fnf-vs-whitty.webp",
+    "iframe": "https://st.8games.net/7/igra-frajdej-najt-fankin-uitti/index-en.html"
+  },
+  {
+    "id": 35,
+    "title": "FNF Sonic Legacy",
+    "img": "../assets/images/fnf-sonic-legacy.webp",
+    "iframe": "https://fnf.kdata1.com/2024/sonic-legacy-rodentrap/1/"
+  },
+  {
+    "id": 36,
+    "title": "FNF vs Impostor Among Us V4",
+    "img": "../assets/images/fnf-vs-impostor-among-us-v4.webp",
+    "iframe": "https://fnf.kdata1.com/impostor-v4/1.5/"
+  },
+  {
+    "id": 37,
+    "title": "FNF Corruption Takeover",
+    "img": "../assets/images/fnf-corruption-takeover.webp",
+    "iframe": "https://fnf.kdata1.com/corruption-takeover/1/"
+  },
+  {
+    "id": 38,
+    "title": "FNF: SOUR",
+    "img": "../assets/images/fnf-sour.webp",
+    "iframe": "https://fnf.kdata1.com/fnf-sour/1/"
+  },
+  {
+    "id": 39,
+    "title": "FNF vs FNAF 1",
+    "img": "../assets/images/fnf-vs-fnaf-1.webp",
+    "iframe": "https://fnf.kdata1.com/fnaf1/1/"
+  },
+  {
+    "id": 40,
+    "title": "FNF Trepidation 1.5",
+    "img": "../assets/images/fnf-trepidation-1-5.webp",
+    "iframe": "https://fnf.kdata1.com/trepidation/1.5/"
+  },
+  {
+    "id": 41,
+    "title": "FNF vs Gorefield V2",
+    "img": "../assets/images/fnf-vs-gorefield-v2.webp",
+    "iframe": "https://gamaverse.com.br/c/f/g/fnf-vs-gorefield-horror-garfield-1728544267/"
+  },
+  {
+    "id": 42,
+    "title": "FNF vs FNAF 3",
+    "img": "../assets/images/fnf-vs-fnaf-3.webp",
+    "iframe": "https://fnf.kdata1.com/2025/fnaf3/"
+  },
+  {
+    "id": 43,
+    "title": "Friday Night Funkin' vs Flippy",
+    "img": "../assets/images/friday-night-funkin-vs-flippy.webp",
+    "iframe": "https://www.miniplay.com/embed/friday-night-funkin-vs-flippy"
+  },
+  {
+    "id": 44,
+    "title": "FNF Another Brother",
+    "img": "../assets/images/fnf-another-brother.webp",
+    "iframe": "https://fnf.kdata1.com/2024/another-brother/1/"
+  },
+  {
+    "id": 45,
+    "title": "FNF vs Sonic The Hedgehog",
+    "img": "../assets/images/fnf-vs-sonic-the-hedgehog.webp",
+    "iframe": "https://fnf.kdata1.com/sonic-the-hedgehog/1/"
+  },
+  {
+    "id": 46,
+    "title": "FNF vs Jeffy v2 Mod",
+    "img": "../assets/images/fnf-vs-jeffy-v2-mod.webp",
+    "iframe": "https://fnf.kdata1.com/jeffy/2/"
+  },
+  {
+    "id": 47,
+    "title": "FNF: Pibby Corrupted 1.5",
+    "img": "../assets/images/fnf-pibby-corrupted-1-5.webp",
+    "iframe": "https://fnf.kdata1.com/2024/pibby-corrupted/1.5/"
+  },
+  {
+    "id": 48,
+    "title": "FNF Vs. Aflac Remastered",
+    "img": "../assets/images/fnf-vs-aflac-remastered.webp",
+    "iframe": "https://gamaverse.com/c/f/g/fnf-vs-aflac-friday-night-funkin/"
+  },
+  {
+    "id": 49,
+    "title": "FNF Saturday Fatality",
+    "img": "../assets/images/fnf-saturday-fatality.webp",
+    "iframe": "https://fnf.kdata1.com/saturday-fatality/1/"
+  },
+  {
+    "id": 50,
+    "title": "FNF Doki Doki Takeover! – Bad Ending",
+    "img": "../assets/images/fnf-doki-doki-takeover-bad-ending.webp",
+    "iframe": "https://fnf.kdata1.com/doki-doki-takeover-bad-ending/1/"
+  },
+  {
+    "id": 51,
+    "title": "FNF vs Rewrite (Sonic.exe)",
+    "img": "../assets/images/fnf-vs-rewrite-sonic-exe.webp",
+    "iframe": "https://fnf.kdata1.com/rewrite-sonic-exe/1.2/"
+  },
+  {
+    "id": 52,
+    "title": "FNF Vs. Spongebob Parodies V3",
+    "img": "../assets/images/fnf-vs-spongebob-parodies-v3.webp",
+    "iframe": "https://fnf.kdata1.com/2025/spongebob-parodies3/"
+  },
+  {
+    "id": 53,
+    "title": "FNF Shucks V2 (Reconstruction)",
+    "img": "../assets/images/fnf-shucks-v2-reconstruction.webp",
+    "iframe": "https://fnf.kdata1.com/2024/shucks-v2-reconstruction/1/"
+  },
+  {
+    "id": 54,
+    "title": "FNF QT: Rewired",
+    "img": "../assets/images/fnf-qt-rewired.webp",
+    "iframe": "https://fnf.kdata1.com/2025/qt-rewired/1/"
+  },
+  {
+    "id": 55,
+    "title": "FNF vs Sonic.EXE 2.0",
+    "img": "../assets/images/fnf-vs-sonic-exe-2-0.webp",
+    "iframe": "https://fnf.kdata1.com/sonic.exe/3/"
+  },
+  {
+    "id": 56,
+    "title": "FNF Sonic Below The Depths",
+    "img": "../assets/images/fnf-sonic-below-the-depths.webp",
+    "iframe": "https://fnf.kdata1.com/sonic-below-the-depths/1/"
+  },
+  {
+    "id": 57,
+    "title": "FNF Release, but Everyone Sing it",
+    "img": "../assets/images/fnf-release-but-everyone-sing-it.webp",
+    "iframe": "https://fnf.kdata1.com/2024/everyone-sing-release/1/"
+  },
+  {
+    "id": 58,
+    "title": "FNF vs Suicide Mouse v2",
+    "img": "../assets/images/fnf-vs-suicide-mouse-v2.webp",
+    "iframe": "https://fnf.kdata1.com/suicide-mouse/2.5/"
+  },
+  {
+    "id": 59,
+    "title": "Friday Night Funkin' vs Big Brother",
+    "img": "../assets/images/friday-night-funkin-vs-big-brother.webp",
+    "iframe": "https://www.miniplay.com/embed/friday-night-funkin-vs-big-brother"
+  },
+  {
+    "id": 60,
+    "title": "FNF KillShot",
+    "img": "../assets/images/fnf-killshot.webp",
+    "iframe": "https://fnf.kdata1.com/2024/killshot/1/"
+  },
+  {
+    "id": 61,
+    "title": "FNF: Spooky Mix",
+    "img": "../assets/images/fnf-spooky-mix.webp",
+    "iframe": "https://fnf.kdata1.com/2024/spooky-mix/123/"
+  },
+  {
+    "id": 62,
+    "title": "FNF in the Backrooms",
+    "img": "../assets/images/fnf-in-the-backrooms.webp",
+    "iframe": "https://fnf.kdata1.com/backrooms/1.11/"
+  },
+  {
+    "id": 63,
+    "title": "Friday Night Funkin’ vs The Nicky-Verse",
+    "img": "../assets/images/friday-night-funkin-vs-the-nicky-verse.webp",
+    "iframe": "https://fnf.kdata1.com/nicky-verse/2/"
+  },
+  {
+    "id": 64,
+    "title": "FNF Sonic.EXE Zero Version",
+    "img": "../assets/images/fnf-sonic-exe-zero-version.webp",
+    "iframe": "https://fnf.kdata1.com/sonicexe-zero/1/"
+  },
+  {
+    "id": 65,
+    "title": "FNF ToyBoy But Everyone Sings it",
+    "img": "../assets/images/fnf-toyboy-but-everyone-sings-it.webp",
+    "iframe": "https://fnf.kdata1.com/everyone-sings-toyboy/1/"
+  },
+  {
+    "id": 66,
+    "title": "FNF Smoke And Mirrors",
+    "img": "../assets/images/fnf-smoke-and-mirrors.webp",
+    "iframe": "https://fnf.kdata1.com/2024/smoke-and-mirrors/2/"
+  },
+  {
+    "id": 67,
+    "title": "FNF Vs. CatNap V2",
+    "img": "../assets/images/fnf-vs-catnap-v2.webp",
+    "iframe": "https://fnf.kdata1.com/2024/catnap-v2-poppy-playtime-chapter-3/1/"
+  },
+  {
+    "id": 68,
+    "title": "FNF vs UnderTale",
+    "img": "../assets/images/fnf-vs-undertale.webp",
+    "iframe": "https://fnf.kdata1.com/undertale/1.25/"
+  },
+  {
+    "id": 69,
+    "title": "FNF Dead Hope, but Mami, Miku, and Bendy Sing it",
+    "img": "../assets/images/fnf-dead-hope-but-mami-miku-and-bendy-sing-it.webp",
+    "iframe": "https://fnf.kdata1.com/dead-hope-but-mami-miku-and-bendy-sing-it/1/"
+  },
+  {
+    "id": 70,
+    "title": "FNF vs Convict Rumble",
+    "img": "../assets/images/fnf-vs-convict-rumble.webp",
+    "iframe": "https://fnf.kdata1.com/2024/convict/1/"
+  },
+  {
+    "id": 71,
+    "title": "FNF Soulless DX",
+    "img": "../assets/images/fnf-soulless-dx.webp",
+    "iframe": "https://fnf.kdata1.com/soulless-dx/1/"
+  },
+  {
+    "id": 72,
+    "title": "Friday Night Funkin Vs Caillou",
+    "img": "../assets/images/friday-night-funkin-vs-caillou.webp",
+    "iframe": "https://fnf.kdata1.com/caillou/1/"
+  },
+  {
+    "id": 73,
+    "title": "Friday Night Dashing",
+    "img": "../assets/images/fnf-another-friday-night.webp",
+    "iframe": "https://fnf.kdata1.com/friday-night-dashing/1/"
+  },
+  {
+    "id": 74,
+    "title": "FNF Vs Amanda The Adventurer",
+    "img": "../assets/images/fnf-vs-amanda-the-adventurer.webp",
+    "iframe": "https://fnf.kdata1.com/amanda-the-adventurer/1/"
+  },
+  {
+    "id": 75,
+    "title": "FNF Vs Matt Voiid-Sides",
+    "img": "../assets/images/fnf-vs-matt-voiid-sides.webp",
+    "iframe": "https://fnf.kdata1.com/matt-voiid-sides/1/"
+  },
+  {
+    "id": 76,
+    "title": "Friday Night Funkin’: Vs Annoying Orange",
+    "img": "../assets/images/friday-night-funkin-vs-annoying-orange.webp",
+    "iframe": "https://fnf.kdata1.com/vs-annoying-orange/1/"
+  },
+  {
+    "id": 77,
+    "title": "FNF Vs Sky Remanifested",
+    "img": "../assets/images/fnf-vs-sky-remanifested.webp",
+    "iframe": "https://fnf.kdata1.com/sky-remanifested/1/"
+  },
+  {
+    "id": 78,
+    "title": "FNF Sussus Moogus, but Everyone Sing it",
+    "img": "../assets/images/fnf-sussus-moogus-but-everyone-sing-it.webp",
+    "iframe": "https://fnf.kdata1.com/everyone-sing-sussus-moogus/1/"
+  },
+  {
+    "id": 79,
+    "title": "FNF vs Whitty (Definitive Edition)",
+    "img": "../assets/images/fnf-vs-whitty-definitive-edition.webp",
+    "iframe": "https://fnf.kdata1.com/whitty-definitive-edition/1.5/"
+  },
+  {
+    "id": 80,
+    "title": "FNF vs Mickey Mouse Treasure Island",
+    "img": "../assets/images/fnf-vs-mickey-mouse-treasure-island.webp",
+    "iframe": "https://fnf.kdata1.com/mickey-mouse-treasure-island/1/"
+  },
+  {
+    "id": 81,
+    "title": "FNF vs Edd, Tord (ChallengEdd)",
+    "img": "../assets/images/fnf-vs-edd-tord-challengedd.webp",
+    "iframe": "https://fnf.kdata1.com/challengedd/1.25/?dd"
+  },
+  {
+    "id": 82,
+    "title": "FNF Mid Fight Masses Deluxe Edition",
+    "img": "../assets/images/fnf-mid-fight-masses-deluxe-edition.webp",
+    "iframe": "https://fnf.kdata1.com/mid-fight-masses-deluxe-edition/1/"
+  },
+  {
+    "id": 83,
+    "title": "FNF IDOL with Oshi no Ko",
+    "img": "../assets/images/fnf-idol-with-oshi-no-ko.webp",
+    "iframe": "https://fnf.kdata1.com/idol-with-oshi-no-ko/1/"
+  },
+  {
+    "id": 84,
+    "title": "FNF vs Mario Ultra Rebooted",
+    "img": "../assets/images/fnf-vs-mario-ultra-rebooted.webp",
+    "iframe": "https://fnf.kdata1.com/mario-ultra-rebooted/1/"
+  },
+  {
+    "id": 85,
+    "title": "FNF vs Oswald the Lucky Rabbit",
+    "img": "../assets/images/fnf-vs-oswald-the-lucky-rabbit.webp",
+    "iframe": "https://fnf.kdata1.com/oswald-the-lucky-rabbit/1.55/"
+  },
+  {
+    "id": 86,
+    "title": "FNF vs Plants vs. Rappers",
+    "img": "../assets/images/fnf-vs-plants-vs-rappers.webp",
+    "iframe": "https://gamaverse.com/c/f/g/fnf-plants-vs-rappers-friday-night-funkin/"
+  },
+  {
+    "id": 87,
+    "title": "FNF Hell’s incarnation vs Sonic.EXE",
+    "img": "../assets/images/fnf-hells-incarnation-vs-sonic-exe.webp",
+    "iframe": "https://fnf.kdata1.com/hells-incarnation-vs-sonic-exe/1/"
+  },
+  {
+    "id": 88,
+    "title": "Friday Night Funkin Encore",
+    "img": "../assets/images/friday-night-funkin-encore.webp",
+    "iframe": "https://fnf.kdata1.com/2024/friday-night-funkin-encore/1/"
+  },
+  {
+    "id": 89,
+    "title": "Friday Night Funkin’: Whitty ERECT",
+    "img": "../assets/images/friday-night-funkin-whitty-erect.webp",
+    "iframe": "https://fnf.kdata1.com/2024/whitty-erect/1/"
+  },
+  {
+    "id": 90,
+    "title": "FNF x Pibby: Glitched Legends",
+    "img": "../assets/images/fnf-x-pibby-glitched-legends.webp",
+    "iframe": "https://fnf.kdata1.com/pibby-glitched-legends/1.11/"
+  },
+  {
+    "id": 91,
+    "title": "FNF 13th Friday Night: Funk Blood",
+    "img": "../assets/images/fnf-13th-friday-night-funk-blood.webp",
+    "iframe": "https://fnf.kdata1.com/13th-friday-night-funk-blood/1/"
+  },
+  {
+    "id": 92,
+    "title": "FNF vs MrBeast (TeamSeas)",
+    "img": "../assets/images/fnf-vs-mrbeast-teamseas.webp",
+    "iframe": "https://fnf.kdata1.com/teamsea/1/?dd"
+  },
+  {
+    "id": 93,
+    "title": "FNF Project MSG Rebirth",
+    "img": "../assets/images/fnf-project-msg-rebirth.webp",
+    "iframe": "https://fnf.kdata1.com/project-msg-rebirth/1.1/"
+  },
+  {
+    "id": 94,
+    "title": "Funkin’ In A Wimpy Day",
+    "img": "../assets/images/funkin-in-a-wimpy-day.webp",
+    "iframe": "https://fnf.kdata1.com/funkin-in-a-wimpy-day/1/"
+  },
+  {
+    "id": 95,
+    "title": "FNF vs Pocoyo",
+    "img": "../assets/images/fnf-vs-pocoyo.webp",
+    "iframe": "https://fnf.kdata1.com/pocoyo/1/"
+  },
+  {
+    "id": 96,
+    "title": "FNF Insane (A Hazbin Hotel Song) with Lyrics",
+    "img": "../assets/images/fnf-insane-a-hazbin-hotel-song-with-lyrics.webp",
+    "iframe": "https://fnf.kdata1.com/2024/insane-a-hazbin-hotel-song-with-lyrics/1/"
+  },
+  {
+    "id": 97,
+    "title": "FNF Gorilla Night Battle",
+    "img": "../assets/images/fnf-gorilla-night-battle.webp",
+    "iframe": "https://kbhgames.com/game/fnf-gorilla-night-battle"
+  },
+  {
+    "id": 98,
+    "title": "FNF vs Mistful Crimson Morning",
+    "img": "../assets/images/fnf-vs-mistful-crimson-morning.webp",
+    "iframe": "https://fnf.kdata1.com/mistful-crimson-morning/1/"
+  },
+  {
+    "id": 99,
+    "title": "FNF: The Impossible Trio",
+    "img": "../assets/images/fnf-the-impossible-trio.webp",
+    "iframe": "https://fnf.kdata1.com/impossible-trio/2/"
+  },
+  {
+    "id": 100,
+    "title": "FNF Mid-Fight Masses: Gender Inversion",
+    "img": "../assets/images/fnf-mid-fight-masses-gender-inversion.webp",
+    "iframe": "https://fnf.kdata1.com/mid-fight-masses-gender-inversion/1/"
+  },
+  {
+    "id": 101,
+    "title": "FNF Vs. Sky: REDUX (Heartbreak Havoc)",
+    "img": "../assets/images/fnf-vs-sky-redux-heartbreak-havoc.webp",
+    "iframe": "https://fnf.kdata1.com/2025/sky-redux/1/"
+  },
+  {
+    "id": 102,
+    "title": "FNF Vs. Cassandra [Weekend 2 Fanmod]",
+    "img": "../assets/images/fnf-vs-cassandra-weekend-2-fanmod.webp",
+    "iframe": "https://fnf.kdata1.com/2025/cassandra-weekend-2-fanmod/1.2/"
+  },
+  {
+    "id": 103,
+    "title": "Wii Funkin’ – VS Matt V3",
+    "img": "../assets/images/wii-funkin-vs-matt-v3.webp",
+    "iframe": "https://fnf.kdata1.com/2025/mattv3/2/"
+  },
+  {
+    "id": 104,
+    "title": "FNF Spaghetti",
+    "img": "../assets/images/fnf-spaghetti.webp",
+    "iframe": "https://fnf.kdata1.com/2024/fnf/5201/"
+  },
+  {
+    "id": 105,
+    "title": "Friday Night Funkin Gacha Life",
+    "img": "../assets/images/friday-night-funkin-gacha-life.webp",
+    "iframe": "https://st.8games.net/7/igra-frajdej-najt-fankin-gacha-lajf/index-en.html"
+  },
+  {
+    "id": 106,
+    "title": "FNF Sky: REBORN",
+    "img": "../assets/images/fnf-sky-reborn.webp",
+    "iframe": "https://fnf.kdata1.com/2026/sky-reborn/3/"
+  },
+  {
+    "id": 107,
+    "title": "FNF Powerjack",
+    "img": "../assets/images/fnf-powerjack.webp",
+    "iframe": "https://fnf.kdata1.com/2025/powerjack/5/"
+  },
+  {
+    "id": 108,
+    "title": "FNF: Shot to the Top!",
+    "img": "../assets/images/fnf-shot-to-the-top.webp",
+    "iframe": "https://fnf.kdata1.com/2026/shot-to-the-top/1.1/"
+  },
+  {
+    "id": 109,
+    "title": "FNF Vs. Visitor!",
+    "img": "../assets/images/fnf-vs-visitor.webp",
+    "iframe": "https://fnf.kdata1.com/2026/visitor/1/"
+  },
+  {
+    "id": 110,
+    "title": "FNF vs Nonsense v2: A Nonsensical Friday Night",
+    "img": "../assets/images/fnf-vs-nonsense-v2-a-nonsensical-friday-night.webp",
+    "iframe": "https://fnf.kdata1.com/nonsense/2.11/"
+  },
+  {
+    "id": 111,
+    "title": "FNF Music Clash",
+    "img": "../assets/images/fnf-music-clash.webp",
+    "iframe": "https://html5.gamemonetize.co/0xudc3upbt8y0lxqut6cvrva9h0yze4s/"
+  },
+  {
+    "id": 112,
+    "title": "FNF WWCD – One Last Bite",
+    "img": "../assets/images/fnf-wwcd-one-last-bite.webp",
+    "iframe": "https://fnf.kdata1.com/2025/wwcd-one-last-bite/1.5/"
+  },
+  {
+    "id": 113,
+    "title": "Sonic.EXE – The Original Game",
+    "img": "../assets/images/fnf-hells-incarnation-vs-sonic-exe.webp",
+    "iframe": "https://f.kbhgames.com/emujs/play.php?c=segaMD&f=sonic.gen"
+  },
+  {
+    "id": 114,
+    "title": "FNF: Lost My Mind + Breaking Point",
+    "img": "../assets/images/fnf-lost-my-mind-breaking-point.webp",
+    "iframe": "https://fnf.kdata1.com/lost-my-mind-breaking-point/1/"
+  },
+  {
+    "id": 115,
+    "title": "FNF vs KOU (Kepler Observation Unit) v3",
+    "img": "../assets/images/fnf-vs-kou-kepler-observation-unit-v3.webp",
+    "iframe": "https://fnf.kdata1.com/kou/3/"
+  },
+  {
+    "id": 116,
+    "title": "FNF vs Amazing World of Gumball",
+    "img": "../assets/images/fnf-vs-amazing-world-of-gumball.webp",
+    "iframe": "https://fnf.kdata1.com/gumball-full-mod/2/"
+  },
+  {
+    "id": 117,
+    "title": "Fun Clicker",
+    "img": "../assets/images/play-fnf.webp",
+    "iframe": "https://scratch.mit.edu/projects/1264170864/embed"
+  },
+  {
+    "id": 118,
+    "title": "FNF Komashot! – YKW OneShot",
+    "img": "../assets/images/fnf-komashot-ykw-oneshot.webp",
+    "iframe": "https://fnf.kdata1.com/2026/komashot-ykw-oneshot/1/"
+  },
+  {
+    "id": 119,
+    "title": "FNF Due Debts (BF Mix)",
+    "img": "../assets/images/fnf-due-debts-bf-mix.webp",
+    "iframe": "https://fnf.kdata1.com/2026/due-debts-bf-mix/1/"
+  },
+  {
+    "id": 120,
+    "title": "FNF Brainrot Vs Tung Tung Tung Sahur",
+    "img": "../assets/images/fnf-brainrot-vs-tung-tung-tung-sahur.webp",
+    "iframe": "https://fnf.kdata1.com/2025/brainrot-vs-tung-tung-tung-sahur/1.1/"
+  },
+  {
+    "id": 121,
+    "title": "Sprunki But It’s Italian Brainrot",
+    "img": "../assets/images/play-fnf.webp",
+    "iframe": "https://st.8games.net/7/8g/igra-sprunki-italyanskij-brejnrot/"
+  },
+  {
+    "id": 122,
+    "title": "FNF Sonic Jam",
+    "img": "../assets/images/fnf-sonic-jam.webp",
+    "iframe": "https://fnf.kdata1.com/2026/sonic-jam/1/"
+  },
+  {
+    "id": 123,
+    "title": "FNF Nevada 1 (Vs Tricky Hank Mix)",
+    "img": "../assets/images/fnf-nevada-1-vs-tricky-hank-mix.webp",
+    "iframe": "https://fnf.kdata1.com/2026/nevada-1-vs-tricky-hank-mix/1/"
+  },
+  {
+    "id": 124,
+    "title": "FNF Reimu: Funkin’ Incident",
+    "img": "../assets/images/fnf-reimu-funkin-incident.webp",
+    "iframe": "https://fnf.kdata1.com/2026/reimu-funkin-incident/1/"
+  },
+  {
+    "id": 125,
+    "title": "Friday Night Funkin’ Corruption",
+    "img": "../assets/images/friday-night-funkin-bendy-s-geno.webp",
+    "iframe": "https://fnf.kdata1.com/2026/corruption/1/"
+  },
+  {
+    "id": 126,
+    "title": "FNF: Six Piece (Chikn Nuggit Vs Cheezborger)",
+    "img": "../assets/images/fnf-six-piece-chikn-nuggit-vs-cheezborger.webp",
+    "iframe": "https://fnf.kdata1.com/2025/six-piece-chikn-nuggit-vs-cheezborger/1/"
+  },
+  {
+    "id": 127,
+    "title": "FNF: Valentine's Day",
+    "img": "../assets/images/fnf-valentine-s-day.webp",
+    "iframe": "https://gamaverse.com/c/f/g/fnf-valentines-day-1739562709/index.html?key=y8&value=default"
+  },
+  {
+    "id": 128,
+    "title": "Friday Night Funkin’: Remnants",
+    "img": "../assets/images/friday-night-funkin-bendy-s-geno.webp",
+    "iframe": "https://fnf.kdata1.com/2026/remnants/1/"
+  },
+  {
+    "id": 129,
+    "title": "MLP: Darkness is Magic (Loyalty Lunacy)",
+    "img": "../assets/images/mlp-darkness-is-magic-loyalty-lunacy.webp",
+    "iframe": "https://fnf.kdata1.com/mlp-darkness-is-magic-loyalty-lunacy/1/"
+  },
+  {
+    "id": 130,
+    "title": "FNF Baddies",
+    "img": "../assets/images/fnf-baddies.webp",
+    "iframe": "https://fnf.kdata1.com/baddies/1.12/"
+  },
+  {
+    "id": 131,
+    "title": "Funkin’ on the Heights!",
+    "img": "../assets/images/funkin-on-the-heights.webp",
+    "iframe": "https://fnf.kdata1.com/2026/funkin-on-the-heights/1/"
+  },
+  {
+    "id": 132,
+    "title": "FNF Doors Floor 1",
+    "img": "../assets/images/fnf-doors-floor-1.webp",
+    "iframe": "https://fnf.kdata1.com/2026/doors/1.5/"
+  },
+  {
+    "id": 133,
+    "title": "FNF Vs. Sans: Last Determined",
+    "img": "../assets/images/fnf-vs-sans-last-determined.webp",
+    "iframe": "https://game.fnfhub.net/24783/"
+  },
+  {
+    "id": 134,
+    "title": "Fish It Online",
+    "img": "../assets/images/play-fnf.webp",
+    "iframe": "https://fish-it-online.1games.io/"
+  },
+  {
+    "id": 135,
+    "title": "FNF Seek’s Cool Deltarune Mod",
+    "img": "../assets/images/fnf-seek-s-cool-deltarune-mod.webp",
+    "iframe": "https://fnf.kdata1.com/seeks-cool-deltarune/3/"
+  },
+  {
+    "id": 136,
+    "title": "FNF Vs Shaggy x Matt",
+    "img": "../assets/images/fnf-vs-shaggy-x-matt.webp",
+    "iframe": "https://onegamez.github.io/fnf-shaggy-matt/"
+  },
+  {
+    "id": 137,
+    "title": "FNF Vs Void",
+    "img": "../assets/images/fnf-vs-void.webp",
+    "iframe": "https://gamesfreez.github.io/fnf-vs-void/"
+  },
+  {
+    "id": 138,
+    "title": "FNF Hellbeats",
+    "img": "../assets/images/fnf-hellbeats.webp",
+    "iframe": "https://www.gameszap.com/iframe/17441.html"
+  },
+  {
+    "id": 139,
+    "title": "FNF Vs Minecraft Null",
+    "img": "../assets/images/fnf-vs-minecraft-null.webp",
+    "iframe": "https://fnf.kdata1.com/minecraft-null/1/"
+  },
+  {
+    "id": 140,
+    "title": "FNF Vs Accelerant Hank Reanimated",
+    "img": "../assets/images/fnf-vs-accelerant-hank-reanimated.webp",
+    "iframe": "https://fnfcdn.com/hank-acc-reanim/"
+  },
+  {
+    "id": 141,
+    "title": "FNF Shaggy’s Thoughts",
+    "img": "../assets/images/fnf-shaggy-s-thoughts.webp",
+    "iframe": "https://fnf.kdata1.com/shaggy-thought/1/"
+  },
+  {
+    "id": 142,
+    "title": "FNF Triple Trouble With Lyrics",
+    "img": "../assets/images/fnf-triple-trouble-with-lyrics.webp",
+    "iframe": "https://fnf.kdata1.com/triple-trouble-with-lyrics/1/"
+  },
+  {
+    "id": 143,
+    "title": "FNF Music 3D",
+    "img": "../assets/images/fnf-music-3d.webp",
+    "iframe": "https://html5.gamedistribution.com/a36efa74f33a4166a8ad641ac8ef7337"
+  },
+  {
+    "id": 144,
+    "title": "FNF UpSide Tricky",
+    "img": "../assets/images/fnf-upside-tricky.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-apsajd-trikki/index-en.html"
+  },
+  {
+    "id": 145,
+    "title": "FNF vs. Monika",
+    "img": "../assets/images/fnf-vs-monika.webp",
+    "iframe": "https://st.8games.net/7/igra-frajdej-najt-fankin-monika/"
+  },
+  {
+    "id": 146,
+    "title": "FNF Mistful Crimson Morning Reboot",
+    "img": "../assets/images/fnf-mistful-crimson-morning-reboot.webp",
+    "iframe": "https://fnf.kdata1.com/2025/mistful-crimson-morning-reboot/1/"
+  },
+  {
+    "id": 147,
+    "title": "Friday Night Funkin’ Pibby Corrupted",
+    "img": "../assets/images/friday-night-funkin-pibby-corrupted.webp",
+    "iframe": "https://fnf.kdata1.com/2024/pibby-corrupted/1.5/"
+  },
+  {
+    "id": 148,
+    "title": "FNF Indie Cross – Crossed Out",
+    "img": "../assets/images/fnf-indie-cross-crossed-out.webp",
+    "iframe": "https://fnf.kdata1.com/crossed-out/2.2/"
+  },
+  {
+    "id": 149,
+    "title": "FNF Pibby Vs Corrupted Peppa Pig",
+    "img": "../assets/images/fnf-pibby-vs-corrupted-peppa-pig.webp",
+    "iframe": "https://fnf.kdata1.com/pibby-vs-corrupted-peppa-pig/1.1/"
+  },
+  {
+    "id": 150,
+    "title": "FNF Vs Dave and Bambi: Definitive Edition",
+    "img": "../assets/images/fnf-vs-dave-and-bambi-definitive-edition.webp",
+    "iframe": "https://fnf.kdata1.com/dave-and-bambi-definitive-edition/1.1/"
+  },
+  {
+    "id": 151,
+    "title": "FNF Vs Tails Caught Sonic",
+    "img": "../assets/images/fnf-vs-tails-caught-sonic.webp",
+    "iframe": "https://fnf.kdata1.com/tails-caught-sonic/1/"
+  },
+  {
+    "id": 152,
+    "title": "FNF Vs. Tabi Ex Boyfriend",
+    "img": "../assets/images/fnf-vs-tabi-ex-boyfriend.webp",
+    "iframe": "https://st.8games.net/7/igra-frajdej-najt-fankin-tabi-eks-bojfrend/"
+  },
+  {
+    "id": 153,
+    "title": "FNF 2 Player",
+    "img": "../assets/images/fnf-2-player.webp",
+    "iframe": "https://www.miniplay.com/embed/friday-night-funkin-2-players"
+  },
+  {
+    "id": 154,
+    "title": "Friday Night Funkin Download",
+    "img": "../assets/images/friday-night-funkin-download.webp",
+    "iframe": "https://st.8games.net/7/igra-frajdej-najt-fankin/index-en.html"
+  },
+  {
+    "id": 155,
+    "title": "FNF Hypno’s Lullaby : FNaF Mix",
+    "img": "../assets/images/fnf-hypno-s-lullaby-fnaf-mix.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-kolybelnaya-gipno-fnaf-miks/"
+  },
+  {
+    "id": 156,
+    "title": "FNF: Silent Note But Demon Slayer Sings It",
+    "img": "../assets/images/fnf-silent-note-but-demon-slayer-sings-it.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-klinok-rassekayushchij-demonov/"
+  },
+  {
+    "id": 157,
+    "title": "Friday Night Funkin' Pibby: Apocalypse",
+    "img": "../assets/images/friday-night-funkin-pibby-apocalypse.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-pibbi-apokalipsis/"
+  },
+  {
+    "id": 158,
+    "title": "FNF Vs Chainsaw Man",
+    "img": "../assets/images/fnf-vs-chainsaw-man.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-chelovek-benzopila/"
+  },
+  {
+    "id": 159,
+    "title": "FNF Rivals",
+    "img": "../assets/images/fnf-rivals.webp",
+    "iframe": "https://fnf.kdata1.com/2024/rivals/1/"
+  },
+  {
+    "id": 160,
+    "title": "FNF Vs Indie Cross",
+    "img": "../assets/images/fnf-vs-indie-cross.webp",
+    "iframe": "https://www.miniplay.com/embed/friday-night-funkin-vs-indie-cross"
+  },
+  {
+    "id": 161,
+    "title": "FNF Vs Mario’s Madness V2",
+    "img": "../assets/images/fnf-vs-mario-s-madness-v2.webp",
+    "iframe": "https://fnf.kdata1.com/2024/marios-madness-v2/2/"
+  },
+  {
+    "id": 162,
+    "title": "FNF: Fireboy And Watergirl",
+    "img": "../assets/images/fnf-fireboy-and-watergirl.webp",
+    "iframe": "https://st.8games.net/7/igra-frajdej-najt-fankin-ogon-i-voda/index-en.html"
+  },
+  {
+    "id": 163,
+    "title": "FNF Vs Mommy Long Legs (Poppy Playtime)",
+    "img": "../assets/images/fnf-vs-mommy-long-legs-poppy-playtime.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-poppi-plejtajm-mama-dlinnye-nogi/"
+  },
+  {
+    "id": 164,
+    "title": "FNF The Basement Show (Tom & Jerry Creepypasta Mod)",
+    "img": "../assets/images/fnf-the-basement-show-tom-jerry-creepypasta-mod.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-podvalnoe-shou-tom-i-dzherri-kripipasta/"
+  },
+  {
+    "id": 165,
+    "title": "FNF Roblox Rainbow Friends But Yellow, Pink, Red Join",
+    "img": "../assets/images/fnf-roblox-rainbow-friends-but-yellow-pink-red-join.webp",
+    "iframe": "https://fnf.kdata1.com/rainbow-friends-but-yellow-pink-red-join/1/"
+  },
+  {
+    "id": 166,
+    "title": "FNF Poppy Playtime Chapter 3: Project Funk",
+    "img": "../assets/images/fnf-poppy-playtime-chapter-3-project-funk.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-poppi-plejtajm-3-proekt-fank/"
+  },
+  {
+    "id": 167,
+    "title": "Friday Night Amazing Digital: Funk Off Reality",
+    "img": "../assets/images/friday-night-amazing-digital-funk-off-reality.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-udivitelnyj-tsifrovoj-tsirk-fank-iz-realnosti/"
+  },
+  {
+    "id": 168,
+    "title": "FNF Wacky World",
+    "img": "../assets/images/fnf-wacky-world.webp",
+    "iframe": "https://st.8games.net/7/igra-tsifrovoj-tsirk-fnf-bezumnyj-mir/"
+  },
+  {
+    "id": 169,
+    "title": "FNF Silly Billy Vs Yourself",
+    "img": "../assets/images/fnf-silly-billy-vs-yourself.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-silli-billi/"
+  },
+  {
+    "id": 170,
+    "title": "FNF Indie Cross Ritual But Everyone Sings It",
+    "img": "../assets/images/fnf-indie-cross-ritual-but-everyone-sings-it.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-indi-kross-ritual/"
+  },
+  {
+    "id": 171,
+    "title": "FNF Godsent Gaslit – Bedtime Vs CatNap",
+    "img": "../assets/images/fnf-godsent-gaslit-bedtime-vs-catnap.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-kot-dremot-godsent-gazlit/"
+  },
+  {
+    "id": 172,
+    "title": "FNF The Dreams Of Bloods Vs CatNip",
+    "img": "../assets/images/fnf-the-dreams-of-bloods-vs-catnip.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-kot-dremot-krovavye-sny/"
+  },
+  {
+    "id": 173,
+    "title": "FNF Digitalizing, But Everyone Sing It",
+    "img": "../assets/images/fnf-digitalizing-but-everyone-sing-it.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-tsifrovoj-tsirk-otsifrovka-poyut-vse/"
+  },
+  {
+    "id": 174,
+    "title": "FNF Vs Halt (Roblox Doors)",
+    "img": "../assets/images/fnf-vs-halt-roblox-doors.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-dors-khalt/"
+  },
+  {
+    "id": 175,
+    "title": "FNF Vs Tobias & Chowder & Pizza",
+    "img": "../assets/images/fnf-vs-tobias-chowder-pizza.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-tobias-chauder-i-pitstsa-stiv/"
+  },
+  {
+    "id": 176,
+    "title": "Friday Night Funkin’: Bendy’s Genocide",
+    "img": "../assets/images/friday-night-funkin-bendy-s-genocide.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-genotsid-bendi/"
+  },
+  {
+    "id": 177,
+    "title": "FNF Vs Pibby Twilight Sparkle - Dusk Till Dawn",
+    "img": "../assets/images/fnf-vs-pibby-twilight-sparkle-dusk-till-dawn.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-pibbi-tvajlajt-sparkl-ot-zakata-do-rassveta/"
+  },
+  {
+    "id": 178,
+    "title": "FNF Vs Imposter V4 Monochrome And Triple Trouble",
+    "img": "../assets/images/fnf-vs-imposter-v4-monochrome-and-triple-trouble.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-imposter-v4-monokhrom-i-tripl-trabl/"
+  },
+  {
+    "id": 179,
+    "title": "FNF Helluva Boss Funkin",
+    "img": "../assets/images/fnf-helluva-boss-funkin.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-adskij-boss/"
+  },
+  {
+    "id": 180,
+    "title": "FNF Net Games Fever!",
+    "img": "../assets/images/fnf-net-games-fever.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-igrovaya-likhoradka/"
+  },
+  {
+    "id": 181,
+    "title": "FNF Vs Toothless",
+    "img": "../assets/images/fnf-vs-toothless.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-bezzubik/"
+  },
+  {
+    "id": 182,
+    "title": "FNF x TADC – Digitalizing 2",
+    "img": "../assets/images/fnf-x-tadc-digitalizing-2.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-tsifrovoj-tsirk-otsifrovka-2/"
+  },
+  {
+    "id": 183,
+    "title": "FNF: Elements (Fireboy & Watergirl)",
+    "img": "../assets/images/fnf-elements-fireboy-watergirl.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-ogon-i-voda-elementy-stikhij/"
+  },
+  {
+    "id": 184,
+    "title": "FNF County Christmas",
+    "img": "../assets/images/fnf-county-christmas.webp",
+    "iframe": "https://st.8games.net/7/igra-fnf-rozhdestvo-v-okruge/"
+  },
+  {
+    "id": 185,
+    "title": "FNF Vs. Dave and Bambi Volume 1",
+    "img": "../assets/images/fnf-vs-dave-and-bambi-volume-1.webp",
+    "iframe": "https://fnf.kdata1.com/2026/VsDaveVol1/1/"
+  },
+  {
+    "id": 186,
+    "title": "FNF vs Granny",
+    "img": "../assets/images/fnf-vs-granny.webp",
+    "iframe": "https://fnf.kdata1.com/granny/1/"
+  },
+  {
+    "id": 187,
+    "title": "FNF Vs Pac-Man 2",
+    "img": "../assets/images/fnf-vs-pac-man-2.webp",
+    "iframe": "https://fnf.kdata1.com/pac-man-2/1/"
+  },
+  {
+    "id": 188,
+    "title": "Wednesday’s Infidelity 2 vs Sad Mickey Mouse",
+    "img": "../assets/images/wednesdays-infidelity-2-vs-sad-mickey-mouse.webp",
+    "iframe": "https://fnf.kdata1.com/wednesdays-infidelity-vs-sad-mickey-mouse/3/"
+  },
+  {
+    "id": 189,
+    "title": "FNF Piggyfied vs Roblox Piggy",
+    "img": "../assets/images/fnf-piggyfied-vs-roblox-piggy.webp",
+    "iframe": "https://fnf.kdata1.com/piggyfied-vs-roblox-piggy/1.1/"
+  },
+  {
+    "id": 190,
+    "title": "Hymns of Hallownest",
+    "img": "../assets/images/hymns-of-hallownest.webp",
+    "iframe": "https://fnf.kdata1.com/2026/Hoh/1/"
+  },
+  {
+    "id": 191,
+    "title": "FNF Vs Tralalero Tralala",
+    "img": "../assets/images/fnf-vs-tralalero-tralala.webp",
+    "iframe": "https://fnf.kdata1.com/2025/tralalero-tralala/1/"
+  },
+  {
+    "id": 192,
+    "title": "FNF Phantasm (ENCORE)",
+    "img": "../assets/images/fnf-phantasm.webp",
+    "iframe": "https://fnf.kdata1.com/2024/phantasm-encore/2/"
+  },
+  {
+    "id": 193,
+    "title": "FNF VS Starecrown – Definitive Edition",
+    "img": "../assets/images/fnf-vs-starecrown-definitive-edition.webp",
+    "iframe": "https://fnf.kdata1.com/starecrown-definitive-edition/1/"
+  },
+  {
+    "id": 194,
+    "title": "FNF x Dream Everyday! (Daydream Critters)",
+    "img": "../assets/images/fnf-x-dream-everyday.webp",
+    "iframe": "https://fnf.kdata1.com/2025/dream-everyday-daydream-critters/1/"
+  },
+  {
+    "id": 195,
+    "title": "FNF vs Toy Story.EXE -Toy’s Madness Friday",
+    "img": "../assets/images/fnf-vs-toy-story-exe-toys-madness-friday.webp",
+    "iframe": "https://fnf.kdata1.com/toy-story-exe-toys-madness-friday/1/"
+  },
+  {
+    "id": 196,
+    "title": "FNF: Pico Overload",
+    "img": "../assets/images/fnf-pico-overload.webp",
+    "iframe": "https://fnf.kdata1.com/pico-overload/1/"
+  },
+  {
+    "id": 197,
+    "title": "FNF Funkin Physics vs Trollface/Trollge",
+    "img": "../assets/images/fnf-funkin-physics-vs-trollface-trollge.webp",
+    "iframe": "https://fnf.kdata1.com/funkin-physics-trollface-trollge/1/"
+  },
+  {
+    "id": 198,
+    "title": "FNF: The Golden ONE V2 (hfjONE Mod)",
+    "img": "../assets/images/fnf-the-golden-one-v2-hfjone-mod.webp",
+    "iframe": "https://fnf.kdata1.com/golden-one-v2-hfjone/1/"
+  },
+  {
+    "id": 199,
+    "title": "FNF: Whitty Vs. Boyfriend Fire Fight Mod",
+    "img": "../assets/images/fnf-whitty-vs-boyfriend-fire-fight-mod.webp",
+    "iframe": "https://fnf.kdata1.com/whitty-fire/1.25/"
+  },
+  {
+    "id": 200,
+    "title": "FNF Pico Vs Tankman: Familiar Encounters",
+    "img": "../assets/images/fnf-pico-vs-tankman-familiar-encounters.webp",
+    "iframe": "https://fnf.kdata1.com/familiar-encounters/1/"
+  },
+  {
+    "id": 201,
+    "title": "FNF vs Peppa Pig – Muddy Puddles",
+    "img": "../assets/images/fnf-vs-peppa-pig-muddy-puddles.webp",
+    "iframe": "https://fnf.kdata1.com/peppa-pig-muddy-puddles/1.1/"
+  },
+  {
+    "id": 202,
+    "title": "FNF Funk City: Rewind – Pico vs BF",
+    "img": "../assets/images/fnf-funk-city-rewind-pico-vs-bf.webp",
+    "iframe": "https://fnf.kdata1.com/rewind-bf-vs-pico/1/"
+  },
+  {
+    "id": 203,
+    "title": "FNF vs Bambi: Strident Crisis",
+    "img": "../assets/images/fnf-vs-bambi-strident-crisis.webp",
+    "iframe": "https://fnf.kdata1.com/bambi-student-crisis/1.2/"
+  },
+  {
+    "id": 204,
+    "title": "A Magical Friday Night: Vs Holy Quintet",
+    "img": "../assets/images/a-magical-friday-night-vs-holy-quintet.webp",
+    "iframe": "https://fnf.kdata1.com/2026/holy-quintet/1/"
+  },
+  {
+    "id": 205,
+    "title": "FNF VS. Impostor: Tainted Fate",
+    "img": "../assets/images/fnf-vs-impostor-tainted-fate.webp",
+    "iframe": "https://fnf.kdata1.com/2024/impostor-tainted-fate/2/"
+  },
+  {
+    "id": 206,
+    "title": "FNF: B3 Rerun",
+    "img": "../assets/images/fnf-b3-rerun.webp",
+    "iframe": "https://fnf.kdata1.com/2025/b3-rerun/1.1/"
+  },
+  {
+    "id": 207,
+    "title": "FNF: Late Night City Tales vs Limu",
+    "img": "../assets/images/fnf-late-night-city-tales-vs-limu.webp",
+    "iframe": "https://fnf.kdata1.com/late-night-city-tales-vs-limu/1/"
+  },
+  {
+    "id": 208,
+    "title": "FNF Catnap Sleep Well",
+    "img": "../assets/images/fnf-catnap-sleep-well.webp",
+    "iframe": "https://fnf.kdata1.com/2024/catnap-sleep-well/1/"
+  },
+  {
+    "id": 209,
+    "title": "FNF vs Niko (OneShot)",
+    "img": "../assets/images/fnf-vs-niko-oneshot.webp",
+    "iframe": "https://fnf.kdata1.com/oneshot/1/"
+  },
+  {
+    "id": 210,
+    "title": "Friday Night Mother Funkin",
+    "img": "../assets/images/friday-night-mother-funkin.webp",
+    "iframe": "https://fnf.kdata1.com/mother-funkin/1/"
+  },
+  {
+    "id": 211,
+    "title": "FNF: Scott Pilgrim vs The World",
+    "img": "../assets/images/fnf-scott-pilgrim-vs-the-world.webp",
+    "iframe": "https://fnf.kdata1.com/scott-pilgrim-vs-the-world/1/"
+  },
+  {
+    "id": 212,
+    "title": "FNF vs Hello Kitty (Hell On Kitty mod)",
+    "img": "../assets/images/fnf-vs-hello-kitty-hell-on-kitty-mod.webp",
+    "iframe": "https://fnf.kdata1.com/hello-kitty-hell-no-kitty/1/"
+  },
+  {
+    "id": 213,
+    "title": "FNF vs Corrupted Tankman (Corrupted Night)",
+    "img": "../assets/images/fnf-vs-corrupted-tankman-corrupted-night.webp",
+    "iframe": "https://fnf.kdata1.com/corrupted-tankman/1/?sddd"
+  },
+  {
+    "id": 214,
+    "title": "FNF Vs Mouse: Rookies Edition (Disk 1)",
+    "img": "../assets/images/fnf-vs-mouse-rookies-edition-disk-1.webp",
+    "iframe": "https://fnf.kdata1.com/2025/mouse-rookies-edition/2.1/"
+  },
+  {
+    "id": 215,
+    "title": "FNF NeneMixes",
+    "img": "../assets/images/fnf-nenemixes.webp",
+    "iframe": "https://fnf.kdata1.com//2026/nenemixes/2.5/"
+  },
+  {
+    "id": 216,
+    "title": "FNF: Pico vs Darnell",
+    "img": "../assets/images/fnf-pico-vs-darnell.webp",
+    "iframe": "https://fnf.kdata1.com/pico-vs-darnell/1/"
+  },
+  {
+    "id": 217,
+    "title": "FNF Vs. FNAF 2",
+    "img": "../assets/images/fnf-vs-fnaf-2.webp",
+    "iframe": "https://fnf.kdata1.com/fnf-vs-fnaf2/1/"
+  },
+  {
+    "id": 218,
+    "title": "Friday Night Funkin PixelCrate",
+    "img": "../assets/images/friday-night-funkin-pixelcrate.webp",
+    "iframe": "https://html5.gamemonetize.co/5wapv148s692qieoclu9iikp9zytehqw/"
+  },
+  {
+    "id": 219,
+    "title": "FNF Vs. Huggy Wuggy Redux",
+    "img": "../assets/images/fnf-vs-huggy-wuggy-redux.webp",
+    "iframe": "https://fnf.kdata1.com/2026/huggy-redux/desktop/1/"
+  },
+  {
+    "id": 220,
+    "title": "Friday Night Funkin’ After The Week",
+    "img": "../assets/images/friday-night-funkin-after-the-week.webp",
+    "iframe": "https://fnf.kdata1.com/after-the-week/1/"
+  },
+  {
+    "id": 221,
+    "title": "FNF Vs Benson Dunwoody",
+    "img": "../assets/images/fnf-vs-benson-dunwoody.webp",
+    "iframe": "https://fnf.kdata1.com/benson-dunwoody/1.25/?d"
+  },
+  {
+    "id": 222,
+    "title": "FNF All My Fellas",
+    "img": "../assets/images/fnf-all-my-fellas.webp",
+    "iframe": "https://fnf.kdata1.com/allmyfellas/1/"
+  },
+  {
+    "id": 223,
+    "title": "FNF 2Hot – BF Mix",
+    "img": "../assets/images/fnf-2hot-bf-mix.webp",
+    "iframe": "https://fnf.kdata1.com/2025/2hot-bf-mix/1.3/"
+  },
+  {
+    "id": 224,
+    "title": "FNF Triflethumb",
+    "img": "../assets/images/fnf-triflethumb.webp",
+    "iframe": "https://fnf.kdata1.com/2024/triflethumb/2.1/"
+  },
+  {
+    "id": 225,
+    "title": "FNF: All Hallow’s Eve",
+    "img": "../assets/images/fnf-all-hallows-eve.webp",
+    "iframe": "https://fnf.kdata1.com/all-hallows-eve/1/"
+  },
+  {
+    "id": 226,
+    "title": "FNF Nightmare Tabi",
+    "img": "../assets/images/fnf-nightmare-tabi.webp",
+    "iframe": "https://fnf.kdata1.com/nightmare-tabi/1.25/"
+  },
+  {
+    "id": 227,
+    "title": "FNF: Diary of a Wimpy Kid",
+    "img": "../assets/images/fnf-diary-of-a-wimpy-kid.webp",
+    "iframe": "https://fnf.kdata1.com/diary-of-a-funky-kid/1/"
+  },
+  {
+    "id": 228,
+    "title": "FNF vs Hecker (Got Heck’d)",
+    "img": "../assets/images/fnf-vs-hecker-got-heck-d.webp",
+    "iframe": "https://fnf.kdata1.com/hecker/2/"
+  },
+  {
+    "id": 229,
+    "title": "FNF vs Cartoon Cat",
+    "img": "../assets/images/fnf-vs-cartoon-cat.webp",
+    "iframe": "https://fnf.kdata1.com/cartoon-cat/0.5/"
+  },
+  {
+    "id": 230,
+    "title": "FNF vs Senpai Expansion",
+    "img": "../assets/images/fnf-vs-senpai-expansion.webp",
+    "iframe": "https://fnf.kdata1.com/senpai-extended/1.1/"
+  },
+  {
+    "id": 231,
+    "title": "FNF Sonic.EXE ReRun",
+    "img": "../assets/images/fnf-sonic-exe-rerun.webp",
+    "iframe": "https://fnf.kdata1.com/sonic-exe-rerun-scrapped-edition/1/"
+  },
+  {
+    "id": 232,
+    "title": "Friday Night Funkin’ vs Tails Secret Histories",
+    "img": "../assets/images/friday-night-funkin-vs-tails-secret-histories.webp",
+    "iframe": "https://fnf.kdata1.com/tails-secret-histories/1.1/"
+  },
+  {
+    "id": 233,
+    "title": "FNF Darkness Takeover: Aftermath",
+    "img": "../assets/images/fnf-darkness-takeover-aftermath.webp",
+    "iframe": "https://fnf.kdata1.com/takeover-aftermath/1/"
+  },
+  {
+    "id": 234,
+    "title": "Friday Night Funkin VS. KAPI v2",
+    "img": "../assets/images/friday-night-funkin-vs-kapi-v2.webp",
+    "iframe": "https://fnf.kdata1.com/2026/kapi/2.12/desktop/"
+  },
+  {
+    "id": 235,
+    "title": "FNF Sonic The Funk",
+    "img": "../assets/images/fnf-sonic-the-funk.webp",
+    "iframe": "https://fnf.kdata1.com/2026/sonicthefunk/3.15/"
+  },
+  {
+    "id": 236,
+    "title": "FNF The Grieving of Friday (Gumball Week)",
+    "img": "../assets/images/fnf-the-grieving-of-friday-gumball-week.webp",
+    "iframe": "https://fnf.kdata1.com/the-grieving-of-friday/2/"
+  },
+  {
+    "id": 237,
+    "title": "FNF Mid-Fight Masses: Repented",
+    "img": "../assets/images/fnf-mid-fight-masses-repented.webp",
+    "iframe": "https://fnf.kdata1.com/2026/mfm-repented/1.12/d/"
+  },
+  {
+    "id": 238,
+    "title": "FNF vs Garcello – [Packwatched]",
+    "img": "../assets/images/fnf-vs-garcello-packwatched.webp",
+    "iframe": "https://fnf.kdata1.com/2026/garcello-packwatched/1/d/"
+  }
+];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('mod-list-container');
+      const searchInput = document.getElementById('sidebar-search-input');
+      const iframe = document.getElementById('collection-iframe');
+      const placeholder = document.getElementById('player-placeholder');
+
+      function renderList(list) {
+        container.innerHTML = '';
+        list.forEach((mod, index) => {
+          const el = document.createElement('div');
+          el.className = 'mod-list-item';
+          el.innerHTML = `
+            <span class="mod-number">${mod.id}</span>
+            <img class="mod-list-thumb" src="${mod.img}" alt="${mod.title}">
+            <span class="mod-list-name" title="${mod.title}">${mod.title}</span>
+          `;
+          el.addEventListener('click', () => {
+            // Remove active class from all
+            document.querySelectorAll('.mod-list-item').forEach(i => i.classList.remove('active'));
+            el.classList.add('active');
+            
+            // Show iframe, hide placeholder
+            placeholder.style.display = 'none';
+            iframe.style.display = 'block';
+            iframe.src = mod.iframe;
+            document.getElementById('current-mod-title').textContent = mod.title;
+            document.getElementById('current-mod-icon').src = mod.img;
+          });
+          container.appendChild(el);
+        });
+      }
+
+      renderList(modData);
+
+      searchInput.addEventListener('input', (e) => {
+        const q = e.target.value.toLowerCase();
+        const filtered = modData.filter(m => m.title.toLowerCase().includes(q));
+        renderList(filtered);
+      });
+    });
+
+    // Global Search behavior
+    document.addEventListener('DOMContentLoaded', function () {
+      const input = document.querySelector('.search-input');
+      const resultsBox = document.getElementById('search-results');
+      if (!input || !resultsBox) return;
+
+      const games = modData.map(m => ({
+        title: m.title,
+        href: m.id === 1 ? 'https://fnfgame24.github.io/' : '#',
+        img: m.img,
+        iframe: m.iframe
+      }));
+
+      function renderResults(list){
+        resultsBox.innerHTML = '';
+        if (!list.length){
+          resultsBox.style.display = 'none';
+          return;
+        }
+        list.forEach(function(game){
+          const item = document.createElement('div');
+          item.className = 'search-item';
+
+          const thumb = document.createElement('div');
+          thumb.className = 'search-thumb';
+          const img = document.createElement('img');
+          img.src = game.img;
+          img.alt = game.title;
+          thumb.appendChild(img);
+
+          const label = document.createElement('div');
+          label.className = 'search-title';
+          label.textContent = game.title;
+
+          item.appendChild(thumb);
+          item.appendChild(label);
+
+          item.addEventListener('click', function(){
+            resultsBox.style.display = 'none';
+            // Search will also trigger iframe load on collection page
+            const placeholder = document.getElementById('player-placeholder');
+            const iframe = document.getElementById('collection-iframe');
+            placeholder.style.display = 'none';
+            iframe.style.display = 'block';
+            iframe.src = game.iframe;
+            document.getElementById('current-mod-title').textContent = game.title;
+            document.getElementById('current-mod-icon').src = game.img;
+
+            // Highlight the correct item in the sidebar
+            document.querySelectorAll('.mod-list-item').forEach(i => {
+                if(i.querySelector('.mod-list-name').textContent === game.title) {
+                    i.classList.add('active');
+                    i.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                } else {
+                    i.classList.remove('active');
+                }
+            });
+          });
+
+          resultsBox.appendChild(item);
+        });
+        resultsBox.style.display = 'block';
+      }
+
+      input.addEventListener('focus', function () { renderResults(games); });
+      input.addEventListener('input', function () {
+        const q = input.value.trim().toLowerCase();
+        if (!q){ renderResults(games); return; }
+        const matched = games.filter(g => g.title.toLowerCase().includes(q));
+        renderResults(matched);
+      });
+
+      document.addEventListener('click', function(e){
+        if (!e.target.closest('.search-container')){
+          resultsBox.style.display = 'none';
+        }
+      });
+    });
+
+    function toggleFullscreen() {
+      const iframe = document.getElementById('collection-iframe');
+      if (!document.fullscreenElement) {
+        if (iframe.requestFullscreen) {
+          iframe.requestFullscreen();
+        } else if (iframe.webkitRequestFullscreen) {
+          iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) {
+          iframe.msRequestFullscreen();
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+
+    function sharePage(){
+      const url = location.href;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(function(){
+          showToast('Link copied to clipboard! 🚀');
+        }).catch(function(){
+          showToastFallback(url);
+        });
+      } else {
+        showToastFallback(url);
+      }
+    }
+
+    function showToast(message) {
+      let toast = document.getElementById('toast-msg');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'toast-msg';
+        toast.className = 'toast-notification';
+        toast.innerHTML = '<span class="toast-icon">✨</span><span class="toast-text">' + message + '</span>';
+        document.body.appendChild(toast);
+      } else {
+        toast.querySelector('.toast-text').textContent = message;
+      }
+      
+      toast.offsetHeight; // Trigger reflow
+      toast.classList.add('show');
+      
+      clearTimeout(window.toastTimeout);
+      window.toastTimeout = setTimeout(function(){
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
+    function showToastFallback(url) {
+      prompt('Copy this link:', url);
+    }
+
+    function toggleFavorite() {
+      const btn = document.getElementById('fav-btn');
+      btn.classList.toggle('active');
+      btn.style.color = btn.classList.contains('active') ? '#ff4d4d' : 'var(--text)';
+    }
+  </script>
+</body>
+</html>

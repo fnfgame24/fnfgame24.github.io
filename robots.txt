@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Avoid indexing error page
+Disallow: /404.html
+
+# Avoid indexing GitHub Pages internal files
+Disallow: /README
+Disallow: /LICENSE
+
+# Sitemap
+Sitemap: https://fnfgame24.github.io/sitemap.xml
