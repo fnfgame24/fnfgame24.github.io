@@ -1011,7 +1011,7 @@ const modData = [
     "id": 169,
     "title": "FNF Silly Billy Vs Yourself",
     "img": "../assets/images/fnf-silly-billy-vs-yourself.webp",
-    "iframe": "https://st.8games.net/7/igra-fnf-silli-billi/"
+    "iframe": "https://fnf.kdata1.com/2024/silly-billy-vs-yourself/1/"
   },
   {
     "id": 170,
@@ -1287,7 +1287,7 @@ const modData = [
     "id": 215,
     "title": "FNF NeneMixes",
     "img": "../assets/images/fnf-nenemixes.webp",
-    "iframe": "https://fnf.kdata1.com//2026/nenemixes/2.5/"
+    "iframe": "https://fnf.kdata1.com/2026/nenemixes/2.5/"
   },
   {
     "id": 216,
@@ -1426,5 +1426,29 @@ const modData = [
     "title": "FNF vs Garcello – [Packwatched]",
     "img": "../assets/images/fnf-vs-garcello-packwatched.webp",
     "iframe": "https://fnf.kdata1.com/2026/garcello-packwatched/1/d/"
+  },
+  {
+    "id": 239,
+    "title": "FNF Nocturnal Protocol Mod",
+    "img": "../assets/images/fnf-nocturnal-protocol-mod.webp",
+    "iframe": "https://fnf.kdata1.com/2026/nocturnal-protocol/1/d/"
+  },
+  {
+    "id": 240,
+    "title": "FNF VS Sonic.Exe The Last Adventure",
+    "img": "../assets/images/fnf-vs-sonic-exe-the-last-adventure.webp",
+    "iframe": "https://fnf.kdata1.com/2026/sonicexe-last-adventure/1.1/d/"
+  },
+  {
+    "id": 241,
+    "title": "FNF Hazier River: Smoke 'Em Out Struggle",
+    "img": "../assets/images/fnf-hazier-river-smoke-em-out-struggle.webp",
+    "iframe": "https://fnf.kdata1.com/2026/hazy-river/1/d/"
+  },
+  {
+    "id": 242,
+    "title": "FNF Babybones",
+    "img": "../assets/images/fnf-babybones.webp",
+    "iframe": "https://fnf.kdata1.com/2026/babybone/1.11/"
   }
 ];

@@ -1,4 +1,4 @@
-https://www.miniplay.com/embed/friday-night-funkin-minus
+﻿https://www.miniplay.com/embed/friday-night-funkin-minus
 https://gamaverse.com/c/f/g/friday-night-funkin-starcatcher/
 https://html5.gamemonetize.co/o4i40mgrpxgzltypewm2jeqc3usjik5f/
 https://www.gameszap.com/iframe/19141.html
@@ -166,7 +166,7 @@ https://fnf.kdata1.com/rainbow-friends-but-yellow-pink-red-join/1/
 https://st.8games.net/7/igra-fnf-poppi-plejtajm-3-proekt-fank/
 https://st.8games.net/7/igra-fnf-udivitelnyj-tsifrovoj-tsirk-fank-iz-realnosti/
 https://st.8games.net/7/igra-tsifrovoj-tsirk-fnf-bezumnyj-mir/
-https://st.8games.net/7/igra-fnf-silli-billi/
+https://fnf.kdata1.com/2024/silly-billy-vs-yourself/1/
 https://st.8games.net/7/igra-fnf-indi-kross-ritual/
 https://st.8games.net/7/igra-fnf-kot-dremot-godsent-gazlit/
 https://st.8games.net/7/igra-fnf-kot-dremot-krovavye-sny/
@@ -212,7 +212,7 @@ https://fnf.kdata1.com/scott-pilgrim-vs-the-world/1/
 https://fnf.kdata1.com/hello-kitty-hell-no-kitty/1/
 https://fnf.kdata1.com/corrupted-tankman/1/?sddd
 https://fnf.kdata1.com/2025/mouse-rookies-edition/2.1/
-https://fnf.kdata1.com//2026/nenemixes/2.5/
+https://fnf.kdata1.com/2026/nenemixes/2.5/
 https://fnf.kdata1.com/pico-vs-darnell/1/
 https://fnf.kdata1.com/fnf-vs-fnaf2/1/
 https://html5.gamemonetize.co/5wapv148s692qieoclu9iikp9zytehqw/
@@ -236,3 +236,7 @@ https://fnf.kdata1.com/2026/sonicthefunk/3.15/
 https://fnf.kdata1.com/the-grieving-of-friday/2/
 https://fnf.kdata1.com/2026/mfm-repented/1.12/d/
 https://fnf.kdata1.com/2026/garcello-packwatched/1/d/
+https://fnf.kdata1.com/2026/nocturnal-protocol/1/d/
+https://fnf.kdata1.com/2026/sonicexe-last-adventure/1.1/d/
+https://fnf.kdata1.com/2026/hazy-river/1/d/
+https://fnf.kdata1.com/2026/babybone/1.11/

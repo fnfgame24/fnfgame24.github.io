@@ -571,6 +571,13 @@ header.top{
       box-shadow: 0 6px 16px rgba(246, 163, 19, 0.6);
       color: #fff;
     }
+    .collection-btn.mods-btn {
+      background: linear-gradient(90deg, #36f2ff, #7b5cff 55%, #d74cff);
+      box-shadow: 0 4px 16px rgba(54, 242, 255, 0.28), 0 0 18px rgba(215, 76, 255, 0.18);
+    }
+    .collection-btn.mods-btn:hover {
+      box-shadow: 0 6px 18px rgba(54, 242, 255, 0.38), 0 0 22px rgba(215, 76, 255, 0.24);
+    }
   </style>
 </head>
 <body>
@@ -591,15 +598,13 @@ header.top{
         <a class="quick-mod" href="https://fnfgame24.github.io/fnf-vs-hypnos-lullaby-v2/">
           FNF Vs. Hypno’s Lullaby v2
         </a>
-        <a class="quick-mod" href="https://fnfgame24.github.io/fnf-indie-cross-ritual-but-everyone-sings-it/">
-          FNF Indie Cross Ritual But Everyone Sings It
-        </a>
         <a class="quick-mod" href="https://fnfgame24.github.io/fnf-vs-impostor-among-us-v4/">
           FNF vs Impostor Among Us V4 
         </a>
       </div>
 
       <!-- Search ở bên phải -->
+      <a href="/fnf-mods/" class="collection-btn mods-btn">🎮 FNF Mods</a>
       <a href="/fnf-collection/" class="collection-btn">🔥 FNF Collection</a>
         <div class="search-container">
         <div class="search-box">
@@ -753,11 +758,83 @@ header.top{
 
         return { title, href, img };
       });
+
+      const nocturnalGame = {
+        title: "FNF Nocturnal Protocol Mod",
+        href: "https://fnfgame24.github.io/fnf-nocturnal-protocol-mod/",
+        img: "/assets/images/fnf-nocturnal-protocol-mod.webp"
+      };
+      if (!games.some(function(game){ return game.title === nocturnalGame.title; })) {
+        games.unshift(nocturnalGame);
+      }
+
+      const lastAdventureGame = {
+        title: "FNF VS Sonic.Exe The Last Adventure",
+        href: "https://fnfgame24.github.io/fnf-vs-sonic-exe-the-last-adventure/",
+        img: "/assets/images/fnf-vs-sonic-exe-the-last-adventure.webp"
+      };
+      if (!games.some(function(game){ return game.title === lastAdventureGame.title; })) {
+        games.unshift(lastAdventureGame);
+      }
       games.unshift({
         title: "FNF",
         href: "https://fnfgame24.github.io/",
         img: "https://fnfgame24.github.io/assets/fnf.png"
        });
+
+      const hazierRiverGame = {
+        title: "FNF Hazier River: Smoke 'Em Out Struggle",
+        href: "https://fnfgame24.github.io/fnf-hazier-river-smoke-em-out-struggle/",
+        img: "/assets/images/fnf-hazier-river-smoke-em-out-struggle.webp"
+      };
+      if (!games.some(function(game){ return game.title === hazierRiverGame.title; })) {
+        games.unshift(hazierRiverGame);
+      }
+
+      const babybonesGame = {
+        title: "FNF Babybones",
+        href: "https://fnfgame24.github.io/fnf-babybones/",
+        img: "/assets/images/fnf-babybones.webp"
+      };
+      if (!games.some(function(game){ return game.title === babybonesGame.title; })) {
+        games.unshift(babybonesGame);
+      }
+
+      const packwatchedGame = {
+        title: "FNF vs Garcello - [Packwatched]",
+        href: "https://fnfgame24.github.io/fnf-vs-garcello-packwatched/",
+        img: "/assets/images/fnf-vs-garcello-packwatched.webp"
+      };
+      if (!games.some(function(game){ return game.title === packwatchedGame.title; })) {
+        games.unshift(packwatchedGame);
+      }
+
+      const neneMixesGame = {
+        title: "FNF NeneMixes",
+        href: "https://fnfgame24.github.io/fnf-nenemixes/",
+        img: "/assets/images/fnf-nenemixes.webp"
+      };
+      if (!games.some(function(game){ return game.title === neneMixesGame.title; })) {
+        games.unshift(neneMixesGame);
+      }
+
+      const sonicFunkGame = {
+        title: "FNF Sonic The Funk",
+        href: "https://fnfgame24.github.io/fnf-sonic-the-funk/",
+        img: "/assets/images/fnf-sonic-the-funk.webp"
+      };
+      if (!games.some(function(game){ return game.title === sonicFunkGame.title; })) {
+        games.unshift(sonicFunkGame);
+      }
+
+      const sillyBillyGame = {
+        title: "FNF Silly Billy vs Yourself",
+        href: "https://fnfgame24.github.io/fnf-silly-billy-vs-yourself/",
+        img: "/assets/images/fnf-silly-billy-vs-yourself.webp"
+      };
+      if (!games.some(function(game){ return game.title === sillyBillyGame.title; })) {
+        games.unshift(sillyBillyGame);
+      }
 
       function renderResults(list){
         resultsBox.innerHTML = '';
@@ -774,6 +851,7 @@ header.top{
           const img = document.createElement('img');
           img.src = game.img;
           img.alt = game.title;
+          img.onerror = function(){ this.onerror = null; this.src = '/assets/fnf.png'; };
           thumb.appendChild(img);
 
           const label = document.createElement('div');

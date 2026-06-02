@@ -174,6 +174,13 @@
       box-shadow: 0 6px 16px rgba(246, 163, 19, 0.6);
       color: #fff;
     }
+    .collection-btn.mods-btn {
+      background: linear-gradient(90deg, #36f2ff, #7b5cff 55%, #d74cff);
+      box-shadow: 0 4px 16px rgba(54, 242, 255, 0.28), 0 0 18px rgba(215, 76, 255, 0.18);
+    }
+    .collection-btn.mods-btn:hover {
+      box-shadow: 0 6px 18px rgba(54, 242, 255, 0.38), 0 0 22px rgba(215, 76, 255, 0.24);
+    }
 
     /* SEARCH */
     .search-container{
@@ -591,15 +598,13 @@
         <a class="quick-mod" href="https://fnfgame24.github.io/fnf-vs-hypnos-lullaby-v2/">
           FNF Vs. Hypno’s Lullaby v2
         </a>
-        <a class="quick-mod" href="https://fnfgame24.github.io/fnf-indie-cross-ritual-but-everyone-sings-it/">
-          FNF Indie Cross Ritual But Everyone Sings It
-        </a>
         <a class="quick-mod" href="https://fnfgame24.github.io/fnf-vs-impostor-among-us-v4/">
           FNF vs Impostor Among Us V4 
         </a>
       </div>
 
       <!-- Search ở bên phải -->
+      <a href="/fnf-mods/" class="collection-btn mods-btn">🎮 FNF Mods</a>
       <a href="/fnf-collection/" class="collection-btn">🔥 FNF Collection</a>
         <div class="search-container">
         <div class="search-box">
@@ -616,7 +621,7 @@
           <div class="mod-sidebar-title">
             <span style="font-size:18px;">☰</span> MOD LIST
           </div>
-          <div class="mod-count">238</div>
+          <div class="mod-count">239</div>
         </div>
         <div class="sidebar-search">
           <input type="text" id="sidebar-search-input" placeholder="🔍 Search mods...">
@@ -671,6 +676,12 @@
       
       <h2>How To Play FNF Games</h2>
       <p>Use the arrow keys or WASD to match the notes on screen. Press each key when the note reaches the target area. Keep the rhythm steady, avoid missing too many notes, and try to finish the song with a strong score. The better the timing, the better the performance in FNF games.</p>
+      <h2>Explore More Games</h2>
+      <ul>
+        <li><a href="/fnf-doki-doki-takeover/">FNF Doki Doki Takeover</a></li>
+        <li><a href="/fnf-vs-hypnos-lullaby-v2/">FNF Vs. Hypno’s Lullaby v2</a></li>
+        <li><a href="/fnf-indie-cross-ritual-but-everyone-sings-it/">FNF Indie Cross Ritual</a></li>
+      </ul>
     </article>
 
             <footer>
@@ -1699,7 +1710,7 @@
     "id": 169,
     "title": "FNF Silly Billy Vs Yourself",
     "img": "../assets/images/fnf-silly-billy-vs-yourself.webp",
-    "iframe": "https://st.8games.net/7/igra-fnf-silli-billi/"
+    "iframe": "https://fnf.kdata1.com/2024/silly-billy-vs-yourself/1/"
   },
   {
     "id": 170,
@@ -1975,7 +1986,7 @@
     "id": 215,
     "title": "FNF NeneMixes",
     "img": "../assets/images/fnf-nenemixes.webp",
-    "iframe": "https://fnf.kdata1.com//2026/nenemixes/2.5/"
+    "iframe": "https://fnf.kdata1.com/2026/nenemixes/2.5/"
   },
   {
     "id": 216,
@@ -2114,6 +2125,30 @@
     "title": "FNF vs Garcello – [Packwatched]",
     "img": "../assets/images/fnf-vs-garcello-packwatched.webp",
     "iframe": "https://fnf.kdata1.com/2026/garcello-packwatched/1/d/"
+  },
+  {
+    "id": 239,
+    "title": "FNF Nocturnal Protocol Mod",
+    "img": "../assets/images/fnf-nocturnal-protocol-mod.webp",
+    "iframe": "https://fnf.kdata1.com/2026/nocturnal-protocol/1/d/"
+  },
+  {
+    "id": 240,
+    "title": "FNF VS Sonic.Exe The Last Adventure",
+    "img": "../assets/images/fnf-vs-sonic-exe-the-last-adventure.webp",
+    "iframe": "https://fnf.kdata1.com/2026/sonicexe-last-adventure/1.1/d/"
+  },
+  {
+    "id": 241,
+    "title": "FNF Hazier River: Smoke 'Em Out Struggle",
+    "img": "../assets/images/fnf-hazier-river-smoke-em-out-struggle.webp",
+    "iframe": "https://fnf.kdata1.com/2026/hazy-river/1/d/"
+  },
+  {
+    "id": 242,
+    "title": "FNF Babybones",
+    "img": "../assets/images/fnf-babybones.webp",
+    "iframe": "https://fnf.kdata1.com/2026/babybone/1.11/"
   }
 ];
 
@@ -2186,6 +2221,7 @@
           const img = document.createElement('img');
           img.src = game.img;
           img.alt = game.title;
+          img.onerror = function(){ this.onerror = null; this.src = '/assets/fnf.png'; };
           thumb.appendChild(img);
 
           const label = document.createElement('div');
