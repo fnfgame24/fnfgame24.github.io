@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -566,6 +566,63 @@
       color: #8b9dff;
       font-size: 18px;
     }
+    .mods-menu {
+      position: relative;
+      display: inline-flex;
+      flex-shrink: 0;
+      margin-right: 8px;
+    }
+    .mods-menu .collection-btn {
+      margin-right: 0;
+    }
+    .mods-dropdown {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 50%;
+      transform: translate(-50%, 8px);
+      min-width: 168px;
+      padding: 8px;
+      background: rgba(8, 15, 36, 0.96);
+      border: 1px solid rgba(54, 242, 255, 0.45);
+      border-radius: 14px;
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.35), 0 0 22px rgba(123, 92, 255, 0.18);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+      z-index: 2000;
+    }
+    .mods-dropdown::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -10px;
+      height: 10px;
+    }
+    .mods-menu:hover .mods-dropdown,
+    .mods-menu:focus-within .mods-dropdown {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translate(-50%, 0);
+    }
+    .mods-dropdown a {
+      display: block;
+      padding: 9px 12px;
+      border-radius: 10px;
+      color: #eaf7ff;
+      font-size: 13px;
+      font-weight: 800;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .mods-dropdown a:hover,
+    .mods-dropdown a:focus {
+      color: #fff;
+      background: linear-gradient(90deg, rgba(54, 242, 255, 0.24), rgba(215, 76, 255, 0.28));
+      outline: none;
+    }
 </style>
 </head>
 <body>
@@ -592,7 +649,13 @@
       </div>
 
       <!-- Search ở bên phải -->
-      <a href="/fnf-mods/" class="collection-btn mods-btn">🎮 FNF Mods</a>
+            <div class="mods-menu">
+        <a href="/fnf-mods/" class="collection-btn mods-btn">🎮 FNF Mods</a>
+        <div class="mods-dropdown" aria-label="FNF Mods sections">
+          <a href="/fnf-mods/#new-games">New Games</a>
+          <a href="/fnf-mods/#trending-now">Trending Now</a>
+        </div>
+      </div>
       <a href="/fnf-collection/" class="collection-btn">🔥 FNF Collection</a>
         <div class="search-container">
         <div class="search-box">
@@ -775,11 +838,11 @@ Players match the on-screen arrows using either the Arrow Keys or WASD. You can 
 
             <footer>
       <div style="margin-bottom: 12px; font-size: 14px;">
-        <a href="/about-us">About Us</a> | 
-        <a href="/contact-us">Contact Us</a> | 
-        <a href="/dmca">DMCA</a> | 
-        <a href="/privacy-policy">Privacy Policy</a> | 
-        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/about-us.html">About Us</a> | 
+        <a href="/contact-us.html">Contact Us</a> | 
+        <a href="/dmca.html">DMCA</a> | 
+        <a href="/privacy-policy.html">Privacy Policy</a> | 
+        <a href="/terms-of-service.html">Terms of Service</a>
       </div>
       <p>© 2026 FNF Game 24 — Fan-made project for Friday Night Funkin'.</p>
     </footer>
@@ -955,6 +1018,15 @@ Players match the on-screen arrows using either the Arrow Keys or WASD. You can 
         games.unshift(sonicFunkGame);
       }
 
+      const spaghettiGame = {
+        title: "FNF Spaghetti",
+        href: "https://fnfgame24.github.io/fnf-spaghetti/",
+        img: "/assets/images/fnf-spaghetti.webp"
+      };
+      if (!games.some(function(game){ return game.title === spaghettiGame.title; })) {
+        games.unshift(spaghettiGame);
+      }
+
       const sillyBillyGame = {
         title: "FNF Silly Billy vs Yourself",
         href: "https://fnfgame24.github.io/fnf-silly-billy-vs-yourself/",
@@ -962,6 +1034,51 @@ Players match the on-screen arrows using either the Arrow Keys or WASD. You can 
       };
       if (!games.some(function(game){ return game.title === sillyBillyGame.title; })) {
         games.unshift(sillyBillyGame);
+      }
+
+      const fnaf1Game = {
+        title: "FNF vs FNAF 1",
+        href: "https://fnfgame24.github.io/fnf-vs-fnaf-1/",
+        img: "/assets/images/fnf-vs-fnaf-1.webp"
+      };
+      if (!games.some(function(game){ return game.title === fnaf1Game.title; })) {
+        games.unshift(fnaf1Game);
+      }
+
+      const pibbyCorruptedGame = {
+        title: "Friday Night Funkin' Pibby Corrupted",
+        href: "https://fnfgame24.github.io/friday-night-funkin-pibby-corrupted/",
+        img: "/assets/images/friday-night-funkin-pibby-corrupted.webp"
+      };
+      if (!games.some(function(game){ return game.title === pibbyCorruptedGame.title; })) {
+        games.unshift(pibbyCorruptedGame);
+      }
+
+      const suicideMouseRemasteredGame = {
+        title: "FNF Vs. Suicide Mouse Remastered",
+        href: "https://fnfgame24.github.io/fnf-vs-suicide-mouse-remastered/",
+        img: "/assets/images/fnf-vs-suicide-mouse-remastered.webp"
+      };
+      if (!games.some(function(game){ return game.title === suicideMouseRemasteredGame.title; })) {
+        games.unshift(suicideMouseRemasteredGame);
+      }
+
+      const funkadelixGame = {
+        title: "FNF Funkadelix",
+        href: "https://fnfgame24.github.io/fnf-funkadelix/",
+        img: "/assets/images/fnf-funkadelix.webp"
+      };
+      if (!games.some(function(game){ return game.title === funkadelixGame.title; })) {
+        games.unshift(funkadelixGame);
+      }
+
+      const huggyWuggyGame = {
+        title: "FNF Vs. Huggy Wuggy (Poppy Playtime)",
+        href: "https://fnfgame24.github.io/fnf-vs-huggy-wuggy-poppy-playtime/",
+        img: "/assets/images/fnf-vs-huggy-wuggy-poppy-playtime.webp"
+      };
+      if (!games.some(function(game){ return game.title === huggyWuggyGame.title; })) {
+        games.unshift(huggyWuggyGame);
       }
 
       function renderResults(list){
