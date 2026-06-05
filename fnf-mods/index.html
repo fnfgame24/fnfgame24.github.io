@@ -165,7 +165,8 @@
       padding:2px 2px 6px;
     }
     #new-games,
-    #trending-now{
+    #trending-now,
+    #pibby-mods{
       scroll-margin-top:96px;
     }
     .section-head{
@@ -367,6 +368,7 @@
         <div class="mods-dropdown" aria-label="FNF Mods sections">
           <a href="/fnf-mods/#new-games">New Games</a>
           <a href="/fnf-mods/#trending-now">Trending Now</a>
+          <a href="/fnf-mods/#pibby-mods">Pibby Mods</a>
         </div>
       </div>
       <a href="/fnf-collection/" class="collection-btn">🔥 FNF Collection</a>
@@ -491,6 +493,57 @@
       </div>
     </section>
 
+    <section class="section" id="pibby-mods" aria-label="Pibby FNF mods">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Glitch Picks</div>
+          <h2 class="section-title">Pibby Mods</h2>
+        </div>
+      </div>
+      <div class="new-games-grid">
+        <a class="game-card" href="/friday-night-funkin-pibby-corrupted/">
+          <img src="/assets/images/friday-night-funkin-pibby-corrupted.webp" alt="Friday Night Funkin' Pibby Corrupted">
+          <span class="game-name">Friday Night Funkin' Pibby Corrupted</span>
+        </a>
+        <a class="game-card" href="/friday-night-funkin-pibby-apocalypse/">
+          <img src="/assets/images/friday-night-funkin-pibby-apocalypse.webp" alt="Friday Night Funkin' Pibby: Apocalypse">
+          <span class="game-name">Friday Night Funkin' Pibby: Apocalypse</span>
+        </a>
+        <a class="game-card" href="/fnf-x-pibby-glitched-legends/">
+          <img src="/assets/images/fnf-x-pibby-glitched-legends.webp" alt="FNF x Pibby: Glitched Legends">
+          <span class="game-name">FNF x Pibby: Glitched Legends</span>
+        </a>
+        <a class="game-card" href="/fnf-pibby-vs-oggy-high-effort/">
+          <img src="/assets/images/fnf-pibby-vs-oggy-high-effort.png" alt="FNF Pibby vs Oggy High effort">
+          <span class="game-name">FNF Pibby vs Oggy High effort</span>
+        </a>
+        <a class="game-card" href="/fnf-x-pibby-vs-corrupted-garcello-annie/">
+          <img src="/assets/images/fnf-x-pibby-vs-corrupted-garcello-and-annie.png" alt="FNF X Pibby vs Corrupted Garcello & Annie">
+          <span class="game-name">FNF X Pibby vs Corrupted Garcello & Annie</span>
+        </a>
+        <a class="game-card" href="/fnf-x-pibby-doof-mod-vs-perry-platypus/">
+          <img src="/assets/images/fnf-x-pibby-doof-mod-vs-perry-platypus.png" alt="FNF X Pibby Doof Mod vs Perry Platypus">
+          <span class="game-name">FNF X Pibby Doof Mod vs Perry Platypus</span>
+        </a>
+        <a class="game-card" href="/fnf-x-pibby-vs-corrupted-family-guy/">
+          <img src="/assets/images/fnf-x-pibby-vs-corrupted-family-guy.png" alt="FNF X Pibby vs Corrupted Family Guy">
+          <span class="game-name">FNF X Pibby vs Corrupted Family Guy</span>
+        </a>
+        <a class="game-card" href="/fnf-x-pibby-vs-red-and-peashooter/">
+          <img src="/assets/images/fnf-x-pibby-vs-red-and-peashooter.png" alt="FNF X Pibby vs Red And Peashooter">
+          <span class="game-name">FNF X Pibby vs Red And Peashooter</span>
+        </a>
+        <a class="game-card" href="/fnf-pibby-vs-corrupted-peppa-pig/">
+          <img src="/assets/images/fnf-pibby-vs-corrupted-peppa-pig.webp" alt="FNF Pibby Vs Corrupted Peppa Pig">
+          <span class="game-name">FNF Pibby Vs Corrupted Peppa Pig</span>
+        </a>
+        <a class="game-card" href="/fnf-darkness-takeover-vs-pibby-family-guy/">
+          <img src="/assets/images/fnf-darkness-takeover-vs-pibby-family-guy.webp" alt="FNF: Darkness Takeover vs Pibby Family Guy">
+          <span class="game-name">FNF: Darkness Takeover vs Pibby Family Guy</span>
+        </a>
+      </div>
+    </section>
+
     <section class="content-section">
       <h2>Play New And Trending FNF Mods Online</h2>
       <p>FNF Mods bring new energy to Friday Night Funkin with fresh songs, custom characters, remix battles, and creative crossover worlds. On this page, players can explore new games, trending rhythm challenges, horror-themed battles, Sonic.EXE mods, Pibby corruption stories, and many other fan-made music experiences.</p>
@@ -599,7 +652,79 @@
       if (!games.some(function(game){ return game.title === huggyWuggyGame.title; })) {
         games.unshift(huggyWuggyGame);
       }
-      function renderResults(list){
+
+      const pibbyApocalypseGame = {
+        title: "Friday Night Funkin’ Pibby: Apocalypse",
+        href: "https://fnfgame24.github.io/friday-night-funkin-pibby-apocalypse/",
+        img: "/assets/images/friday-night-funkin-pibby-apocalypse.webp"
+      };
+      if (!games.some(function(game){ return game.title === pibbyApocalypseGame.title; })) {
+        games.unshift(pibbyApocalypseGame);
+      }
+      const pibbyGlitchedLegendsGame = {
+        title: "FNF x Pibby: Glitched Legends",
+        href: "https://fnfgame24.github.io/fnf-x-pibby-glitched-legends/",
+        img: "/assets/images/fnf-x-pibby-glitched-legends.webp"
+      };
+      if (!games.some(function(game){ return game.title === pibbyGlitchedLegendsGame.title; })) {
+        games.unshift(pibbyGlitchedLegendsGame);
+      }
+      const pibbyOggyHighEffortGame = {
+        title: "FNF Pibby vs Oggy High effort",
+        href: "https://fnfgame24.github.io/fnf-pibby-vs-oggy-high-effort/",
+        img: "/assets/images/fnf-pibby-vs-oggy-high-effort.png"
+      };
+      if (!games.some(function(game){ return game.title === pibbyOggyHighEffortGame.title; })) {
+        games.unshift(pibbyOggyHighEffortGame);
+      }
+      const pibbyGarcelloAnnieGame = {
+        title: "FNF X Pibby vs Corrupted Garcello & Annie",
+        href: "https://fnfgame24.github.io/fnf-x-pibby-vs-corrupted-garcello-annie/",
+        img: "/assets/images/fnf-x-pibby-vs-corrupted-garcello-and-annie.png"
+      };
+      if (!games.some(function(game){ return game.title === pibbyGarcelloAnnieGame.title; })) {
+        games.unshift(pibbyGarcelloAnnieGame);
+      }
+      const pibbyDoofPerryGame = {
+        title: "FNF X Pibby Doof Mod vs Perry Platypus",
+        href: "https://fnfgame24.github.io/fnf-x-pibby-doof-mod-vs-perry-platypus/",
+        img: "/assets/images/fnf-x-pibby-doof-mod-vs-perry-platypus.png"
+      };
+      if (!games.some(function(game){ return game.title === pibbyDoofPerryGame.title; })) {
+        games.unshift(pibbyDoofPerryGame);
+      }
+      const pibbyFamilyGuyGame = {
+        title: "FNF X Pibby vs Corrupted Family Guy",
+        href: "https://fnfgame24.github.io/fnf-x-pibby-vs-corrupted-family-guy/",
+        img: "/assets/images/fnf-x-pibby-vs-corrupted-family-guy.png"
+      };
+      if (!games.some(function(game){ return game.title === pibbyFamilyGuyGame.title; })) {
+        games.unshift(pibbyFamilyGuyGame);
+      }
+      const pibbyRedPeashooterGame = {
+        title: "FNF X Pibby vs Red And Peashooter",
+        href: "https://fnfgame24.github.io/fnf-x-pibby-vs-red-and-peashooter/",
+        img: "/assets/images/fnf-x-pibby-vs-red-and-peashooter.png"
+      };
+      if (!games.some(function(game){ return game.title === pibbyRedPeashooterGame.title; })) {
+        games.unshift(pibbyRedPeashooterGame);
+      }
+      const pibbyPeppaPigGame = {
+        title: "FNF Pibby Vs Corrupted Peppa Pig",
+        href: "https://fnfgame24.github.io/fnf-pibby-vs-corrupted-peppa-pig/",
+        img: "/assets/images/fnf-pibby-vs-corrupted-peppa-pig.webp"
+      };
+      if (!games.some(function(game){ return game.title === pibbyPeppaPigGame.title; })) {
+        games.unshift(pibbyPeppaPigGame);
+      }
+      const darknessTakeoverFamilyGuyGame = {
+        title: "FNF: Darkness Takeover vs Pibby Family Guy",
+        href: "https://fnfgame24.github.io/fnf-darkness-takeover-vs-pibby-family-guy/",
+        img: "/assets/images/fnf-darkness-takeover-vs-pibby-family-guy.webp"
+      };
+      if (!games.some(function(game){ return game.title === darknessTakeoverFamilyGuyGame.title; })) {
+        games.unshift(darknessTakeoverFamilyGuyGame);
+      }      function renderResults(list){
         resultsBox.innerHTML = '';
         if (!list.length) {
           resultsBox.style.display = 'none';

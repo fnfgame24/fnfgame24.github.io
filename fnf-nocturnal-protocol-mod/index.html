@@ -640,6 +640,7 @@
         <div class="mods-dropdown" aria-label="FNF Mods sections">
           <a href="/fnf-mods/#new-games">New Games</a>
           <a href="/fnf-mods/#trending-now">Trending Now</a>
+          <a href="/fnf-mods/#pibby-mods">Pibby Mods</a>
         </div>
       </div>
       <a href="/fnf-collection/" class="collection-btn">🔥 FNF Collection</a>
@@ -1076,7 +1077,79 @@
       if (!games.some(function(game){ return game.title === huggyWuggyGame.title; })) {
         games.unshift(huggyWuggyGame);
       }
-      function renderResults(list){
+
+      const pibbyApocalypseGame = {
+        title: "Friday Night Funkin’ Pibby: Apocalypse",
+        href: "https://fnfgame24.github.io/friday-night-funkin-pibby-apocalypse/",
+        img: "/assets/images/friday-night-funkin-pibby-apocalypse.webp"
+      };
+      if (!games.some(function(game){ return game.title === pibbyApocalypseGame.title; })) {
+        games.unshift(pibbyApocalypseGame);
+      }
+      const pibbyGlitchedLegendsGame = {
+        title: "FNF x Pibby: Glitched Legends",
+        href: "https://fnfgame24.github.io/fnf-x-pibby-glitched-legends/",
+        img: "/assets/images/fnf-x-pibby-glitched-legends.webp"
+      };
+      if (!games.some(function(game){ return game.title === pibbyGlitchedLegendsGame.title; })) {
+        games.unshift(pibbyGlitchedLegendsGame);
+      }
+      const pibbyOggyHighEffortGame = {
+        title: "FNF Pibby vs Oggy High effort",
+        href: "https://fnfgame24.github.io/fnf-pibby-vs-oggy-high-effort/",
+        img: "/assets/images/fnf-pibby-vs-oggy-high-effort.png"
+      };
+      if (!games.some(function(game){ return game.title === pibbyOggyHighEffortGame.title; })) {
+        games.unshift(pibbyOggyHighEffortGame);
+      }
+      const pibbyGarcelloAnnieGame = {
+        title: "FNF X Pibby vs Corrupted Garcello & Annie",
+        href: "https://fnfgame24.github.io/fnf-x-pibby-vs-corrupted-garcello-annie/",
+        img: "/assets/images/fnf-x-pibby-vs-corrupted-garcello-and-annie.png"
+      };
+      if (!games.some(function(game){ return game.title === pibbyGarcelloAnnieGame.title; })) {
+        games.unshift(pibbyGarcelloAnnieGame);
+      }
+      const pibbyDoofPerryGame = {
+        title: "FNF X Pibby Doof Mod vs Perry Platypus",
+        href: "https://fnfgame24.github.io/fnf-x-pibby-doof-mod-vs-perry-platypus/",
+        img: "/assets/images/fnf-x-pibby-doof-mod-vs-perry-platypus.png"
+      };
+      if (!games.some(function(game){ return game.title === pibbyDoofPerryGame.title; })) {
+        games.unshift(pibbyDoofPerryGame);
+      }
+      const pibbyFamilyGuyGame = {
+        title: "FNF X Pibby vs Corrupted Family Guy",
+        href: "https://fnfgame24.github.io/fnf-x-pibby-vs-corrupted-family-guy/",
+        img: "/assets/images/fnf-x-pibby-vs-corrupted-family-guy.png"
+      };
+      if (!games.some(function(game){ return game.title === pibbyFamilyGuyGame.title; })) {
+        games.unshift(pibbyFamilyGuyGame);
+      }
+      const pibbyRedPeashooterGame = {
+        title: "FNF X Pibby vs Red And Peashooter",
+        href: "https://fnfgame24.github.io/fnf-x-pibby-vs-red-and-peashooter/",
+        img: "/assets/images/fnf-x-pibby-vs-red-and-peashooter.png"
+      };
+      if (!games.some(function(game){ return game.title === pibbyRedPeashooterGame.title; })) {
+        games.unshift(pibbyRedPeashooterGame);
+      }
+      const pibbyPeppaPigGame = {
+        title: "FNF Pibby Vs Corrupted Peppa Pig",
+        href: "https://fnfgame24.github.io/fnf-pibby-vs-corrupted-peppa-pig/",
+        img: "/assets/images/fnf-pibby-vs-corrupted-peppa-pig.webp"
+      };
+      if (!games.some(function(game){ return game.title === pibbyPeppaPigGame.title; })) {
+        games.unshift(pibbyPeppaPigGame);
+      }
+      const darknessTakeoverFamilyGuyGame = {
+        title: "FNF: Darkness Takeover vs Pibby Family Guy",
+        href: "https://fnfgame24.github.io/fnf-darkness-takeover-vs-pibby-family-guy/",
+        img: "/assets/images/fnf-darkness-takeover-vs-pibby-family-guy.webp"
+      };
+      if (!games.some(function(game){ return game.title === darknessTakeoverFamilyGuyGame.title; })) {
+        games.unshift(darknessTakeoverFamilyGuyGame);
+      }      function renderResults(list){
         resultsBox.innerHTML = '';
         if (!list.length){
           resultsBox.style.display = 'none';
