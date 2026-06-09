@@ -1,4 +1,4 @@
-const modData = [
+﻿const modData = [
   {
     "id": 1,
     "title": "FNF Minus",
@@ -205,7 +205,7 @@ const modData = [
   },
   {
     "id": 35,
-    "title": "FNF Sonic Legacy",
+    "title": "FNF Sonic Legacy – RodentRap",
     "img": "../assets/images/fnf-sonic-legacy.webp",
     "iframe": "https://fnf.kdata1.com/2024/sonic-legacy-rodentrap/1/"
   },
@@ -265,7 +265,7 @@ const modData = [
   },
   {
     "id": 45,
-    "title": "FNF vs Sonic The Hedgehog",
+    "title": "FNF Vs Sonic The Hedgehog",
     "img": "../assets/images/fnf-vs-sonic-the-hedgehog.webp",
     "iframe": "https://fnf.kdata1.com/sonic-the-hedgehog/1/"
   },
@@ -1450,5 +1450,17 @@ const modData = [
     "title": "FNF Babybones",
     "img": "../assets/images/fnf-babybones.webp",
     "iframe": "https://fnf.kdata1.com/2026/babybone/1.11/"
+  },
+  {
+    "id": 243,
+    "title": "FNF VS Sonic Dash & Spin",
+    "img": "../assets/images/fnf-vs-sonic-dash-and-spin.png",
+    "iframe": "https://fnf.kdata1.com/sonic-dash-spin/2/"
+  },
+  {
+    "id": 244,
+    "title": "FNF vs. Piracy Sonic",
+    "img": "../assets/images/fnf-vs-piracy-sonic.png",
+    "iframe": "https://fnf.kdata1.com/piracy-sonic/1/"
   }
 ];
