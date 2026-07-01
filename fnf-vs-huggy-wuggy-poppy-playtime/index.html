@@ -11,7 +11,7 @@
   <meta name="google-site-verification" content="jiZelBzINsnHWFKipIb1OUNLzmaCDjXLLhWQxOSXZWQ" />
   <meta name="theme-color" content="#0a0f18" />
    <!-- Canonical -->
-  <link rel="canonical" href="https://fnfgame24.github.io/fnf-vs-huggy-wuggy-poppy-playtime/" />
+  <link rel="canonical" href="https://fnfgame24.com/fnf-vs-huggy-wuggy-poppy-playtime/" />
     <meta itemprop="image" content="../assets/images/fnf-vs-huggy-wuggy-poppy-playtime.webp">
       <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1XJXQCK40V"></script>
@@ -24,13 +24,13 @@
   </script>
 
   <!-- Favicon -->
-  <link rel="icon" href="https://fnfgame24.github.io/assets/favicon.png" type="image/png" />
+  <link rel="icon" href="/assets/favicon.png" type="image/png" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="FNF Vs. Huggy Wuggy (Poppy Playtime)" />
   <meta property="og:description" content="FNF Vs. Huggy Wuggy (Poppy Playtime) turns Poppy Playtime's blue mascot into a tense rap rival with Playtime, Playground, reanimated sprites, and toy-factory rhythm pressure." />
-  <meta property="og:url" content="https://fnfgame24.github.io/fnf-vs-huggy-wuggy-poppy-playtime/" />
+  <meta property="og:url" content="https://fnfgame24.com/fnf-vs-huggy-wuggy-poppy-playtime/" />
   <meta property="og:image" content="../assets/images/fnf-vs-huggy-wuggy-poppy-playtime.webp" />
 
   <!-- Twitter Cards -->
@@ -609,6 +609,29 @@
       background: linear-gradient(90deg, rgba(54, 242, 255, 0.24), rgba(215, 76, 255, 0.28));
       outline: none;
     }
+    /* Ad Slots */
+    .ad-slot {
+      background: #0f1728;
+      border: 1px dashed #4e5b82;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #4e5b82;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin: 20px auto;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,.25);
+    }
+    .ad-leaderboard {
+      width: 100%;
+      max-width: 728px;
+      height: 90px;
+    }
+
+    @media (max-width: 768px) { .ad-slot { display: none !important; } }
 </style>
 </head>
 <body>
@@ -617,19 +640,19 @@
       <!-- Logo -->
       <a class="brand" href="/">
         <span class="appicon">
-          <img src="https://fnfgame24.github.io/assets/fnf.png" alt="FNF logo">
+          <img src="/assets/fnf.png" alt="FNF logo">
         </span>
       </a>
 
       <!-- 4 game nổi bật nằm cùng thanh -->
       <div class="top-games">
-        <a class="quick-mod" href="https://fnfgame24.github.io/fnf-doki-doki-takeover/">
+        <a class="quick-mod" href="/fnf-doki-doki-takeover/">
           FNF: Doki Doki Takeover
         </a>
-        <a class="quick-mod" href="https://fnfgame24.github.io/fnf-vs-hypnos-lullaby-v2/">
+        <a class="quick-mod" href="/fnf-vs-hypnos-lullaby-v2/">
           FNF Vs. Hypno’s Lullaby v2
         </a>
-        <a class="quick-mod" href="https://fnfgame24.github.io/fnf-vs-impostor-among-us-v4/">
+        <a class="quick-mod" href="/fnf-vs-impostor-among-us-v4/">
           FNF vs Impostor Among Us V4 
         </a>
       </div>
@@ -653,6 +676,11 @@
         <div class="search-results" id="search-results"></div>
       </div>
     </header>
+
+    <!-- Ad Slot (Top) -->
+    <div class="ad-slot ad-leaderboard">
+       <span>Ad Space (728x90)</span>
+    </div>
 
     <!-- Player -->
     <section class="player-card" aria-label="Game player">
@@ -679,48 +707,52 @@
       </div>
     </section>
 
+        <!-- Ad Slot (Middle) -->
+    <div class="ad-slot ad-leaderboard">
+       <span>Ad Space (728x90)</span>
+    </div>
     <!-- Mods list with images -->
     <section class="block" aria-label="Popular FNF mods">
       <h2 style="margin:4px 0 10px;font-size:18px;">Popular FNF Mods</h2>
       <div class="mods">
-        <a class="mod" href="https://fnfgame24.github.io/friday-night-funkin-vs-whitty/">
-          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-whitty.png" alt="Friday Night Funkin' vs. Whitty">
+        <a class="mod" href="/friday-night-funkin-vs-whitty/">
+          <img src="/assets/friday-night-funkin-vs-whitty.png" alt="Friday Night Funkin' vs. Whitty">
           <div class="mod-label">Friday Night Funkin' vs. Whitty</div>
         </a>
 
-        <a class="mod" href="https://fnfgame24.github.io/friday-night-funkin-vs-tricky-the-clown/">
-          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-tricky-the-clown.png" alt="Friday Night Funkin' vs. Tricky the Clown">
+        <a class="mod" href="/friday-night-funkin-vs-tricky-the-clown/">
+          <img src="/assets/friday-night-funkin-vs-tricky-the-clown.png" alt="Friday Night Funkin' vs. Tricky the Clown">
           <div class="mod-label">Friday Night Funkin' vs. Tricky the Clown</div>
         </a>
 
         <!-- Thay Garcello bằng FNF (trang chủ) -->
-        <a class="mod" href="https://fnfgame24.github.io/">
-          <img src="https://fnfgame24.github.io/assets/fnf.png" alt="Friday Night Funkin'">
+        <a class="mod" href="/">
+          <img src="/assets/fnf.png" alt="Friday Night Funkin'">
           <div class="mod-label">FNF</div>
         </a>
 
-        <a class="mod" href="https://fnfgame24.github.io/friday-night-funkin-vs-agoti/">
-          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-agoti.png" alt="Friday Night Funkin' vs. AGOTI">
+        <a class="mod" href="/friday-night-funkin-vs-agoti/">
+          <img src="/assets/friday-night-funkin-vs-agoti.png" alt="Friday Night Funkin' vs. AGOTI">
           <div class="mod-label">Friday Night Funkin' vs. AGOTI</div>
         </a>
 
-        <a class="mod" href="https://fnfgame24.github.io/friday-night-funkin-vs-shaggy-v2/">
-          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-shaggy-v2.png" alt="Friday Night Funkin vs Shaggy v2">
+        <a class="mod" href="/friday-night-funkin-vs-shaggy-v2/">
+          <img src="/assets/friday-night-funkin-vs-shaggy-v2.png" alt="Friday Night Funkin vs Shaggy v2">
           <div class="mod-label">Friday Night Funkin vs Shaggy v2</div>
         </a>
 
-        <a class="mod" href="https://fnfgame24.github.io/fnf-indie-cross/">
-          <img src="https://fnfgame24.github.io/assets/fnf-indie-cross.png" alt="FNF: Indie Cross">
+        <a class="mod" href="/fnf-indie-cross/">
+          <img src="/assets/fnf-indie-cross.png" alt="FNF: Indie Cross">
           <div class="mod-label">FNF: Indie Cross</div>
         </a>
 
-        <a class="mod" href="https://fnfgame24.github.io/fnf-vs-sonic-exe/">
-          <img src="https://fnfgame24.github.io/assets/fnf-vs-sonic-exe.png" alt="FNF vs. Sonic.EXE">
+        <a class="mod" href="/fnf-vs-sonic-exe/">
+          <img src="/assets/fnf-vs-sonic-exe.png" alt="FNF vs. Sonic.EXE">
           <div class="mod-label">FNF vs. Sonic.EXE</div>
         </a>
 
-        <a class="mod" href="https://fnfgame24.github.io/friday-night-funkin-vs-bob-bosip/">
-          <img src="https://fnfgame24.github.io/assets/friday-night-funkin-vs-bob-bosip.png" alt="Friday Night Funkin' vs. Bob & Bosip">
+        <a class="mod" href="/friday-night-funkin-vs-bob-bosip/">
+          <img src="/assets/friday-night-funkin-vs-bob-bosip.png" alt="Friday Night Funkin' vs. Bob & Bosip">
           <div class="mod-label">Friday Night Funkin' vs. Bob & Bosip</div>
         </a>
       </div>
@@ -737,7 +769,30 @@
         .toast-notification { position: fixed; bottom: 24px; left: 24px; background: rgba(15, 23, 40, 0.95); border: 1px solid rgba(139, 157, 255, 0.4); border-radius: 12px; padding: 12px 20px; color: #fff; font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 15px rgba(139, 157, 255, 0.2); z-index: 99999; opacity: 0; transform: translateY(20px) scale(0.95); transition: opacity 0.3s, transform 0.3s; pointer-events: none; backdrop-filter: blur(8px); }
         .toast-notification.show { opacity: 1; transform: translateY(0) scale(1); }
         .toast-icon { color: #8b9dff; font-size: 18px; }
-      </style>
+          /* Ad Slots */
+    .ad-slot {
+      background: #0f1728;
+      border: 1px dashed #4e5b82;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #4e5b82;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin: 20px auto;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,.25);
+    }
+    .ad-leaderboard {
+      width: 100%;
+      max-width: 728px;
+      height: 90px;
+    }
+
+    @media (max-width: 768px) { .ad-slot { display: none !important; } }
+</style>
 
       <img src="../assets/images/fnf-vs-huggy-wuggy-poppy-playtime.webp" alt="FNF Vs. Huggy Wuggy (Poppy Playtime) banner" class="center-img">
 
@@ -776,7 +831,12 @@
 
     </article>
 
-            <footer>
+                <!-- Ad Slot (Bottom) -->
+    <div class="ad-slot ad-leaderboard">
+       <span>Ad Space (728x90)</span>
+    </div>
+
+    <footer>
       <div style="margin-bottom: 12px; font-size: 14px;">
         <a href="/about-us.html">About Us</a> | 
         <a href="/contact-us.html">Contact Us</a> | 
@@ -790,20 +850,14 @@
 
   <script>
     /* Fullscreen */
-    function toggleFullscreen(){
-      const elem = document.getElementById('player-box');
-      if (!document.fullscreenElement &&
-          !document.webkitFullscreenElement &&
-          !document.msFullscreenElement) {
-        (elem.requestFullscreen || elem.webkitRequestFullscreen || elem.msRequestFullscreen).call(elem);
-      } else {
-        (document.exitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen).call(document);
-      }
+    function toggleFullscreen(){ elem = document.getElementById('player-box'); (!document.fullscreenElement &&!document.webkitFullscreenElement &&!document.msFullscreenElement) {(typeof gtag === 'function') gtag('event', 'enter_fullscreen', {'event_category': 'Game Interaction'});
+        (elem.requestFullscreen || elem.webkitRequestFullscreen || elem.msRequestFullscreen).call(elem);} else {(typeof gtag === 'function') gtag('event', 'exit_fullscreen', {'event_category': 'Game Interaction'});
+        (document.exitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen).call(document);}
     }
 
     /* Share: copy current page link */
-    function sharePage(){
-      const url = location.href;
+    function sharePage(){ url = location.href;
+      if(typeof gtag === 'function') gtag('event', 'share', {'method': 'Copy Link', 'event_category': 'Game Interaction'});
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(url).then(function(){
           showToast('Link copied to clipboard! 🚀');
@@ -847,6 +901,7 @@
       let isFav = localStorage.getItem(key) === '1';
       isFav = !isFav;
       localStorage.setItem(key, isFav ? '1' : '0');
+      if(typeof gtag === 'function') gtag('event', isFav ? 'add_favorite' : 'remove_favorite', {'event_category': 'Game Interaction'});
       if(btn){
         btn.classList.toggle('active', isFav);
       }
@@ -867,15 +922,15 @@
       if (!input || !resultsBox) return;
 
       const quickThumbs = {
-        "FNF: Doki Doki Takeover": "https://fnfgame24.github.io/assets/fnf-doki-doki-takeover.png",
-        "FNF Vs. Hypno’s Lullaby v2": "https://fnfgame24.github.io/assets/fnf-vs-hyphnos-lullaby-v2.png",
-        "FNF Indie Cross Ritual But Everyone Sings It": "https://fnfgame24.github.io/assets/fnf-indie-cross-ritual-but-everyone-sings-it.png",
-        "FNF vs Impostor Among Us V4": "https://fnfgame24.github.io/assets/fnf-vs-impostor-among-us-v4.png"
+        "FNF: Doki Doki Takeover": "/assets/fnf-doki-doki-takeover.png",
+        "FNF Vs. Hypno’s Lullaby v2": "/assets/fnf-vs-hyphnos-lullaby-v2.png",
+        "FNF Indie Cross Ritual But Everyone Sings It": "/assets/fnf-indie-cross-ritual-but-everyone-sings-it.png",
+        "FNF vs Impostor Among Us V4": "/assets/fnf-vs-impostor-among-us-v4.png"
       };
 
       // get games from header + grid
       const linkNodes = document.querySelectorAll('.top-games .quick-mod, .mods .mod');
-      const defaultThumb = 'https://fnfgame24.github.io/assets/fnf.png';
+      const defaultThumb = '/assets/fnf.png';
 
       const games = Array.from(linkNodes).map(function(el){
         const title = el.textContent.trim();
@@ -894,7 +949,7 @@
 
       const nocturnalGame = {
         title: "FNF Nocturnal Protocol Mod",
-        href: "https://fnfgame24.github.io/fnf-nocturnal-protocol-mod/",
+        href: "/fnf-nocturnal-protocol-mod/",
         img: "/assets/images/fnf-nocturnal-protocol-mod.webp"
       };
       if (!games.some(function(game){ return game.title === nocturnalGame.title; })) {
@@ -903,7 +958,7 @@
 
       const lastAdventureGame = {
         title: "FNF VS Sonic.Exe The Last Adventure",
-        href: "https://fnfgame24.github.io/fnf-vs-sonic-exe-the-last-adventure/",
+        href: "/fnf-vs-sonic-exe-the-last-adventure/",
         img: "/assets/images/fnf-vs-sonic-exe-the-last-adventure.webp"
       };
       if (!games.some(function(game){ return game.title === lastAdventureGame.title; })) {
@@ -912,7 +967,7 @@
 
       const hazierRiverGame = {
         title: "FNF Hazier River: Smoke 'Em Out Struggle",
-        href: "https://fnfgame24.github.io/fnf-hazier-river-smoke-em-out-struggle/",
+        href: "/fnf-hazier-river-smoke-em-out-struggle/",
         img: "/assets/images/fnf-hazier-river-smoke-em-out-struggle.webp"
       };
       if (!games.some(function(game){ return game.title === hazierRiverGame.title; })) {
@@ -920,7 +975,7 @@
       }
       const huggy_wuggyGame = {
         title: "FNF Vs. Huggy Wuggy (Poppy Playtime)",
-        href: "https://fnfgame24.github.io/fnf-vs-huggy-wuggy-poppy-playtime/",
+        href: "/fnf-vs-huggy-wuggy-poppy-playtime/",
         img: "/assets/images/fnf-vs-huggy-wuggy-poppy-playtime.webp"
       };
       if (!games.some(function(game){ return game.title === huggy_wuggyGame.title; })) {
@@ -928,7 +983,7 @@
       }
       const packwatchedGame = {
         title: "FNF vs Garcello - [Packwatched]",
-        href: "https://fnfgame24.github.io/fnf-vs-garcello-packwatched/",
+        href: "/fnf-vs-garcello-packwatched/",
         img: "/assets/images/fnf-vs-garcello-packwatched.webp"
       };
       if (!games.some(function(game){ return game.title === packwatchedGame.title; })) {
@@ -936,7 +991,7 @@
       }
       const neneMixesGame = {
         title: "FNF NeneMixes",
-        href: "https://fnfgame24.github.io/fnf-nenemixes/",
+        href: "/fnf-nenemixes/",
         img: "/assets/images/fnf-nenemixes.webp"
       };
       if (!games.some(function(game){ return game.title === neneMixesGame.title; })) {
@@ -944,7 +999,7 @@
       }
       const sonicFunkGame = {
         title: "FNF Sonic The Funk",
-        href: "https://fnfgame24.github.io/fnf-sonic-the-funk/",
+        href: "/fnf-sonic-the-funk/",
         img: "/assets/images/fnf-sonic-the-funk.webp"
       };
       if (!games.some(function(game){ return game.title === sonicFunkGame.title; })) {
@@ -953,7 +1008,7 @@
 
       const spaghettiGame = {
         title: "FNF Spaghetti",
-        href: "https://fnfgame24.github.io/fnf-spaghetti/",
+        href: "/fnf-spaghetti/",
         img: "/assets/images/fnf-spaghetti.webp"
       };
       if (!games.some(function(game){ return game.title === spaghettiGame.title; })) {
@@ -961,7 +1016,7 @@
       }
       const sillyBillyGame = {
         title: "FNF Silly Billy vs Yourself",
-        href: "https://fnfgame24.github.io/fnf-silly-billy-vs-yourself/",
+        href: "/fnf-silly-billy-vs-yourself/",
         img: "/assets/images/fnf-silly-billy-vs-yourself.webp"
       };
       if (!games.some(function(game){ return game.title === sillyBillyGame.title; })) {
@@ -970,7 +1025,7 @@
 
       const fnaf1Game = {
         title: "FNF vs FNAF 1",
-        href: "https://fnfgame24.github.io/fnf-vs-fnaf-1/",
+        href: "/fnf-vs-fnaf-1/",
         img: "/assets/images/fnf-vs-fnaf-1.webp"
       };
       if (!games.some(function(game){ return game.title === fnaf1Game.title; })) {
@@ -978,7 +1033,7 @@
       }
       const pibbyCorruptedGame = {
         title: "Friday Night Funkin' Pibby Corrupted",
-        href: "https://fnfgame24.github.io/friday-night-funkin-pibby-corrupted/",
+        href: "/friday-night-funkin-pibby-corrupted/",
         img: "/assets/images/friday-night-funkin-pibby-corrupted.webp"
       };
       if (!games.some(function(game){ return game.title === pibbyCorruptedGame.title; })) {
@@ -986,7 +1041,7 @@
       }
       const suicideMouseRemasteredGame = {
         title: "FNF Vs. Suicide Mouse Remastered",
-        href: "https://fnfgame24.github.io/fnf-vs-suicide-mouse-remastered/",
+        href: "/fnf-vs-suicide-mouse-remastered/",
         img: "/assets/images/fnf-vs-suicide-mouse-remastered.webp"
       };
       if (!games.some(function(game){ return game.title === suicideMouseRemasteredGame.title; })) {
@@ -994,7 +1049,7 @@
       }
       const funkadelixGame = {
         title: "FNF Funkadelix",
-        href: "https://fnfgame24.github.io/fnf-funkadelix/",
+        href: "/fnf-funkadelix/",
         img: "/assets/images/fnf-funkadelix.webp"
       };
       if (!games.some(function(game){ return game.title === funkadelixGame.title; })) {
@@ -1003,7 +1058,7 @@
 
       const pibbyApocalypseGame = {
         title: "Friday Night Funkin’ Pibby: Apocalypse",
-        href: "https://fnfgame24.github.io/friday-night-funkin-pibby-apocalypse/",
+        href: "/friday-night-funkin-pibby-apocalypse/",
         img: "/assets/images/friday-night-funkin-pibby-apocalypse.webp"
       };
       if (!games.some(function(game){ return game.title === pibbyApocalypseGame.title; })) {
@@ -1011,7 +1066,7 @@
       }
       const pibbyGlitchedLegendsGame = {
         title: "FNF x Pibby: Glitched Legends",
-        href: "https://fnfgame24.github.io/fnf-x-pibby-glitched-legends/",
+        href: "/fnf-x-pibby-glitched-legends/",
         img: "/assets/images/fnf-x-pibby-glitched-legends.webp"
       };
       if (!games.some(function(game){ return game.title === pibbyGlitchedLegendsGame.title; })) {
@@ -1019,7 +1074,7 @@
       }
       const pibbyOggyHighEffortGame = {
         title: "FNF Pibby vs Oggy High effort",
-        href: "https://fnfgame24.github.io/fnf-pibby-vs-oggy-high-effort/",
+        href: "/fnf-pibby-vs-oggy-high-effort/",
         img: "/assets/images/fnf-pibby-vs-oggy-high-effort.png"
       };
       if (!games.some(function(game){ return game.title === pibbyOggyHighEffortGame.title; })) {
@@ -1027,7 +1082,7 @@
       }
       const pibbyGarcelloAnnieGame = {
         title: "FNF X Pibby vs Corrupted Garcello & Annie",
-        href: "https://fnfgame24.github.io/fnf-x-pibby-vs-corrupted-garcello-annie/",
+        href: "/fnf-x-pibby-vs-corrupted-garcello-annie/",
         img: "/assets/images/fnf-x-pibby-vs-corrupted-garcello-and-annie.png"
       };
       if (!games.some(function(game){ return game.title === pibbyGarcelloAnnieGame.title; })) {
@@ -1035,7 +1090,7 @@
       }
       const pibbyDoofPerryGame = {
         title: "FNF X Pibby Doof Mod vs Perry Platypus",
-        href: "https://fnfgame24.github.io/fnf-x-pibby-doof-mod-vs-perry-platypus/",
+        href: "/fnf-x-pibby-doof-mod-vs-perry-platypus/",
         img: "/assets/images/fnf-x-pibby-doof-mod-vs-perry-platypus.png"
       };
       if (!games.some(function(game){ return game.title === pibbyDoofPerryGame.title; })) {
@@ -1043,7 +1098,7 @@
       }
       const pibbyFamilyGuyGame = {
         title: "FNF X Pibby vs Corrupted Family Guy",
-        href: "https://fnfgame24.github.io/fnf-x-pibby-vs-corrupted-family-guy/",
+        href: "/fnf-x-pibby-vs-corrupted-family-guy/",
         img: "/assets/images/fnf-x-pibby-vs-corrupted-family-guy.png"
       };
       if (!games.some(function(game){ return game.title === pibbyFamilyGuyGame.title; })) {
@@ -1051,7 +1106,7 @@
       }
       const pibbyRedPeashooterGame = {
         title: "FNF X Pibby vs Red And Peashooter",
-        href: "https://fnfgame24.github.io/fnf-x-pibby-vs-red-and-peashooter/",
+        href: "/fnf-x-pibby-vs-red-and-peashooter/",
         img: "/assets/images/fnf-x-pibby-vs-red-and-peashooter.png"
       };
       if (!games.some(function(game){ return game.title === pibbyRedPeashooterGame.title; })) {
@@ -1059,7 +1114,7 @@
       }
       const pibbyPeppaPigGame = {
         title: "FNF Pibby Vs Corrupted Peppa Pig",
-        href: "https://fnfgame24.github.io/fnf-pibby-vs-corrupted-peppa-pig/",
+        href: "/fnf-pibby-vs-corrupted-peppa-pig/",
         img: "/assets/images/fnf-pibby-vs-corrupted-peppa-pig.webp"
       };
       if (!games.some(function(game){ return game.title === pibbyPeppaPigGame.title; })) {
@@ -1067,7 +1122,7 @@
       }
       const darknessTakeoverFamilyGuyGame = {
         title: "FNF: Darkness Takeover vs Pibby Family Guy",
-        href: "https://fnfgame24.github.io/fnf-darkness-takeover-vs-pibby-family-guy/",
+        href: "/fnf-darkness-takeover-vs-pibby-family-guy/",
         img: "/assets/images/fnf-darkness-takeover-vs-pibby-family-guy.webp"
       };
       if (!games.some(function(game){ return game.title === darknessTakeoverFamilyGuyGame.title; })) {

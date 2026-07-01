@@ -1,4 +1,4 @@
-param(
+﻿param(
     [string]$OutFile,
     [string]$Title,
     [string]$Description,
@@ -13,7 +13,7 @@ $content = $content -replace '(?i)<title>.*?</title>', "<title>$Title | FNF Game
 $content = $content -replace '(?i)<meta name="description" content=".*?" />', "<meta name=`"description`" content=`"$Description`" />"
 
 # Replace canonical
-$content = $content -replace '(?i)<link rel="canonical" href="https://fnfgame24.github.io" />', "<link rel=`"canonical`" href=`"https://fnfgame24.github.io/$OutFile`" />"
+$content = $content -replace '(?i)<link rel="canonical" href="https://fnfgame24.com" />', "<link rel=`"canonical`" href=`"https://fnfgame24.com/$OutFile`" />"
 
 # Replace Player, Mods list, and article with the new ContentBody
 $regex = [regex] '(?s)<!-- Player -->.*?</article>'

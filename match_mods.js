@@ -1,4 +1,4 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 const path = require('path');
 
 const names = fs.readFileSync('names.txt', 'utf-8').split('\n').map(l => l.trim()).filter(Boolean);
@@ -53,7 +53,7 @@ function getBestMatch(name, images) {
 let modData = [];
 for (let i = 0; i < names.length; i++) {
   const name = names[i];
-  const url = urls[i] || "https://fnfgame24.github.io";
+  const url = urls[i] || "https://fnfgame24.com";
   const imgName = getBestMatch(name, images);
   const imgUrl = `../assets/images/${imgName}`; // Keep it relative as we modified it earlier
   modData.push({

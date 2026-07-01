@@ -1,24 +1,24 @@
-$headerContent = @"
+﻿$headerContent = @"
     <header class="top">
       <!-- Logo -->
       <a class="brand" href="/">
         <span class="appicon">
-          <img src="https://fnfgame24.github.io/assets/fnf.png" alt="FNF logo">
+          <img src="/assets/fnf.png" alt="FNF logo">
         </span>
       </a>
 
       <!-- 4 game nổi bật nằm cùng thanh -->
       <div class="top-games">
-        <a class="quick-mod" href="https://fnfgame24.github.io/fnf-doki-doki-takeover">
+        <a class="quick-mod" href="/fnf-doki-doki-takeover">
           FNF: Doki Doki Takeover
         </a>
-        <a class="quick-mod" href="https://fnfgame24.github.io/fnf-vs-hypnos-lullaby-v2">
+        <a class="quick-mod" href="/fnf-vs-hypnos-lullaby-v2">
           FNF Vs. Hypno’s Lullaby v2
         </a>
-        <a class="quick-mod" href="https://fnfgame24.github.io/fnf-indie-cross-ritual-but-everyone-sings-it">
+        <a class="quick-mod" href="/fnf-indie-cross-ritual-but-everyone-sings-it">
           FNF Indie Cross Ritual But Everyone Sings It
         </a>
-        <a class="quick-mod" href="https://fnfgame24.github.io/fnf-vs-impostor-among-us-v4">
+        <a class="quick-mod" href="/fnf-vs-impostor-among-us-v4">
           FNF vs Impostor Among Us V4 
         </a>
       </div>

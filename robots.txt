@@ -1,4 +1,4 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
 
 # Avoid indexing error page
@@ -9,4 +9,4 @@ Disallow: /README
 Disallow: /LICENSE
 
 # Sitemap
-Sitemap: https://fnfgame24.github.io/sitemap.xml
+Sitemap: https://fnfgame24.com/sitemap.xml
