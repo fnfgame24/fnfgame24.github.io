@@ -103,7 +103,7 @@
   </url>
 
   <url>
-    <loc>https://fnfgame24.com/about-us.html</loc>
+    <loc>https://fnfgame24.com/about-us</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -289,27 +289,33 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fnfgame24.com/contact-us.html</loc>
+    <loc>https://fnfgame24.com/contact-us</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://fnfgame24.com/dmca.html</loc>
+    <loc>https://fnfgame24.com/dmca</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://fnfgame24.com/privacy-policy.html</loc>
+    <loc>https://fnfgame24.com/privacy-policy</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://fnfgame24.com/terms-of-service.html</loc>
+    <loc>https://fnfgame24.com/terms-of-service</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fnfgame24.com/fnf-nocturnal-protocol-mod/</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
